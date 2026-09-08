@@ -122,31 +122,6 @@
             margin: .4em 0 1.6em;
         }
 
-        .mgi-lp .hero-grid {
-            display: grid;
-            grid-template-columns: 1.3fr .9fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .mgi-lp .hero-card {
-            background: rgba(255, 255, 255, .08);
-            border: 1px solid rgba(255, 255, 255, .18);
-            border-radius: var(--radius);
-            padding: 26px;
-        }
-
-        .mgi-lp .hero-card h3 {
-            color: #fff;
-            margin-top: 0;
-        }
-
-        .mgi-lp .hero-card ul {
-            margin: 0;
-            padding-left: 18px;
-            color: #dce8f7;
-        }
-
         .mgi-lp .answer {
             background: var(--bg-soft);
             border-left: 5px solid var(--blue);
@@ -424,55 +399,6 @@
             white-space: nowrap;
         }
 
-        .mgi-lp .carousel-wrapper {
-            position: relative;
-            margin: 40px 0;
-        }
-
-        .mgi-lp .carousel {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 20px;
-            padding-bottom: 20px;
-            scrollbar-width: thin;
-            scrollbar-color: var(--blue) var(--line);
-        }
-
-        .mgi-lp .carousel::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .mgi-lp .carousel::-webkit-scrollbar-track {
-            background: var(--line);
-            border-radius: 4px;
-        }
-
-        .mgi-lp .carousel::-webkit-scrollbar-thumb {
-            background: var(--blue);
-            border-radius: 4px;
-        }
-
-        .mgi-lp .carousel-item {
-            flex: 0 0 85%;
-            max-width: 320px;
-            scroll-snap-align: center;
-            background: #fff;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--line);
-        }
-
-        .mgi-lp .carousel-item img {
-            width: 100%;
-            height: 260px;
-            object-fit: cover;
-            padding: 0;
-            background: #fff;
-            display: block;
-        }
-
         .mgi-lp .setores {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -500,6 +426,13 @@
             height: 220px;
             object-fit: cover;
             display: block;
+        }
+
+        .mgi-lp .setor-thumb {
+            height: 150px;
+            display: grid;
+            place-items: center;
+            font-size: 2.6rem;
         }
 
         .mgi-lp .setor-card .setor-title {
@@ -550,10 +483,6 @@
             .mgi-lp .cookie-bar .wrap {
                 justify-content: center;
                 text-align: center;
-            }
-
-            .mgi-lp .carousel-item {
-                max-width: 280px;
             }
 
             .mgi-lp .setores {
@@ -1375,7 +1304,7 @@
                 <p style="margin-top: 14px;">Com o modelo de locação por assinatura da MGI, você tem suporte técnico local, treinamento completo e manutenção garantida sem precisar de altos investimentos iniciais em compra de equipamentos.</p>
             </div>
             <div>
-                <img src="https://cdn.pudutech.com/website/images/pc/kettybot2024/kettybot2024-robot.png" alt="KettyBot Pro - Robô de atendimento e entrega Pudu Robotics" />
+                <img src="https://cdn.pudutech.com/website/images/pc/kettybot2024/kettybot2024-robot.png" alt="KettyBot Pro - Robô de atendimento e entrega Pudu Robotics" width="550" height="620" loading="lazy" />
             </div>
         </div>
     </section>
@@ -1419,6 +1348,47 @@
         </div>
     </section>
 
+    <!-- SEGMENTOS ATENDIDOS -->
+    <section id="segmentos" style="background: var(--bg-soft);">
+        <div class="wrap">
+            <h2>Segmentos Atendidos pela Locação de Robôs MGI</h2>
+            <p class="lead">Cada projeto começa com um mapeamento consultivo do seu ambiente antes de indicarmos o robô e o plano ideal para a sua operação:</p>
+            <div class="setores">
+                <div class="setor-card">
+                    <div class="setor-thumb" style="background: linear-gradient(135deg,#0b2440,#1e6fd9);"><span aria-hidden="true">🚚</span></div>
+                    <div class="setor-title">Logística</div>
+                </div>
+                <div class="setor-card">
+                    <div class="setor-thumb" style="background: linear-gradient(135deg,#123a63,#1e6fd9);"><span aria-hidden="true">🏭</span></div>
+                    <div class="setor-title">Indústria</div>
+                </div>
+                <div class="setor-card">
+                    <div class="setor-thumb" style="background: linear-gradient(135deg,#0b2440,#29b6e8);"><span aria-hidden="true">🛍️</span></div>
+                    <div class="setor-title">Varejo</div>
+                </div>
+                <div class="setor-card">
+                    <div class="setor-thumb" style="background: linear-gradient(135deg,#123a63,#20b965);"><span aria-hidden="true">🏥</span></div>
+                    <div class="setor-title">Saúde</div>
+                </div>
+                <div class="setor-card">
+                    <div class="setor-thumb" style="background: linear-gradient(135deg,#0b2440,#1e6fd9);"><span aria-hidden="true">🏨</span></div>
+                    <div class="setor-title">Hotelaria</div>
+                </div>
+                <div class="setor-card">
+                    <div class="setor-thumb" style="background: linear-gradient(135deg,#123a63,#29b6e8);"><span aria-hidden="true">🏢</span></div>
+                    <div class="setor-title">Condomínios</div>
+                </div>
+                <div class="setor-card">
+                    <div class="setor-thumb" style="background: linear-gradient(135deg,#0b2440,#20b965);"><span aria-hidden="true">🧰</span></div>
+                    <div class="setor-title">Facilities</div>
+                </div>
+            </div>
+            <div class="response-note" style="margin-top: 32px; max-width: 820px; margin-left: auto; margin-right: auto;">
+                <strong>Gestão integrada MyINsights</strong><br />Todos os robôs locados são acompanhados em tempo real pela plataforma MyINsights, com rastreamento de rotas, indicadores de uso e alertas de manutenção — parte do ecossistema tecnológico completo do Grupo MGITECH.
+            </div>
+        </div>
+    </section>
+
     <!-- TECNOLOGIA & RECURSOS OFICIAIS DO KETTYBOT PRO -->
     <section id="tecnologia" style="padding-top: 70px; padding-bottom: 50px;">
         <div class="wrap">
@@ -1428,7 +1398,7 @@
             <div class="tech-grid">
                 <div class="tech-card">
                     <div class="tech-card-img-wrap">
-                        <img src="https://cdn.pudutech.com/website/images/pc/kettybot2024/51cm_pc.jpg" alt="Passagem em corredores estreitos de até 52cm" />
+                        <img src="https://cdn.pudutech.com/website/images/pc/kettybot2024/51cm_pc.jpg" alt="Passagem em corredores estreitos de até 52cm" width="800" height="600" loading="lazy" />
                     </div>
                     <div class="tech-card-body">
                         <span class="tech-card-tag">Agilidade Incomparável</span>
@@ -1438,7 +1408,7 @@
                 </div>
                 <div class="tech-card">
                     <div class="tech-card-img-wrap">
-                        <img src="https://cdn.pudutech.com/website/images/pc/kettybot2024/kettybot2024-rgbd.png" alt="Detecção Inteligente de Bandejas RGBD" />
+                        <img src="https://cdn.pudutech.com/website/images/pc/kettybot2024/kettybot2024-rgbd.png" alt="Detecção Inteligente de Bandejas RGBD" width="800" height="600" loading="lazy" />
                     </div>
                     <div class="tech-card-body">
                         <span class="tech-card-tag">Visão Computacional 360°</span>
@@ -1448,7 +1418,7 @@
                 </div>
                 <div class="tech-card">
                     <div class="tech-card-img-wrap">
-                        <img src="https://cdn.pudutech.com/website/images/pc/kettybot2024/autonp_pc.jpg" alt="Navegação Dupla Laser e Visual" />
+                        <img src="https://cdn.pudutech.com/website/images/pc/kettybot2024/autonp_pc.jpg" alt="Navegação Dupla Laser e Visual" width="800" height="600" loading="lazy" />
                     </div>
                     <div class="tech-card-body">
                         <span class="tech-card-tag">Segurança Absoluta</span>
@@ -1458,7 +1428,7 @@
                 </div>
                 <div class="tech-card">
                     <div class="tech-card-img-wrap" style="background: #112a4d;">
-                        <img src="https://cdn.pudutech.com/website/images/pc/kettybot/rear_yellow.png" alt="Versatilidade 2 em 1 com Capa Traseira" style="object-fit: contain; padding: 12px;" />
+                        <img src="https://cdn.pudutech.com/website/images/pc/kettybot/rear_yellow.png" alt="Versatilidade 2 em 1 com Capa Traseira" width="800" height="600" loading="lazy" style="object-fit: contain; padding: 12px;" />
                     </div>
                     <div class="tech-card-body">
                         <span class="tech-card-tag">Versatilidade 2 em 1</span>
@@ -1468,7 +1438,7 @@
                 </div>
                 <div class="tech-card">
                     <div class="tech-card-img-wrap" style="background: #112a4d;">
-                        <img src="https://cdn.pudutech.com/website/images/pc/kettybot/letter1.png" alt="Display Publicitário de 18.5 polegadas" style="object-fit: contain; padding: 12px;" />
+                        <img src="https://cdn.pudutech.com/website/images/pc/kettybot/letter1.png" alt="Display Publicitário de 18.5 polegadas" width="800" height="600" loading="lazy" style="object-fit: contain; padding: 12px;" />
                     </div>
                     <div class="tech-card-body">
                         <span class="tech-card-tag">Marketing Dinâmico</span>
@@ -1478,7 +1448,7 @@
                 </div>
                 <div class="tech-card">
                     <div class="tech-card-img-wrap" style="background: #112a4d;">
-                        <img src="https://cdn.pudutech.com/website/images/pc/kettybot2024/kettybot2024-yellow.png" alt="Cores Oficiais do KettyBot Pro" style="object-fit: contain; padding: 12px;" />
+                        <img src="https://cdn.pudutech.com/website/images/pc/kettybot2024/kettybot2024-yellow.png" alt="Cores Oficiais do KettyBot Pro" width="800" height="600" loading="lazy" style="object-fit: contain; padding: 12px;" />
                     </div>
                     <div class="tech-card-body">
                         <span class="tech-card-tag">Acabamento Premium</span>
@@ -1649,7 +1619,7 @@
     <!-- SOBRE O GRUPO -->
     <section id="sobre" style="background: var(--bg-soft); padding: 64px 0;">
         <div class="wrap" style="text-align: center; max-width: 760px;">
-            <img style="height: 48px; width: auto; margin-bottom: 20px; display: inline-block;" src="https://grupomgitech.com.br/wp-content/uploads/2026/01/logo-grupomgi.png" alt="Grupo MGITECH" />
+            <img style="height: 48px; width: auto; margin-bottom: 20px; display: inline-block;" src="https://grupomgitech.com.br/wp-content/uploads/2026/01/logo-grupomgi.png" alt="Grupo MGITECH" width="180" height="48" loading="lazy" />
             <h2 style="font-size: 1.6rem; color: var(--navy); margin-bottom: 18px;">Uma empresa do Grupo MGITECH</h2>
             <p style="font-size: 1.08rem; color: var(--muted); line-height: 1.7; margin: 0;">Há mais de 34 anos, o Grupo MGITECH conecta tecnologia e operação. Somos pioneiros em inovação corporativa, unindo hardware, robótica de serviço, suporte técnico especializado e gestão de dispositivos.</p>
         </div>
