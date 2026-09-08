@@ -1244,6 +1244,296 @@
             border-bottom: none;
         }
 
+        /* CARROSSEL SEGMENTOS */
+        .mgi-lp .segmentos-section {
+            padding: 76px 0;
+            background: var(--bg-soft);
+        }
+
+        .mgi-lp .segmentos-header {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 36px;
+        }
+
+        .mgi-lp .segmentos-header h2 {
+            font-size: clamp(2rem, 3vw, 2.7rem);
+            color: var(--navy);
+            margin: 0 0 12px;
+        }
+
+        .mgi-lp .segmentos-header p {
+            font-size: 1.05rem;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .mgi-lp .carousel-container {
+            position: relative;
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        .mgi-lp .carousel-track {
+            display: flex;
+            gap: 22px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 10px 4px 24px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--blue) var(--line);
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mgi-lp .carousel-track::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .mgi-lp .carousel-track::-webkit-scrollbar-track {
+            background: var(--line);
+            border-radius: 3px;
+        }
+
+        .mgi-lp .carousel-track::-webkit-scrollbar-thumb {
+            background: var(--blue);
+            border-radius: 3px;
+        }
+
+        .mgi-lp .segmento-slide {
+            flex: 0 0 340px;
+            scroll-snap-align: start;
+            background: #fff;
+            border-radius: 20px;
+            border: 1px solid var(--line);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(11, 36, 64, .07);
+            display: flex;
+            flex-direction: column;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .mgi-lp .segmento-slide:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 45px rgba(11, 36, 64, .13);
+        }
+
+        .mgi-lp .segmento-img-box {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background: #0b2440;
+        }
+
+        .mgi-lp .segmento-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .35s ease;
+        }
+
+        .mgi-lp .segmento-slide:hover .segmento-img-box img {
+            transform: scale(1.05);
+        }
+
+        .mgi-lp .segmento-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mgi-lp .segmento-title {
+            font-size: 1.25rem;
+            font-weight: 750;
+            color: var(--navy);
+            margin: 0 0 8px;
+        }
+
+        .mgi-lp .segmento-divider {
+            width: 36px;
+            height: 3px;
+            background: var(--blue);
+            border-radius: 2px;
+            margin-bottom: 12px;
+        }
+
+        .mgi-lp .segmento-desc {
+            font-size: 0.94rem;
+            color: var(--muted);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        .mgi-lp .carousel-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .mgi-lp .carousel-btn {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: #fff;
+            border: 1px solid var(--line);
+            color: var(--navy);
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            box-shadow: 0 6px 16px rgba(11, 36, 64, 0.08);
+            transition: all .2s ease;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .mgi-lp .carousel-btn:hover {
+            background: var(--blue);
+            color: #fff;
+            border-color: var(--blue);
+            transform: scale(1.05);
+        }
+
+        /* MEDIA CAROUSEL ROBOS (MODELOS HOMOLOGADOS / LIVE SCREENSHOT) */
+        .mgi-lp .media-carousel-section {
+            padding: 76px 0 84px;
+            background: #051428;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mgi-lp .media-carousel-section .wrap {
+            max-width: 1240px;
+            position: relative;
+        }
+
+        .mgi-lp .media-carousel-section h2 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: clamp(2rem, 3.2vw, 2.75rem);
+        }
+
+        .mgi-lp .media-carousel-section p.carousel-sub {
+            color: #cfe0f5;
+            max-width: 680px;
+            margin: 0 auto 40px;
+            font-size: 1.06rem;
+        }
+
+        .mgi-lp .robots-carousel-wrapper {
+            position: relative;
+            padding: 0 10px;
+        }
+
+        .mgi-lp .media-carousel-track {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 10px 4px 28px;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mgi-lp .media-carousel-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .mgi-lp .media-slide {
+            flex: 0 0 calc((100% - 48px) / 3);
+            min-width: 290px;
+            max-width: 380px;
+            scroll-snap-align: start;
+            background: transparent;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+            transition: transform .3s ease, box-shadow .3s ease;
+            position: relative;
+            display: block;
+        }
+
+        .mgi-lp .media-slide:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 65px rgba(0, 0, 0, 0.6);
+        }
+
+        .mgi-lp .media-slide img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1 / 1.7;
+            object-fit: cover;
+            display: block;
+            border-radius: 28px;
+        }
+
+        /* FLOATING ARROWS */
+        .mgi-lp .robots-arrow-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all .2s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .mgi-lp .robots-arrow-btn:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .mgi-lp .robots-arrow-btn.prev {
+            left: -8px;
+        }
+
+        .mgi-lp .robots-arrow-btn.next {
+            right: -8px;
+        }
+
+        /* PAGINATION DOTS */
+        .mgi-lp .robots-dots-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .mgi-lp .robots-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.28);
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            transition: all .25s ease;
+        }
+
+        .mgi-lp .robots-dot.active {
+            width: 28px;
+            border-radius: 6px;
+            background: #fff;
+        }
+
         @media(max-width:900px) {
             .mgi-lp .hero-shell {
                 grid-template-columns: 1fr;
@@ -1258,6 +1548,14 @@
             .mgi-lp .specs-table td {
                 padding: 12px 16px;
                 font-size: 0.9rem;
+            }
+            .mgi-lp .segmento-slide {
+                flex: 0 0 85%;
+                max-width: 320px;
+            }
+            .mgi-lp .media-slide {
+                flex: 0 0 85%;
+                max-width: 320px;
             }
         }
     </style>
@@ -1418,6 +1716,184 @@
             </div>
         </div>
     </section>
+
+    <!-- CARROSSEL MODELOS DE ROBÔS HOMOLOGADOS MGI (EXACT FROM LIVE SITE) -->
+    <section class="media-carousel-section">
+        <div class="wrap">
+            <span class="section-kicker" style="color: #7bd2ff; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;">Frota Homologada</span>
+            <h2>Robôs Inteligentes em Operação</h2>
+            <p class="carousel-sub">Conheça os principais modelos autônomos integrados pela MGI para recepção, atendimento ao cliente, garçom e entregas internas.</p>
+            
+            <div class="robots-carousel-wrapper">
+                <!-- Floating Arrows -->
+                <button type="button" class="robots-arrow-btn prev" onclick="mgiScrollRobots(-1)" aria-label="Slide anterior">&#10094;</button>
+                <button type="button" class="robots-arrow-btn next" onclick="mgiScrollRobots(1)" aria-label="Próximo slide">&#10095;</button>
+
+                <!-- Track with the 5 official cards -->
+                <div class="media-carousel-track" id="mediaTrack">
+                    <div class="media-slide">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/07/1.png" alt="Soluções para Atendimento e Entrega - KettyBot" loading="lazy" />
+                    </div>
+                    <div class="media-slide">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/07/2.png" alt="Soluções para Atendimento e Entrega - FlashBot" loading="lazy" />
+                    </div>
+                    <div class="media-slide">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/07/3.png" alt="Soluções para Atendimento e Entrega - BellaBot" loading="lazy" />
+                    </div>
+                    <div class="media-slide">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/07/4.png" alt="Soluções para Atendimento e Entrega - PuduBot 2" loading="lazy" />
+                    </div>
+                    <div class="media-slide">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/07/5-1.png" alt="Soluções para Atendimento e Entrega - SwiftBot" loading="lazy" />
+                    </div>
+                </div>
+
+                <!-- Pagination Dots -->
+                <div class="robots-dots-nav" id="mediaDots">
+                    <button type="button" class="robots-dot active" onclick="mgiGoToRobotSlide(0)" aria-label="Slide 1"></button>
+                    <button type="button" class="robots-dot" onclick="mgiGoToRobotSlide(1)" aria-label="Slide 2"></button>
+                    <button type="button" class="robots-dot" onclick="mgiGoToRobotSlide(2)" aria-label="Slide 3"></button>
+                    <button type="button" class="robots-dot" onclick="mgiGoToRobotSlide(3)" aria-label="Slide 4"></button>
+                    <button type="button" class="robots-dot" onclick="mgiGoToRobotSlide(4)" aria-label="Slide 5"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARROSSEL SEGMENTOS QUE ATENDEMOS -->
+    <section id="segmentos" class="segmentos-section">
+        <div class="wrap">
+            <div class="segmentos-header">
+                <span class="section-kicker" style="color: var(--blue); font-weight: 800; letter-spacing: .08em; text-transform: uppercase;">Aplicações Reais</span>
+                <h2>Segmentos que Atendemos</h2>
+                <p>Tecnologia e gestão que modernizam o atendimento, reduzem custos operacionais e encantam o cliente final.</p>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-track" id="segmentosTrack">
+                    <!-- Slide 1: Logística -->
+                    <div class="segmento-slide">
+                        <div class="segmento-img-box">
+                            <img src="https://mgi.com.br/wp-content/uploads/2026/07/two-diverse-male-warehouse-workers-reaching-up-to-2026-04-13-21-39-08-utc-1024x683.jpg" alt="Logística e Centros de Distribuição" />
+                        </div>
+                        <div class="segmento-body">
+                            <div class="segmento-title">Logística</div>
+                            <div class="segmento-divider"></div>
+                            <p class="segmento-desc">Operações logísticas vivem de agilidade e continuidade. Qualquer parada afeta prazos e produtividade. Atuamos com tecnologia e gestão que mantêm o fluxo rodando, reduzem downtime e dão visibilidade sobre a operação.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2: Indústria -->
+                    <div class="segmento-slide">
+                        <div class="segmento-img-box">
+                            <img src="https://mgi.com.br/wp-content/uploads/2026/07/high-angle-view-over-the-factory-floor-and-assembl-2026-01-09-09-42-55-utc-1024x683.jpg" alt="Indústria e Chão de Fábrica" />
+                        </div>
+                        <div class="segmento-body">
+                            <div class="segmento-title">Indústria</div>
+                            <div class="segmento-divider"></div>
+                            <p class="segmento-desc">A indústria não pode parar. Do chão de fábrica ao controle de produção, entregamos tecnologia e gestão que garantem continuidade, padronização e controle, mesmo em ambientes exigentes.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 3: Varejo -->
+                    <div class="segmento-slide">
+                        <div class="segmento-img-box">
+                            <img src="https://mgi.com.br/wp-content/uploads/2026/07/woman-in-crafting-workshop-2026-03-20-01-02-40-utc-1024x683.jpg" alt="Varejo e Shoppings" />
+                        </div>
+                        <div class="segmento-body">
+                            <div class="segmento-title">Varejo</div>
+                            <div class="segmento-divider"></div>
+                            <p class="segmento-desc">No varejo, cada minuto de operação conta e a experiência do cliente é decisiva. Apoiamos lojas, redes e shoppings com tecnologia que agiliza o atendimento e sustenta a operação no ritmo do negócio.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 4: Saúde -->
+                    <div class="segmento-slide">
+                        <div class="segmento-img-box">
+                            <img src="https://mgi.com.br/wp-content/uploads/2026/07/diverse-doctors-discussing-work-and-walking-throug-2026-03-25-02-18-27-utc-1024x683.jpg" alt="Saúde e Hospitais" />
+                        </div>
+                        <div class="segmento-body">
+                            <div class="segmento-title">Saúde</div>
+                            <div class="segmento-divider"></div>
+                            <p class="segmento-desc">Ambientes de saúde exigem precisão, segurança e disponibilidade constante. Entregamos tecnologia e gestão que apoiam a rotina de hospitais e clínicas, com foco em continuidade operacional e controle.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 5: Hotelaria -->
+                    <div class="segmento-slide">
+                        <div class="segmento-img-box">
+                            <img src="https://mgi.com.br/wp-content/uploads/2026/07/happy-receptionists-cooperating-while-working-on-a-2026-01-06-10-26-51-utc-1024x683.jpg" alt="Hotelaria e Resorts" />
+                        </div>
+                        <div class="segmento-body">
+                            <div class="segmento-title">Hotelaria</div>
+                            <div class="segmento-divider"></div>
+                            <p class="segmento-desc">A hotelaria se sustenta na experiência do hóspede e na eficiência da operação. Apoiamos hotéis e resorts com tecnologia que moderniza o atendimento e mantém os serviços funcionando em horários estendidos.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 6: Condomínios -->
+                    <div class="segmento-slide">
+                        <div class="segmento-img-box">
+                            <img src="https://mgi.com.br/wp-content/uploads/2026/07/houses-in-suburb-at-summer-in-the-north-america-l-2026-03-26-11-36-51-utc-1024x683.jpg" alt="Condomínios Residenciais e Comerciais" />
+                        </div>
+                        <div class="segmento-body">
+                            <div class="segmento-title">Condomínios</div>
+                            <div class="segmento-divider"></div>
+                            <p class="segmento-desc">Condomínios residenciais e comerciais buscam eficiência, segurança e conveniência no dia a dia. Entregamos tecnologia e gestão que organizam a operação predial e melhoram a experiência de quem vive e trabalha ali.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 7: Facilities -->
+                    <div class="segmento-slide">
+                        <div class="segmento-img-box">
+                            <img src="https://mgi.com.br/wp-content/uploads/2026/07/people-walking-in-modern-office-hallway-2026-01-09-10-24-53-utc-1024x683.jpg" alt="Gestão de Facilities" />
+                        </div>
+                        <div class="segmento-body">
+                            <div class="segmento-title">Facilities</div>
+                            <div class="segmento-divider"></div>
+                            <p class="segmento-desc">A gestão de facilities precisa padronizar serviços e controlar custos em múltiplos ambientes. Apoiamos operações com tecnologia e gestão que trazem eficiência, padronização e previsibilidade.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button type="button" class="carousel-btn" onclick="document.getElementById('segmentosTrack').scrollBy({left: -360, behavior: 'smooth'})" aria-label="Anterior">&#10094;</button>
+                    <button type="button" class="carousel-btn" onclick="document.getElementById('segmentosTrack').scrollBy({left: 360, behavior: 'smooth'})" aria-label="Próximo">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function mgiScrollRobots(direction) {
+            const track = document.getElementById('mediaTrack');
+            if (!track) return;
+            const slide = track.querySelector('.media-slide');
+            const slideWidth = slide ? slide.offsetWidth + 24 : 360;
+            track.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
+        }
+
+        function mgiGoToRobotSlide(index) {
+            const track = document.getElementById('mediaTrack');
+            if (!track) return;
+            const slide = track.querySelectorAll('.media-slide')[index];
+            if (slide) {
+                track.scrollTo({ left: slide.offsetLeft - track.offsetLeft - 10, behavior: 'smooth' });
+            }
+        }
+
+        (function setupMediaCarouselDots() {
+            const track = document.getElementById('mediaTrack');
+            const dots = document.querySelectorAll('#mediaDots .robots-dot');
+            if (!track || !dots.length) return;
+
+            track.addEventListener('scroll', () => {
+                const slides = track.querySelectorAll('.media-slide');
+                const scrollLeft = track.scrollLeft;
+                let activeIdx = 0;
+                slides.forEach((s, idx) => {
+                    if (s.offsetLeft - track.offsetLeft <= scrollLeft + 50) {
+                        activeIdx = idx;
+                    }
+                });
+                dots.forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === activeIdx);
+                });
+            }, { passive: true });
+        })();
+    </script>
 
     <!-- TECNOLOGIA & RECURSOS OFICIAIS DO KETTYBOT PRO -->
     <section id="tecnologia" style="padding-top: 70px; padding-bottom: 50px;">
