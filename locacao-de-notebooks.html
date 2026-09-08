@@ -18,6 +18,8 @@
             --navy-2: #123a63;
             --blue: #1e6fd9;
             --blue-dark: #1657ad;
+            --cyan: #29b6e8;
+            --green: #20b965;
             --ink: #1c2733;
             --muted: #5b6b7b;
             --line: #e3e9f0;
@@ -565,20 +567,27 @@
             .mgi-lp .setores {
                 grid-template-columns: 1fr;
             }
+
+            .mgi-lp #solucoes h2,
+            .mgi-lp #beneficios h2,
+            .mgi-lp #como-funciona h2,
+            .mgi-lp #faq h2 {
+                white-space: normal !important;
+            }
         }
     </style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Locação e Outsourcing de Notebooks e Computadores",
+  "serviceType": "Locação de Notebooks Corporativos",
   "provider": {
     "@type": "Organization",
     "name": "MGI",
     "url": "https://mgi.com.br/"
   },
-  "name": "Locação de Notebooks e Computadores para Empresas",
-  "description": "Aluguel corporativo de notebooks, desktops e workstations com configuração personalizada, suporte técnico e reposição rápida.",
+  "name": "Locação de Notebooks",
+  "description": "Locação e outsourcing de notebooks e laptops corporativos de alta performance com suporte técnico dedicado, plataforma MyINsights e manutenção preventiva.",
   "url": "https://mgi.com.br/solucoes/locacao-de-notebooks/"
 }
 </script>
@@ -589,34 +598,34 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Os notebooks já vêm configurados para a minha empresa?",
+      "name": "O que está incluso no contrato de locação de notebooks da MGI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. Entregamos todos os equipamentos com a imagem padrão do seu sistema operacional, softwares corporativos, antivírus e políticas de segurança pré-instaladas."
+        "text": "O contrato inclui fornecimento de notebooks corporativos (Lenovo, Dell, HP, Apple), configuração personalizada (staging de imagem com SO e apps), suporte técnico especializado, garantia com swap rápido, manutenção preventiva e gestão de ativos."
       }
     },
     {
       "@type": "Question",
-      "name": "Qual o prazo de troca em caso de defeito no notebook?",
+      "name": "Como funciona a plataforma MyINsights na gestão dos notebooks?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Possuímos estoque de backup (buffer) para reposição expressa, minimizando o tempo de máquina parada da sua equipe."
+        "text": "A plataforma MyINsights oferece monitoramento em tempo real do parque de notebooks, controle de inventário, telemetria de saúde de hardware, métricas de chamados e relatórios gerenciais para total visibilidade da TI."
       }
     },
     {
       "@type": "Question",
-      "name": "Quais são as vantagens fiscais de alugar notebooks?",
+      "name": "Qual a vantagem fiscal da locação de notebooks (OPEX) em relação à compra (CAPEX)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A locação é categorizada como OPEX (despesa operacional), permitindo dedução integral no IRPJ e CSLL para empresas no regime de Lucro Real, além de preservar o fluxo de caixa."
+        "text": "A locação é contabilizada como despesa operacional (OPEX), sendo 100% dedutível da base de cálculo do IRPJ e CSLL para empresas no regime de Lucro Real, além de preservar o capital de giro e evitar a desvalorização patrimonial."
       }
     },
     {
       "@type": "Question",
-      "name": "Posso aumentar ou diminuir a quantidade de notebooks durante o contrato?",
+      "name": "Como funciona o atendimento de suporte e a substituição de equipamentos (swap)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. Nossos contratos corporativos oferecem flexibilidade e escalabilidade para acompanhar contratações, projetos pontuais ou reduções da sua equipe."
+        "text": "Contamos com Service Desk dedicado e laboratório técnico próprio. Caso um notebook apresente qualquer falha de hardware, um equipamento substituto (swap) é disponibilizado com rapidez para que o colaborador continue trabalhando sem prejuízo à produtividade."
       }
     }
   ]
@@ -687,7 +696,7 @@
             min-height: 620px;
             padding: 50px 0 54px;
             background-color: #071933;
-            background-image: linear-gradient(90deg, rgba(6, 27, 55, .98) 0%, rgba(7, 35, 72, .92) 42%, rgba(11, 51, 99, .55) 75%, rgba(9, 39, 77, .25) 100%), url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1600&q=80');
+            background-image: radial-gradient(circle at 85% 50%, rgba(30, 111, 217, 0.25) 0%, transparent 60%), linear-gradient(135deg, #06172e 0%, #0c2b55 50%, #071933 100%);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center right;
@@ -699,9 +708,9 @@
             position: relative;
             z-index: 2;
             display: grid;
-            grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+            grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
             align-items: center;
-            gap: 40px;
+            gap: 44px;
             width: 100%;
         }
 
@@ -794,6 +803,133 @@
             gap: 7px;
         }
 
+        .mgi-lp .hero-video-box {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mgi-lp .hero-video-card {
+            position: relative;
+            width: 100%;
+            max-width: 580px;
+            background: rgba(11, 36, 64, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 24px;
+            padding: 16px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45), 0 0 40px rgba(30, 111, 217, 0.25);
+            overflow: hidden;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .mgi-lp .hero-video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55), 0 0 50px rgba(41, 182, 232, 0.35);
+        }
+
+        .mgi-lp .hero-video-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding: 0 6px;
+        }
+
+        .mgi-lp .hero-video-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(30, 111, 217, 0.25);
+            border: 1px solid rgba(41, 182, 232, 0.4);
+            color: #bfe7ff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .mgi-lp .hero-video-tag .live-dot {
+            width: 7px;
+            height: 7px;
+            background: #20bf69;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #20bf69;
+            animation: pulse-dot 1.8s infinite;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: scale(0.8);
+            }
+        }
+
+        .mgi-lp .hero-video-media {
+            position: relative;
+            width: 100%;
+            padding-bottom: 65%;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .mgi-lp .hero-video-media img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            background: radial-gradient(circle at center, #11345f 0%, #071933 100%);
+            padding: 12px;
+        }
+
+        .mgi-lp .hero-video-footer {
+            margin-top: 12px;
+            padding: 4px 6px 2px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .mgi-lp .hero-video-info-title {
+            color: #fff;
+            font-size: 0.92rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .mgi-lp .hero-video-info-desc {
+            color: #b0c6df;
+            font-size: 0.8rem;
+            margin: 2px 0 0;
+        }
+
+        .mgi-lp .hero-video-badge {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            font-size: 0.74rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 8px;
+            white-space: nowrap;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
         .mgi-lp .lead-form-section {
             background: linear-gradient(180deg, #f5f9fd 0%, #fff 100%);
         }
@@ -806,12 +942,12 @@
         }
 
         .mgi-lp .form-card {
-            background: #07111f;
+            background: #000000;
             color: #fff;
-            border: 1px solid #152a43;
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 24px;
             padding: 38px;
-            box-shadow: 0 24px 70px rgba(8, 31, 58, .18);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, .35);
         }
 
         .mgi-lp .form-kicker {
@@ -837,7 +973,7 @@
             margin-bottom: 24px;
         }
 
-        .mgi-lp .form-benefits ul {
+        .mgi-lp .form-benefits ul:not(.benefit-pills) {
             list-style: none;
             padding: 0;
             margin: 0 0 24px;
@@ -845,13 +981,14 @@
             gap: 15px;
         }
 
-        .mgi-lp .form-benefits li {
+        .mgi-lp .form-benefits ul:not(.benefit-pills) li {
             position: relative;
             padding-left: 36px;
             font-size: 1.02rem;
+            line-height: 1.5;
         }
 
-        .mgi-lp .form-benefits li:before {
+        .mgi-lp .form-benefits ul:not(.benefit-pills) li:before {
             content: '✓';
             position: absolute;
             left: 0;
@@ -869,19 +1006,28 @@
         .mgi-lp .benefit-pills {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
         .mgi-lp .benefit-pills li {
-            font-size: .82rem;
+            position: static;
+            font-size: .88rem;
             font-weight: 700;
             color: #174b7d;
             background: #eaf4ff;
-            padding: 8px 11px;
+            padding: 8px 16px;
             border-radius: 999px;
+            line-height: 1.4;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .mgi-lp .benefit-pills li:before {
+            content: none !important;
+            display: none !important;
         }
 
         .mgi-lp .response-note {
@@ -986,17 +1132,504 @@
             margin-right: auto;
         }
 
-        .mgi-lp .cta .btn {
+        .mgi-lp .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 36px;
+        }
+
+        .mgi-lp .tech-card {
             background: #fff;
-            color: #103a6b;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .mgi-lp .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(11, 36, 64, .14);
+        }
+
+        .mgi-lp .tech-card-img-wrap {
+            position: relative;
+            width: 100%;
+            height: 230px;
+            background: #071933;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mgi-lp .tech-card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .35s ease;
+        }
+
+        .mgi-lp .tech-card:hover .tech-card-img-wrap img {
+            transform: scale(1.05);
+        }
+
+        .mgi-lp .tech-card-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mgi-lp .tech-card-tag {
+            display: inline-block;
+            color: var(--blue);
+            font-size: 0.76rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+
+        .mgi-lp .tech-card-body h3 {
+            font-size: 1.15rem;
+            color: var(--navy);
+            margin: 0 0 8px;
+            line-height: 1.3;
+        }
+
+        .mgi-lp .tech-card-body p {
+            font-size: 0.93rem;
+            color: var(--muted);
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        .mgi-lp .specs-section {
+            background: #071933;
+            color: #fff;
+            padding: 72px 0;
+        }
+
+        .mgi-lp .specs-section h2 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .mgi-lp .specs-lead {
+            color: #cfe0f5;
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 36px;
+            font-size: 1.05rem;
+        }
+
+        .mgi-lp .specs-table-wrapper {
+            overflow-x: auto;
+            max-width: 960px;
+            margin: 0 auto;
+            border-radius: 18px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        .mgi-lp .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .mgi-lp .specs-table th,
+        .mgi-lp .specs-table td {
+            padding: 16px 24px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mgi-lp .specs-table th {
+            background: rgba(30, 111, 217, 0.35);
+            color: #7bd2ff;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-size: 0.85rem;
+        }
+
+        .mgi-lp .specs-table td:first-child {
+            font-weight: 700;
+            color: #fff;
+            width: 35%;
+        }
+
+        .mgi-lp .specs-table td:last-child {
+            color: #dce8f7;
+        }
+
+        .mgi-lp .specs-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* SEGMENTOS QUE ATENDEMOS (CARDS FIXOS) */
+        .mgi-lp .segmentos-section {
+            padding: 80px 0 88px;
+            background: var(--bg-soft);
+        }
+
+        .mgi-lp .segmentos-header {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto 48px;
+        }
+
+        .mgi-lp .segmentos-header h2 {
+            margin: 12px auto 10px;
+            color: var(--navy);
+        }
+
+        .mgi-lp .segmentos-header p {
+            color: var(--muted);
+            font-size: 1.06rem;
+            margin: 0;
+        }
+
+        .mgi-lp .segmentos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .mgi-lp .segmento-card {
+            background: #fff;
+            border-radius: 20px;
+            border: 1px solid var(--line);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(11, 36, 64, .07);
+            display: flex;
+            flex-direction: column;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .mgi-lp .segmento-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(11, 36, 64, .13);
+        }
+
+        .mgi-lp .segmento-img-box {
+            width: 100%;
+            height: 210px;
+            overflow: hidden;
+            background: #0b2440;
+        }
+
+        .mgi-lp .segmento-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .35s ease;
+        }
+
+        .mgi-lp .segmento-card:hover .segmento-img-box img {
+            transform: scale(1.06);
+        }
+
+        .mgi-lp .segmento-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mgi-lp .segmento-title {
+            font-size: 1.25rem;
+            font-weight: 750;
+            color: var(--navy);
+            margin: 0 0 8px;
+        }
+
+        .mgi-lp .segmento-divider {
+            width: 36px;
+            height: 3px;
+            background: var(--blue);
+            border-radius: 2px;
+            margin-bottom: 12px;
+        }
+
+        .mgi-lp .segmento-desc {
+            font-size: 0.94rem;
+            color: var(--muted);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media(max-width:992px) {
+            .mgi-lp .segmentos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:640px) {
+            .mgi-lp .segmentos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* MEDIA CAROUSEL NOTEBOOKS HOMOLOGADOS */
+        .mgi-lp .media-carousel-section {
+            padding: 76px 0 84px;
+            background: #051428;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mgi-lp .media-carousel-section .wrap {
+            max-width: 1240px;
+            position: relative;
+            text-align: center;
+        }
+
+        .mgi-lp .media-carousel-section .section-kicker {
+            display: block;
+            text-align: center;
+            margin: 0 auto 10px;
+        }
+
+        .mgi-lp .media-carousel-section h2 {
+            color: #fff;
+            margin: 0 auto 12px;
+            text-align: center;
+            font-size: clamp(2rem, 3.2vw, 2.75rem);
+        }
+
+        .mgi-lp .media-carousel-section p.carousel-sub {
+            color: #cfe0f5;
+            max-width: 680px;
+            margin: 0 auto 40px;
+            font-size: 1.06rem;
+            text-align: center;
+        }
+
+        .mgi-lp .robots-carousel-wrapper {
+            position: relative;
+            padding: 0 10px;
+        }
+
+        .mgi-lp .media-carousel-track {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 10px 4px 28px;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mgi-lp .media-carousel-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .mgi-lp .media-slide {
+            flex: 0 0 calc((100% - 72px) / 4);
+            min-width: 250px;
+            max-width: 320px;
+            scroll-snap-align: start;
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+            transition: transform .3s ease, box-shadow .3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mgi-lp .media-slide:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 65px rgba(0, 0, 0, 0.6);
+        }
+
+        .mgi-lp .media-slide img {
+            width: 100%;
+            height: 240px;
+            object-fit: contain;
+            display: block;
+            background: radial-gradient(circle at center, #ffffff 0%, #edf4fc 100%);
+            padding: 18px;
+        }
+
+        .mgi-lp .media-slide-body {
+            background: #ffffff;
+            padding: 18px 16px 20px;
+            text-align: left;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid var(--line);
+        }
+
+        .mgi-lp .media-slide-tag {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 6px;
+        }
+
+        .mgi-lp .media-slide-title {
+            font-size: 1.05rem;
+            font-weight: 750;
+            color: var(--navy);
+            margin: 0 0 6px;
+            line-height: 1.3;
+        }
+
+        .mgi-lp .media-slide-desc {
+            font-size: 0.88rem;
+            color: var(--muted);
+            margin: 0;
+            line-height: 1.45;
+        }
+
+        /* FLOATING ARROWS */
+        .mgi-lp .robots-arrow-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all .2s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .mgi-lp .robots-arrow-btn:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .mgi-lp .robots-arrow-btn.prev {
+            left: -8px;
+        }
+
+        .mgi-lp .robots-arrow-btn.next {
+            right: -8px;
+        }
+
+        /* PAGINATION DOTS */
+        .mgi-lp .robots-dots-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .mgi-lp .robots-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.28);
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            transition: all .25s ease;
+        }
+
+        .mgi-lp .robots-dot.active {
+            width: 28px;
+            border-radius: 6px;
+            background: #fff;
+        }
+
+        /* MARQUEE FABRICANTES */
+        .mgi-lp .marquee-section {
+            background: #ffffff;
+            padding: 50px 0 60px;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .mgi-lp .marquee-track {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+
+        .mgi-lp .marquee-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            padding: 8px 16px;
+            background: #fbfdff;
+            border: 1px solid #e2eaf2;
+            border-radius: 12px;
+            transition: transform .2s ease;
+        }
+
+        .mgi-lp .marquee-item:hover {
+            transform: translateY(-3px);
+            border-color: #bcd4ee;
+        }
+
+        .mgi-lp .marquee-item img {
+            max-height: 40px;
+            max-width: 140px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.8;
+            transition: filter .2s ease, opacity .2s ease;
+        }
+
+        .mgi-lp .marquee-item:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
         }
 
         @media(max-width:900px) {
             .mgi-lp .hero-shell {
                 grid-template-columns: 1fr;
             }
+
             .mgi-lp .lead-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .mgi-lp .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mgi-lp .specs-table th,
+            .mgi-lp .specs-table td {
+                padding: 12px 16px;
+                font-size: 0.9rem;
+            }
+
+            .mgi-lp .media-slide {
+                flex: 0 0 85%;
+                max-width: 300px;
             }
         }
     </style>
@@ -1005,20 +1638,44 @@
     <section class="hero">
         <div class="wrap hero-shell">
             <div class="hero-copy">
-                <img class="hero-logo" src="https://mgi.com.br/wp-content/uploads/2025/12/logo-mgi.svg" alt="MGI" width="220" height="64" />
-                <span class="hero-eyebrow">Outsourcing de TI & Hardware Corporativo</span>
-                <h1>Locação de Notebooks, Desktops e Workstations para Empresas</h1>
-                <p class="tag">Modernize o parque tecnológico da sua equipe sem imobilizar capital. Notebooks de alta performance com suporte técnico, garantia total e substituição expressa.</p>
+                <img class="hero-logo" src="https://mgi.com.br/wp-content/uploads/2025/12/logo-mgi.svg" alt="MGI"
+                    width="220" height="64" />
+                <span class="hero-eyebrow">Outsourcing & Gestão de Notebooks Corporativos</span>
+                <h1>Locação de Notebooks Corporativos de Alta Performance</h1>
+                <p class="tag">Com o modelo de locação da MGI, sua empresa tem acesso aos melhores notebooks do mercado,
+                    sempre atualizados, configurados e prontos para uso. Mais eficiência, menos investimento e zero
+                    preocupação com manutenção.</p>
                 <div class="hero-actions">
-                    <a class="btn btn-primary" href="#orcamento">Solicitar orçamento</a>
-                    <a class="btn btn-whatsapp" href="https://wa.me/5511986350609?text=Olá,%20tenho%20interesse%20em%20Locação%20de%20Notebooks" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+                    <a class="btn btn-primary" href="#orcamento">Solicitar proposta</a>
+                    <a class="btn btn-whatsapp"
+                        href="https://wa.me/5511986350609?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20Locação%20de%20Notebooks"
+                        target="_blank" rel="noopener">Falar pelo WhatsApp</a>
                 </div>
-                <ul class="hero-trust" aria-label="Diferenciais da Locação de TI MGI">
-                    <li>✓ Principais Marcas (Dell, Lenovo, HP)</li>
-                    <li>✓ Imagem Personalizada Pré-instalada</li>
-                    <li>✓ Manutenção e Troca Rápida Inclusas</li>
-                    <li>✓ Dedução Fiscal Integral no Lucro Real (OPEX)</li>
+                <ul class="hero-trust" aria-label="Diferenciais da MGI">
+                    <li>✓ Staging e Imagem Customizada</li>
+                    <li>✓ Gestão Remota via MyINsights</li>
+                    <li>✓ Assistência Técnica & Swap Rápido</li>
+                    <li>✓ Dedução Fiscal Integral (OPEX)</li>
                 </ul>
+            </div>
+            <div class="hero-video-box">
+                <div class="hero-video-card">
+                    <div class="hero-video-header">
+                        <span class="hero-video-tag"><span class="live-dot"></span> Equipamentos Homologados</span>
+                        <span class="hero-video-badge">Pronto para Uso</span>
+                    </div>
+                    <div class="hero-video-media">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/09/Linha_Corporativa_Notebooks_Stan…_202609080721.jpeg"
+                            alt="Locação de Notebooks Corporativos MGI" />
+                    </div>
+                    <div class="hero-video-footer">
+                        <div>
+                            <div class="hero-video-info-title">Linha Corporativa & Workstations</div>
+                            <div class="hero-video-info-desc">Produtividade, segurança e mobilidade para equipes remotas
+                                e híbridas</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1027,29 +1684,32 @@
     <section id="orcamento" class="lead-form-section">
         <div class="wrap lead-grid">
             <div class="form-card">
-                <div class="form-kicker">Cotação Rápida</div>
-                <p class="form-intro">Informe a quantidade de máquinas e o perfil de uso da sua equipe para recebermos a proposta.</p>
+                <div class="form-kicker">Proposta Personalizada</div>
+                <p class="form-intro">Conte-nos sobre a demanda da sua empresa e receba uma recomendação sob medida para
+                    seu parque tecnológico.</p>
                 <script src="https://js.hsforms.net/forms/embed/developer/114501.js" defer></script>
-                <div class="hs-form-html" data-region="na1" data-portal-id="114501" data-form-id="16dedfe0-84bc-4703-ad69-ab0ea2a9c1d7">&nbsp;</div>
+                <div class="hs-form-html" data-region="na1" data-portal-id="114501"
+                    data-form-id="16dedfe0-84bc-4703-ad69-ab0ea2a9c1d7">&nbsp;</div>
             </div>
             <aside class="form-benefits" aria-label="Benefícios da locação de notebooks">
-                <span class="section-kicker">Parque Atualizado com Previsibilidade</span>
+                <span class="section-kicker">Parque Atualizado Sem Comprometer o Caixa</span>
                 <h3>Incluso no Contrato</h3>
                 <ul>
-                    <li>Equipamentos corporativos novos e homologados</li>
-                    <li>Configuração de imagem com SO, antivírus e softwares da empresa</li>
-                    <li>Suporte técnico remoto e presencial (N1 e N2)</li>
-                    <li>Garantia total contra defeitos e estoque de backup</li>
-                    <li>Atualização tecnológica periódica sem custos adicionais</li>
+                    <li>Configuração de imagem corporativa e instalação de softwares essenciais (Staging)</li>
+                    <li>Gestão, telemetria e inventário via plataforma proprietária MyINsights</li>
+                    <li>Manutenção preventiva, corretiva e suporte técnico especializado</li>
+                    <li>Substituição rápida de máquinas (Swap Express) para evitar interrupções</li>
+                    <li>Renovação e atualização tecnológica periódica do parque</li>
                 </ul>
                 <ul class="benefit-pills" aria-label="Benefícios rápidos">
-                    <li>Preservação do fluxo de caixa</li>
-                    <li>Sem depreciação contábil</li>
-                    <li>Pronta entrega corporativa</li>
-                    <li>Gestão de ativos simplificada</li>
+                    <li>Preservação de Capital</li>
+                    <li>100% OPEX (Lucro Real)</li>
+                    <li>Escalabilidade Flexível</li>
+                    <li>Suporte Dedicado</li>
                 </ul>
                 <div class="response-note">
-                    <strong>Atendimento Consultivo</strong><br />Ajudamos a dimensionar a configuração ideal de processador, RAM e SSD para cada setor da sua empresa.
+                    <strong>Atendimento Especializado</strong><br />Nossos consultores dimensionam as especificações de
+                    hardware e prazos ideais para a sua empresa.
                 </div>
             </aside>
         </div>
@@ -1058,29 +1718,49 @@
     <!-- NÚMEROS E AUTORIDADE -->
     <section id="numeros" style="padding: 64px 0; background: var(--bg-soft);">
         <div class="wrap" style="text-align: center;">
-            <h2 style="font-size: 1.8rem; color: var(--navy); margin-bottom: 36px; font-weight: bold; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.3;">
-                Mais de 34 anos garantindo tecnologia e continuidade operacional para empresas.
+            <h2
+                style="font-size: 1.8rem; color: var(--navy); margin-bottom: 36px; font-weight: bold; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.3;">
+                Mais de 34 anos liderando o outsourcing e a gestão de TI corporativa.
             </h2>
-            <div style="background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 40px 24px; box-shadow: var(--shadow); max-width: 900px; margin: 0 auto 36px; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-evenly; text-align: center;">
+            <div
+                style="background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 40px 24px; box-shadow: var(--shadow); max-width: 900px; margin: 0 auto 36px; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-evenly; text-align: center;">
                 <div style="min-width: 180px;">
-                    <div style="font-size: 2.8rem; font-weight: bold; color: var(--blue); line-height: 1.1; margin-bottom: 8px;">+34</div>
-                    <div style="font-size: 1.05rem; color: var(--navy); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Anos de Mercado</div>
+                    <div
+                        style="font-size: 2.8rem; font-weight: bold; color: var(--blue); line-height: 1.1; margin-bottom: 8px;">
+                        +34</div>
+                    <div
+                        style="font-size: 1.05rem; color: var(--navy); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">
+                        Anos de Mercado</div>
                 </div>
                 <div style="min-width: 180px;">
-                    <div style="font-size: 2.8rem; font-weight: bold; color: var(--blue); line-height: 1.1; margin-bottom: 8px;">+34.000</div>
-                    <div style="font-size: 1.05rem; color: var(--navy); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Equipamentos Locados</div>
+                    <div
+                        style="font-size: 2.8rem; font-weight: bold; color: var(--blue); line-height: 1.1; margin-bottom: 8px;">
+                        +238.000</div>
+                    <div
+                        style="font-size: 1.05rem; color: var(--navy); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">
+                        Dispositivos sob Gestão</div>
                 </div>
                 <div style="min-width: 180px;">
-                    <div style="font-size: 2.8rem; font-weight: bold; color: var(--blue); line-height: 1.1; margin-bottom: 8px;">+238.000</div>
-                    <div style="font-size: 1.05rem; color: var(--navy); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Dispositivos sob Gestão</div>
+                    <div
+                        style="font-size: 2.8rem; font-weight: bold; color: var(--blue); line-height: 1.1; margin-bottom: 8px;">
+                        +1.000</div>
+                    <div
+                        style="font-size: 1.05rem; color: var(--navy); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">
+                        Contratos Ativos</div>
                 </div>
                 <div style="min-width: 180px;">
-                    <div style="font-size: 2.8rem; font-weight: bold; color: var(--blue); line-height: 1.1; margin-bottom: 8px;">+1.000</div>
-                    <div style="font-size: 1.05rem; color: var(--navy); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Contratos Ativos</div>
+                    <div
+                        style="font-size: 2.8rem; font-weight: bold; color: var(--blue); line-height: 1.1; margin-bottom: 8px;">
+                        99.8%</div>
+                    <div
+                        style="font-size: 1.05rem; color: var(--navy); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">
+                        Disponibilidade</div>
+                    <div style="font-size: 0.9rem; color: var(--muted); margin-top: 4px;">SLA de suporte ágil</div>
                 </div>
             </div>
             <div style="font-size: 1.15rem; color: var(--muted); max-width: 700px; margin: 0 auto; line-height: 1.6;">
-                Soluções completas de Hardware as a Service (HaaS) para que sua empresa foque exclusivamente no seu core business.
+                Unimos marcas líderes mundiais, plataforma inteligente de gestão e assistência técnica de excelência
+                para impulsionar a TI da sua empresa.
             </div>
         </div>
     </section>
@@ -1089,84 +1769,504 @@
     <section style="padding-top: 40px; padding-bottom: 40px;">
         <div class="wrap answer-grid">
             <div class="answer">
-                <p>A compra de computadores corporativos imobiliza capital de giro, gera custos inesperados de manutenção e torna os equipamentos obsoletos em poucos anos. O modelo de locação de computadores da MGI resolve esse desafio de ponta a ponta.</p>
-                <p style="margin-top: 14px;">Entregamos notebooks e desktops prontos para uso, com imagem padrão instalada, licenças regularizadas e suporte técnico rápido. Em caso de defeito, você não espera semanas por assistência técnica de fábrica: nós realizamos a substituição expressa com equipamentos do estoque reserva.</p>
-                <p style="margin-top: 14px;">Com mensalidade fixa dedutível no imposto de renda (OPEX), sua empresa mantém a equipe sempre equipada com tecnologia de última geração e custos 100% previsíveis.</p>
+                <p>A locação de notebooks corporativos da MGI evolui junto com o seu negócio. Oferecemos soluções
+                    completas em locação flexível de equipamentos corporativos, garantindo flexibilidade, agilidade e
+                    performance para empresas de todos os portes.</p>
+                <p style="margin-top: 14px;">Cada notebook é entregue pronto para uso, com configuração personalizada,
+                    suporte técnico corporativo dedicado e gestão remota de dispositivos via plataforma
+                    <strong>MyINsights</strong>.
+                </p>
+                <p style="margin-top: 14px;">Nosso modelo elimina custos de aquisição (CAPEX), reduz a obsolescência
+                    tecnológica e assegura disponibilidade total da infraestrutura de TI. Mais do que equipamentos,
+                    entregamos tranquilidade e controle operacional.</p>
             </div>
-            <div>
-                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=700&q=80" alt="Notebooks corporativos para locação empresarial" />
+            <div style="border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: #fff;">
+                <img src="https://mgi.com.br/wp-content/uploads/2026/09/locacao-de-notebooks.jpeg"
+                    alt="A locação que evolui junto com o seu negócio"
+                    style="width: 100%; height: auto; max-width: 550px; margin: 0 auto; object-fit: cover; display: block; border-radius: var(--radius);" />
             </div>
         </div>
     </section>
 
-    <!-- SOLUÇÕES / TIPOLOGIAS -->
+    <!-- SOLUÇÕES / CATEGORIAS DE NOTEBOOKS -->
     <section id="solucoes">
         <div class="wrap">
-            <h2>Linhas de Equipamentos Disponíveis para Locação</h2>
-            <p class="lead">Configurações dimensionadas para a produtividade de cada departamento:</p>
+            <h2 style="font-size: clamp(1.4rem, 2.35vw, 1.85rem); white-space: nowrap;">Equipamentos para Cada Tipo de
+                Perfil e Operação</h2>
+            <p class="lead">Configurações sob medida para equipes administrativas, operacionais, executivas, de
+                engenharia e criação:</p>
             <div class="cards">
                 <div class="card">
-                    <h3>Notebooks Administrativos</h3>
-                    <p>Processadores Intel Core i3/i5 ou Ryzen 5, 8GB a 16GB RAM e SSD NVMe para rotinas de escritório, ERP e navegadores.</p>
+                    <h3>Notebooks Corporativos Standard</h3>
+                    <p>Processadores Intel Core i5/i7 e AMD Ryzen, SSDs NVMe e memória expansível para rotinas
+                        administrativas, financeiras e gerenciais.</p>
                 </div>
                 <div class="card">
-                    <h3>Notebooks Executivos / Ultrabooks</h3>
-                    <p>Modelos ultrafinos, leves e com alta autonomia de bateria para gestores, diretores e equipes de vendas externas.</p>
+                    <h3>Ultrabooks Executivos</h3>
+                    <p>Design ultrafino e leve com acabamento premium, alta duração de bateria e telas antirreflexo para
+                        diretores e equipes em trânsito.</p>
                 </div>
                 <div class="card">
-                    <h3>Workstations de Alta Performance</h3>
-                    <p>Placas de vídeo dedicadas (NVIDIA RTX), até 64GB RAM para projetos de engenharia, CAD, render 3D e edição de vídeo.</p>
+                    <h3>Workstations Móveis</h3>
+                    <p>Placas de vídeo dedicadas NVIDIA RTX e altíssimo poder de processamento para engenharia,
+                        modelagem 3D, CAD e análise de dados.</p>
                 </div>
                 <div class="card">
-                    <h3>Desktops e Mini PCs</h3>
-                    <p>Computadores compactos e robustos para estações de atendimento, recepção, call centers e caixas de lojas.</p>
+                    <h3>MacBooks Apple (Air e Pro)</h3>
+                    <p>Equipamentos Apple com processadores Apple Silicon (série M) para times de design, marketing,
+                        criação audiovisual e desenvolvimento.</p>
                 </div>
                 <div class="card">
-                    <h3>Monitores e Acessórios</h3>
-                    <p>Monitores de 24" a 27" Full HD/4K, teclados, mouses ergonômicos e docking stations para estações completas de trabalho.</p>
+                    <h3>Laptops Rugged & Resistentes</h3>
+                    <p>Dispositivos robustos resistentes a choques, umidade e poeira para vistorias em campo, plantas
+                        fabris e mineração.</p>
                 </div>
                 <div class="card">
-                    <h3>Outsourcing Completo de TI</h3>
-                    <p>Gestão centralizada do parque de computadores, suporte helpdesk N1/N2, inventário automatizado e segurança de dados.</p>
+                    <h3>Estações de Trabalho & Periféricos</h3>
+                    <p>Monitores auxiliares, docking stations USB-C, teclados e mouses ergonômicos para montar setups
+                        completos em modelo híbrido.</p>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <a class="btn" style="background: #25D366; color: #fff; display: inline-flex; align-items: center; gap: 12px; font-size: 1.05rem; padding: 14px 28px;" href="https://wa.me/5511986350609?text=Olá,%20tenho%20interesse%20em%20Locação%20de%20Notebooks" target="_blank" rel="noopener">
-                    <span style="text-align: left; line-height: 1.2;">Fale com um consultor!<br /><span style="font-weight: normal; font-size: 0.85em; opacity: 0.95;">pelo WhatsApp</span></span>
+                <a class="btn"
+                    style="background: #25D366; color: #fff; display: inline-flex; align-items: center; gap: 12px; font-size: 1.05rem; padding: 14px 28px;"
+                    href="https://wa.me/5511986350609?text=Olá,%20tenho%20interesse%20em%20Locação%20de%20Notebooks"
+                    target="_blank" rel="noopener">
+                    <span style="text-align: left; line-height: 1.2;">Fale com um consultor!<br /><span
+                            style="font-weight: normal; font-size: 0.85em; opacity: 0.95;">pelo WhatsApp</span></span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- SETORES ATENDIDOS -->
-    <section id="setores" style="padding-top: 60px; padding-bottom: 20px;">
+    <!-- CARROSSEL NOTEBOOKS HOMOLOGADOS MGI -->
+    <section class="media-carousel-section">
+        <div class="wrap" style="text-align: center;">
+            <span class="section-kicker"
+                style="display: block; text-align: center; color: #7bd2ff; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin: 0 auto 10px;">Catálogo
+                Homologado</span>
+            <h2 style="text-align: center; color: #fff; margin: 0 auto 12px;">Equipamentos Homologados pela MGI</h2>
+            <p class="carousel-sub" style="text-align: center; margin: 0 auto 40px; max-width: 680px;">Conheça as
+                principais famílias de notebooks e estações corporativas integradas e gerenciadas pela MGI para máxima
+                performance da TI.</p>
+
+            <div class="robots-carousel-wrapper">
+                <!-- Floating Arrows -->
+                <button type="button" class="robots-arrow-btn prev" onclick="mgiScrollRobots(-1)"
+                    aria-label="Slide anterior">&#10094;</button>
+                <button type="button" class="robots-arrow-btn next" onclick="mgiScrollRobots(1)"
+                    aria-label="Próximo slide">&#10095;</button>
+
+                <!-- Track with the 4 official cards -->
+                <div class="media-carousel-track" id="mediaTrack">
+                    <div class="media-slide">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/09/laptop-dc14250nt-fpr-plastic-intel-sl-gallery-1.avif"
+                            alt="Notebooks Corporativos Standard" loading="lazy" />
+                        <div class="media-slide-body">
+                            <span class="media-slide-tag">Linha Corporativa</span>
+                            <div class="media-slide-title">Notebooks Standard</div>
+                            <p class="media-slide-desc">Desempenho ágil, segurança e estabilidade para tarefas
+                                corporativas diárias.</p>
+                        </div>
+                    </div>
+                    <div class="media-slide">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/09/notebook-inspiron-14-7440-t-ice-blue-gallery-4.avif"
+                            alt="Ultrabooks Executivos" loading="lazy" />
+                        <div class="media-slide-body">
+                            <span class="media-slide-tag">Mobilidade Premium</span>
+                            <div class="media-slide-title">Ultrabooks Executivos</div>
+                            <p class="media-slide-desc">Leveza, autonomia de bateria superior e sofisticação para
+                                executivos.</p>
+                        </div>
+                    </div>
+                    <div class="media-slide">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/09/laptop-dc14250nt-fpr-plastic-intel-sl-gallery-4.avif"
+                            alt="Workstations Móveis" loading="lazy" />
+                        <div class="media-slide-body">
+                            <span class="media-slide-tag">Alta Performance</span>
+                            <div class="media-slide-title">Workstations Móveis</div>
+                            <p class="media-slide-desc">GPU dedicada e alto poder de processamento para CAD, 3D e
+                                softwares pesados.</p>
+                        </div>
+                    </div>
+                    <div class="media-slide">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/09/Notebooks_advertising_photo_2K_202609080716.jpeg"
+                            alt="MacBooks Apple" loading="lazy" />
+                        <div class="media-slide-body">
+                            <span class="media-slide-tag">Apple Silicon</span>
+                            <div class="media-slide-title">Linha MacBook</div>
+                            <p class="media-slide-desc">Ecossistema macOS otimizado para designers, criadores e
+                                desenvolvedores.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination Dots -->
+                <div class="robots-dots-nav" id="mediaDots">
+                    <button type="button" class="robots-dot active" onclick="mgiGoToRobotSlide(0)"
+                        aria-label="Slide 1"></button>
+                    <button type="button" class="robots-dot" onclick="mgiGoToRobotSlide(1)"
+                        aria-label="Slide 2"></button>
+                    <button type="button" class="robots-dot" onclick="mgiGoToRobotSlide(2)"
+                        aria-label="Slide 3"></button>
+                    <button type="button" class="robots-dot" onclick="mgiGoToRobotSlide(3)"
+                        aria-label="Slide 4"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FABRICANTES E DESENVOLVEDORES DE SOFTWARE -->
+    <section class="marquee-section">
+        <div class="wrap" style="text-align: center;">
+            <span class="section-kicker"
+                style="color: var(--blue); font-weight: 800; letter-spacing: .08em; text-transform: uppercase;">Parceiros
+                Estratégicos</span>
+            <h2 style="font-size: 1.8rem; color: var(--navy); margin-bottom: 10px;">Fabricantes e Desenvolvedores de
+                Software</h2>
+            <p style="color: var(--muted); max-width: 680px; margin: 0 auto 20px;">Trabalhamos em parceria direta com as
+                maiores marcas globais de computação e soluções corporativas.</p>
+            <div class="marquee-track">
+                <div class="marquee-item"><img
+                        src="https://mgi.com.br/wp-content/uploads/2025/12/mgitech-pagina-home-logo-lenovo.jpg"
+                        alt="Lenovo" /></div>
+                <div class="marquee-item"><img src="https://mgi.com.br/wp-content/uploads/2025/12/logo-apple-3.jpg"
+                        alt="Apple" /></div>
+                <div class="marquee-item"><img src="https://mgi.com.br/wp-content/uploads/2025/12/logo-samsung-2.jpg"
+                        alt="Samsung" /></div>
+                <div class="marquee-item"><img
+                        src="https://mgi.com.br/wp-content/uploads/2025/12/mgitech-pagina-home-logo-motorola.jpg"
+                        alt="Motorola" /></div>
+                <div class="marquee-item"><img src="https://mgi.com.br/wp-content/uploads/2025/12/Logos.jpg"
+                        alt="Zebra" /></div>
+                <div class="marquee-item"><img src="https://mgi.com.br/wp-content/uploads/2025/12/honeywell.jpg"
+                        alt="Honeywell" /></div>
+                <div class="marquee-item"><img
+                        src="https://mgi.com.br/wp-content/uploads/2025/12/mgitech-pagina-home-logo-brother.jpg"
+                        alt="Brother" /></div>
+                <div class="marquee-item"><img
+                        src="https://mgi.com.br/wp-content/uploads/2025/12/mgitech-pagina-home-logo-ricoh.jpg"
+                        alt="Ricoh" /></div>
+                <div class="marquee-item"><img src="https://mgi.com.br/wp-content/uploads/2025/12/logo-realwear.jpg"
+                        alt="Realwear" /></div>
+                <div class="marquee-item"><img
+                        src="https://mgi.com.br/wp-content/uploads/2025/12/mgitech-pagina-home-logo-moziware.jpg"
+                        alt="Moziware" /></div>
+                <div class="marquee-item"><img
+                        src="https://mgi.com.br/wp-content/uploads/2025/12/CIPHER-LAB-LOGO-BW-40x120px-1.jpg"
+                        alt="CipherLab" /></div>
+                <div class="marquee-item"><img src="https://mgi.com.br/wp-content/uploads/2025/12/MOBILITEC.jpg"
+                        alt="Mobilitec" /></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARDS FIXOS: SEGMENTOS QUE ATENDEMOS -->
+    <section id="segmentos" class="segmentos-section">
         <div class="wrap">
-            <h2 style="text-align: center; color: var(--navy); text-transform: uppercase; font-size: 1.75rem;">Segmentos Corporativos Atendidos</h2>
-            <div class="setores">
-                <div class="setor-card">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Empresas de Tecnologia e Startups" />
-                    <div class="setor-title">Empresas de Tecnologia</div>
+            <div class="segmentos-header">
+                <span class="section-kicker"
+                    style="color: var(--blue); font-weight: 800; letter-spacing: .08em; text-transform: uppercase;">Aplicações
+                    Reais</span>
+                <h2>Segmentos que Atendemos</h2>
+                <p>Infraestrutura de computação móvel que impulsiona a produtividade de empresas em todos os setores da
+                    economia.</p>
+            </div>
+            <div class="segmentos-grid">
+                <!-- Card 1: Serviços Financeiros & Consultoria -->
+                <div class="segmento-card">
+                    <div class="segmento-img-box">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/07/people-walking-in-modern-office-hallway-2026-01-09-10-24-53-utc-1024x683.jpg"
+                            alt="Serviços Financeiros e Consultorias" loading="lazy" />
+                    </div>
+                    <div class="segmento-body">
+                        <div class="segmento-title">Finanças & Consultoria</div>
+                        <div class="segmento-divider"></div>
+                        <p class="segmento-desc">Segurança rigorosa de dados e alta performance para analistas,
+                            auditores e executivos com notebooks equipados com criptografia e acesso seguro a sistemas
+                            corporativos.</p>
+                    </div>
                 </div>
-                <div class="setor-card">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Indústrias e Engenharias" />
-                    <div class="setor-title">Indústrias e Engenharia</div>
+                <!-- Card 2: Indústria & Engenharia -->
+                <div class="segmento-card">
+                    <div class="segmento-img-box">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/07/high-angle-view-over-the-factory-floor-and-assembl-2026-01-09-09-42-55-utc-1024x683.jpg"
+                            alt="Indústria e Engenharia" loading="lazy" />
+                    </div>
+                    <div class="segmento-body">
+                        <div class="segmento-title">Indústria & Manufatura</div>
+                        <div class="segmento-divider"></div>
+                        <p class="segmento-desc">Workstations robustas para times de engenharia, projetos CAD e gestão
+                            de chão de fábrica, garantindo capacidade de processamento pesado sem gargalos.</p>
+                    </div>
                 </div>
-                <div class="setor-card">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Escritórios de Advocacia e Contabilidade" />
-                    <div class="setor-title">Escritórios e Finanças</div>
+                <!-- Card 3: Tecnologia & Startups -->
+                <div class="segmento-card">
+                    <div class="segmento-img-box">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/07/happy-receptionists-cooperating-while-working-on-a-2026-01-06-10-26-51-utc-1024x683.jpg"
+                            alt="Tecnologia e Startups" loading="lazy" />
+                    </div>
+                    <div class="segmento-body">
+                        <div class="segmento-title">Tecnologia & Startups</div>
+                        <div class="segmento-divider"></div>
+                        <p class="segmento-desc">Onboarding acelerado de novos desenvolvedores e times remotos com
+                            notebooks de alto desempenho configurados e enviados diretamente para a residência dos
+                            colaboradores.</p>
+                    </div>
                 </div>
-                <div class="setor-card">
-                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80" alt="Hospitais e Clínicas" />
-                    <div class="setor-title">Hospitais e Clínicas</div>
+                <!-- Card 4: Logística & Supply Chain -->
+                <div class="segmento-card">
+                    <div class="segmento-img-box">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/07/two-diverse-male-warehouse-workers-reaching-up-to-2026-04-13-21-39-08-utc-1024x683.jpg"
+                            alt="Logística e Centros de Distribuição" loading="lazy" />
+                    </div>
+                    <div class="segmento-body">
+                        <div class="segmento-title">Logística & Centros de Distribuição</div>
+                        <div class="segmento-divider"></div>
+                        <p class="segmento-desc">Notebooks para supervisores de torre de controle, gestão de pátio,
+                            planejamento de rotas e administração de armazéns integrados a sistemas WMS e ERP.</p>
+                    </div>
                 </div>
-                <div class="setor-card">
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Escolas e Faculdades" />
-                    <div class="setor-title">Escolas e Faculdades</div>
+                <!-- Card 5: Varejo & E-commerce -->
+                <div class="segmento-card">
+                    <div class="segmento-img-box">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/07/woman-in-crafting-workshop-2026-03-20-01-02-40-utc-1024x683.jpg"
+                            alt="Varejo e E-commerce" loading="lazy" />
+                    </div>
+                    <div class="segmento-body">
+                        <div class="segmento-title">Varejo & E-commerce</div>
+                        <div class="segmento-divider"></div>
+                        <p class="segmento-desc">Flexibilidade para atender picos sazonais (Black Friday, Natal) e
+                            expansão rápida de equipes comerciais sem imobilizar capital da empresa.</p>
+                    </div>
                 </div>
-                <div class="setor-card">
-                    <img src="https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=600&q=80" alt="Comércio e Varejo" />
-                    <div class="setor-title">Varejo e Call Center</div>
+                <!-- Card 6: Saúde & Educação -->
+                <div class="segmento-card">
+                    <div class="segmento-img-box">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/07/diverse-doctors-discussing-work-and-walking-throug-2026-03-25-02-18-27-utc-1024x683.jpg"
+                            alt="Saúde e Hospitais" loading="lazy" />
+                    </div>
+                    <div class="segmento-body">
+                        <div class="segmento-title">Saúde & Educação</div>
+                        <div class="segmento-divider"></div>
+                        <p class="segmento-desc">Infraestrutura segura para laboratórios, hospitais, clínicas e polos
+                            educacionais com controle rigoroso de acessos e continuidade operacional garantida.</p>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function mgiScrollRobots(direction) {
+            const track = document.getElementById('mediaTrack');
+            if (!track) return;
+            const slide = track.querySelector('.media-slide');
+            const slideWidth = slide ? slide.offsetWidth + 24 : 320;
+            track.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
+        }
+
+        function mgiGoToRobotSlide(index) {
+            const track = document.getElementById('mediaTrack');
+            if (!track) return;
+            const slide = track.querySelectorAll('.media-slide')[index];
+            if (slide) {
+                track.scrollTo({ left: slide.offsetLeft - track.offsetLeft - 10, behavior: 'smooth' });
+            }
+        }
+
+        (function setupMediaCarouselDots() {
+            const track = document.getElementById('mediaTrack');
+            const dots = document.querySelectorAll('#mediaDots .robots-dot');
+            if (!track || !dots.length) return;
+
+            track.addEventListener('scroll', () => {
+                const slides = track.querySelectorAll('.media-slide');
+                const scrollLeft = track.scrollLeft;
+                let activeIdx = 0;
+                slides.forEach((s, idx) => {
+                    if (s.offsetLeft - track.offsetLeft <= scrollLeft + 50) {
+                        activeIdx = idx;
+                    }
+                });
+                dots.forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === activeIdx);
+                });
+            }, { passive: true });
+        })();
+    </script>
+
+    <!-- TECNOLOGIA & RECURSOS DE GESTÃO DE NOTEBOOKS -->
+    <section id="tecnologia" style="padding-top: 70px; padding-bottom: 50px;">
+        <div class="wrap">
+            <span class="section-kicker"
+                style="display: block; text-align: center; color: var(--blue); font-weight: 800; letter-spacing: .08em; text-transform: uppercase;">Gestão
+                e Controle de TI</span>
+            <h2
+                style="text-align: center; color: var(--navy); margin-bottom: 14px; margin-left: auto; margin-right: auto;">
+                Tecnologia Completa para Gestão do Seu Parque de TI</h2>
+            <p class="lead" style="text-align: center; margin: 0 auto 36px; max-width: 760px;">Entregamos um ecossistema
+                inteligente de hardware, governança de software e suporte contínuo para sua equipe:</p>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-card-img-wrap" style="background: #112a4d;">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/09/Hardware_backup_and_express_swap_202609080807.jpeg"
+                            alt="Plataforma MyINsights" style="object-fit: cover;" />
+                    </div>
+                    <div class="tech-card-body">
+                        <span class="tech-card-tag">Telemetria & Gestão</span>
+                        <h3>Plataforma MyINsights</h3>
+                        <p>Visibilidade em tempo real do parque de notebooks: inventário detalhado de hardware, saúde de
+                            baterias, chamados abertos e relatórios gerenciais.</p>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-img-wrap" style="background: #0b2440;">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/09/gere_uma_nova_versao_202609080810.jpeg"
+                            alt="Staging e Customização" tyle="object-fit: cover;" />
+                    </div>
+                    <div class="tech-card-body">
+                        <span class="tech-card-tag">Pronto para Uso</span>
+                        <h3>Staging & Implantação de Imagem</h3>
+                        <p>Notebooks entregues com o sistema operacional, softwares homologados, antivírus corporativo e
+                            VPN da sua empresa pré-instalados em laboratório.</p>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-img-wrap" style="background: #071933;">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/09/gere_uma_nova_versao_202609080756.jpeg"
+                            alt="Segurança de Dados e LGPD" style="object-fit: cover;" />
+                    </div>
+                    <div class="tech-card-body">
+                        <span class="tech-card-tag">Conformidade e Proteção</span>
+                        <h3>Segurança de Endpoint & LGPD</h3>
+                        <p>Criptografia completa de disco (BitLocker/FileVault), suporte a bloqueio remoto em caso de
+                            perda ou furto e políticas estritas de segurança.</p>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-img-wrap" style="background: #112a4d;">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/09/Hardware_backup_ensures_zero_dow…_202609080808.jpeg"
+                            alt="Swap Rápido e Continuidade" tyle="object-fit: cover;" />
+                    </div>
+                    <div class="tech-card-body">
+                        <span class="tech-card-tag">Zero Downtime</span>
+                        <h3>Swap Express & Backup de Hardware</h3>
+                        <p>Envio imediato de equipamento reserva (swap) pré-configurado caso ocorra qualquer defeito,
+                            mantendo a produtividade do colaborador ininterrupta.</p>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-img-wrap" style="background: #071933;">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/09/Notebook_staging_and_software_in…_202609080745.jpeg"
+                            alt="Assistência Técnica Especializada" style="object-fit: cover;" />
+                    </div>
+                    <div class="tech-card-body">
+                        <span class="tech-card-tag">Suporte Técnico MGI</span>
+                        <h3>Laboratório Próprio Especializado</h3>
+                        <p>Equipe técnica qualificada com peças de reposição originais e SLA rigoroso para manutenção
+                            preventiva e corretiva de todo o parque.</p>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-card-img-wrap" style="background: #112a4d;">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/09/image.png_202609080809.jpeg"
+                            alt="Logística Reversa e Sustentabilidade" tyle="object-fit: cover;" />
+                    </div>
+                    <div class="tech-card-body">
+                        <span class="tech-card-tag">ESG e Sustentabilidade</span>
+                        <h3>Logística Reversa & Descarte Verde</h3>
+                        <p>Higienização certificada de dados (sanitização de armazenamento) ao término do contrato e
+                            descarte sustentável de acordo com as normas ambientais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESPECIFICAÇÕES TÉCNICAS GERAIS DA LOCAÇÃO -->
+    <section class="specs-section">
+        <div class="wrap" style="text-align: center;">
+            <span class="section-kicker"
+                style="display: block; text-align: center; color: #7bd2ff; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin: 0 auto 10px;">Ficha
+                Técnica</span>
+            <h2 style="text-align: center; color: #fff; margin: 0 auto 12px; max-width: 860px;">Especificações Técnicas
+                dos Serviços de Locação de Notebooks</h2>
+            <p class="specs-lead" style="text-align: center; margin: 0 auto 36px; max-width: 780px;">Parâmetros e
+                modelos homologados pela engenharia MGI para terceirização e gestão completa do parque de notebooks
+                corporativos.</p>
+            <div class="specs-table-wrapper">
+                <table class="specs-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Especificação do Serviço de Locação MGI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fabricantes Homologados</td>
+                            <td>Lenovo, Dell, HP, Apple, Samsung e principais marcas mundiais corporativas</td>
+                        </tr>
+                        <tr>
+                            <td>Famílias de Dispositivos</td>
+                            <td>Notebooks Corporativos Standard, Ultrabooks Premium, Workstations Móveis e MacBooks
+                                (Air/Pro)</td>
+                        </tr>
+                        <tr>
+                            <td>Processadores</td>
+                            <td>Intel Core i3/i5/i7/i9 (gerações atuais), AMD Ryzen Pro e processadores Apple Silicon
+                                (série M)</td>
+                        </tr>
+                        <tr>
+                            <td>Memória RAM</td>
+                            <td>Opções de 8 GB, 16 GB, 32 GB até 64 GB DDR4/DDR5 de alta performance</td>
+                        </tr>
+                        <tr>
+                            <td>Armazenamento</td>
+                            <td>SSDs NVMe ultrarrápidos de 256 GB, 512 GB, 1 TB ou 2 TB com alta velocidade de
+                                leitura/escrita</td>
+                        </tr>
+                        <tr>
+                            <td>Telas & Displays</td>
+                            <td>Displays de 13.3″ a 16.0″ Full HD, IPS, 2K/4K e Liquid Retina com revestimento
+                                antirreflexo</td>
+                        </tr>
+                        <tr>
+                            <td>Sistemas Operacionais</td>
+                            <td>Windows 11 Pro, macOS Sonoma/Sequoia ou distribuições Linux corporativas homologadas
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Plataforma de Gestão</td>
+                            <td>Plataforma MyINsights para telemetria, monitoramento de saúde de hardware, inventário e
+                                chamados</td>
+                        </tr>
+                        <tr>
+                            <td>Serviços de Staging</td>
+                            <td>Instalação de imagem padrão corporativa, softwares proprietários, certificados e
+                                políticas de segurança</td>
+                        </tr>
+                        <tr>
+                            <td>Garantia e Swap</td>
+                            <td>Suporte técnico com reposição ágil de equipamentos (Swap Express) para continuidade sem
+                                paradas</td>
+                        </tr>
+                        <tr>
+                            <td>Prazos Contratuais</td>
+                            <td>Contratos flexíveis de 12, 24, 36 ou 48 meses com renovação tecnológica periódica</td>
+                        </tr>
+                        <tr>
+                            <td>Classificação Financeira</td>
+                            <td>100% OPEX (despesa operacional integralmente dedutível no IRPJ/CSLL para empresas em
+                                Lucro Real)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="text-align: center; margin-top: 36px;">
+                <a class="btn btn-primary" href="#orcamento"
+                    style="background: #fff; color: #071933; font-weight: 800;">Solicitar Proposta & Dimensionamento</a>
             </div>
         </div>
     </section>
@@ -1174,37 +2274,44 @@
     <!-- BENEFÍCIOS -->
     <section id="beneficios" class="benefits">
         <div class="wrap">
-            <h2>Por que alugar computadores corporativos com a MGI?</h2>
+            <h2 style="text-align: center; margin: 0 auto 36px; font-size: 1.75rem; white-space: nowrap;">Por que alugar
+                notebooks corporativos com a MGI?</h2>
             <div class="ben-grid">
                 <div class="ben">
-                    <div class="ico">💰</div>
-                    <h3>Benefício Fiscal (OPEX)</h3>
-                    <p>Custos 100% dedutíveis no IRPJ/CSLL para empresas no Lucro Real, sem imobilização de ativos.</p>
+                    <div class="ico">✨</div>
+                    <h3>Tecnologia Sempre Atualizada</h3>
+                    <p>Mantenha sua equipe com os equipamentos mais modernos e velozes do mercado, eliminando a lentidão
+                        e o desgaste de máquinas antigas.</p>
                 </div>
                 <div class="ben">
-                    <div class="ico">🔄</div>
-                    <h3>Troca Expressa Garantida</h3>
-                    <p>Estoque de backup dedicado para reposição ágil caso qualquer máquina apresente falha.</p>
+                    <div class="ico">💰</div>
+                    <h3>Economia Inteligente</h3>
+                    <p>Custos previsíveis em mensalidades fixas e benefícios fiscais diretos (OPEX) que otimizam o caixa
+                        da sua empresa.</p>
                 </div>
                 <div class="ben">
                     <div class="ico">⚡</div>
-                    <h3>Escalabilidade Rápida</h3>
-                    <p>Aumente ou reduza a quantidade de máquinas com facilidade conforme novos funcionários entram.</p>
-                </div>
-                <div class="ben">
-                    <div class="ico">🚀</div>
-                    <h3>Parque Sempre Moderno</h3>
-                    <p>Renovação periódica de máquinas para evitar lentidão e garantir segurança contra vulnerabilidades.</p>
+                    <h3>Flexibilidade Sob Medida</h3>
+                    <p>Adicione, substitua ou expanda o número de notebooks de acordo com a contratação de novos
+                        colaboradores ou projetos temporários.</p>
                 </div>
                 <div class="ben">
                     <div class="ico">🛡️</div>
-                    <h3>Padronização e Segurança</h3>
-                    <p>Todas as máquinas entregues prontas para uso com as políticas de TI da sua empresa.</p>
+                    <h3>Capital de Giro Protegido</h3>
+                    <p>Sem necessidade de desembolsos vultosos de capital (CAPEX) nem endividamento em linhas bancárias
+                        de financiamento.</p>
                 </div>
                 <div class="ben">
                     <div class="ico">🤝</div>
-                    <h3>Suporte Especializado MGI</h3>
-                    <p>Equipe de técnicos dedicados com mais de 34 anos de experiência em gestão de hardware corporativo.</p>
+                    <h3>Suporte e Proteção Total</h3>
+                    <p>Assistência técnica especializada, laboratório com peças originais e troca expressa de máquinas
+                        com falha.</p>
+                </div>
+                <div class="ben">
+                    <div class="ico">🌱</div>
+                    <h3>Sustentabilidade Garantida</h3>
+                    <p>Logística reversa, sanitização certificada de dados e descarte ecológico responsável ao final do
+                        ciclo de locação.</p>
                 </div>
             </div>
         </div>
@@ -1213,28 +2320,37 @@
     <!-- COMO FUNCIONA -->
     <section id="como-funciona">
         <div class="wrap">
-            <h2>Como funciona o processo de locação de computadores</h2>
+            <h2 style="text-align: center; margin: 0 auto 36px; font-size: 1.75rem; white-space: nowrap;">Como funciona
+                a locação de notebooks com a MGI</h2>
             <div class="steps">
                 <div class="step">
-                    <h3>Diagnóstico de Hardware</h3>
-                    <p>Mapeamos os perfis de cada cargo e definimos processador, memória e armazenamento.</p>
+                    <h3>Diagnóstico e Dimensionamento</h3>
+                    <p>Analisamos os perfis de cada área da sua empresa para definir as configurações ideais de
+                        processamento, memória e tela.</p>
                 </div>
                 <div class="step">
-                    <h3>Homologação da Imagem</h3>
-                    <p>Configuramos seu sistema operacional padrão, softwares de gestão e antivírus.</p>
+                    <h3>Homologação e Staging</h3>
+                    <p>Configuramos a imagem padrão da sua TI com softwares, antivírus corporativo e VPN nos notebooks
+                        em laboratório próprio.</p>
                 </div>
                 <div class="step">
-                    <h3>Entrega e Instalação</h3>
-                    <p>Entregamos os notebooks prontos para logon dos colaboradores com entrega rápida.</p>
+                    <h3>Entrega e Ativação Operacional</h3>
+                    <p>Notebooks entregues identificados por patrimônio, inventariados e prontos para uso imediato pelos
+                        colaboradores.</p>
                 </div>
                 <div class="step">
-                    <h3>Gestão e Suporte</h3>
-                    <p>Monitoramento contínuo, suporte técnico helpdesk e reposição sem burocracia.</p>
+                    <h3>Gestão Contínua e Suporte</h3>
+                    <p>Monitoramento via plataforma MyINsights, suporte técnico com SLA prioritário e swap ágil de
+                        equipamentos durante todo o contrato.</p>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <a class="btn" style="background: #25D366; color: #fff; display: inline-flex; align-items: center; gap: 12px; font-size: 1.05rem; padding: 14px 28px;" href="https://wa.me/5511986350609?text=Olá,%20tenho%20interesse%20em%20Locação%20de%20Notebooks" target="_blank" rel="noopener">
-                    <span style="text-align: left; line-height: 1.2;">Fale com um consultor!<br /><span style="font-weight: normal; font-size: 0.85em; opacity: 0.95;">pelo WhatsApp</span></span>
+                <a class="btn"
+                    style="background: #25D366; color: #fff; display: inline-flex; align-items: center; gap: 12px; font-size: 1.05rem; padding: 14px 28px;"
+                    href="https://wa.me/5511986350609?text=Olá,%20tenho%20interesse%20em%20Locação%20de%20Notebooks"
+                    target="_blank" rel="noopener">
+                    <span style="text-align: left; line-height: 1.2;">Fale com um consultor!<br /><span
+                            style="font-weight: normal; font-size: 0.85em; opacity: 0.95;">pelo WhatsApp</span></span>
                 </a>
             </div>
         </div>
@@ -1243,22 +2359,31 @@
     <!-- FAQ -->
     <section id="faq" class="faq">
         <div class="wrap">
-            <h2>Perguntas Frequentes sobre Locação de Notebooks</h2>
+            <h2 style="text-align: center; margin: 0 auto 32px; font-size: 1.75rem; white-space: nowrap;">Perguntas
+                Frequentes sobre Locação de Notebooks</h2>
             <details open="">
-                <summary>Os notebooks já vêm configurados para a minha empresa?</summary>
-                <p>Sim. Entregamos todos os equipamentos com a imagem padrão do seu sistema operacional, softwares corporativos, antivírus e políticas de segurança pré-instaladas.</p>
+                <summary>O que está incluso no contrato de locação de notebooks da MGI?</summary>
+                <p>O contrato inclui fornecimento de notebooks corporativos (Lenovo, Dell, HP, Apple), configuração
+                    personalizada (staging de imagem com SO e apps), suporte técnico especializado, garantia com swap
+                    rápido, manutenção preventiva e gestão de ativos.</p>
             </details>
             <details>
-                <summary>Qual o prazo de troca em caso de defeito no notebook?</summary>
-                <p>Possuímos estoque de backup (buffer) para reposição expressa, minimizando o tempo de máquina parada da sua equipe.</p>
+                <summary>Como funciona a plataforma MyINsights na gestão dos notebooks?</summary>
+                <p>A plataforma MyINsights oferece monitoramento em tempo real do parque de notebooks, controle de
+                    inventário, telemetria de saúde de hardware, métricas de chamados e relatórios gerenciais para total
+                    visibilidade da TI.</p>
             </details>
             <details>
-                <summary>Quais são as vantagens fiscais de alugar notebooks?</summary>
-                <p>A locação é categorizada como OPEX (despesa operacional), permitindo dedução integral no IRPJ e CSLL para empresas no regime de Lucro Real, além de preservar o fluxo de caixa.</p>
+                <summary>Qual a vantagem fiscal da locação de notebooks (OPEX) em relação à compra (CAPEX)?</summary>
+                <p>A locação é contabilizada como despesa operacional (OPEX), sendo 100% dedutível da base de cálculo do
+                    IRPJ e CSLL para empresas no regime de Lucro Real, além de preservar o capital de giro e evitar a
+                    desvalorização patrimonial.</p>
             </details>
             <details>
-                <summary>Posso aumentar ou diminuir a quantidade de notebooks durante o contrato?</summary>
-                <p>Sim. Nossos contratos corporativos oferecem flexibilidade e escalabilidade para acompanhar contratações, projetos pontuais ou reduções da sua equipe.</p>
+                <summary>Como funciona o atendimento de suporte e a substituição de equipamentos (swap)?</summary>
+                <p>Contamos com Service Desk dedicado e laboratório técnico próprio. Caso um notebook apresente qualquer
+                    falha de hardware, um equipamento substituto (swap) é disponibilizado com rapidez para que o
+                    colaborador continue trabalhando sem prejuízo à produtividade.</p>
             </details>
         </div>
     </section>
@@ -1266,25 +2391,31 @@
     <!-- SOBRE O GRUPO -->
     <section id="sobre" style="background: var(--bg-soft); padding: 64px 0;">
         <div class="wrap" style="text-align: center; max-width: 760px;">
-            <img style="height: 48px; width: auto; margin-bottom: 20px; display: inline-block;" src="https://grupomgitech.com.br/wp-content/uploads/2026/01/logo-grupomgi.png" alt="Grupo MGITECH" />
+            <img style="height: 48px; width: auto; margin-bottom: 20px; display: inline-block;"
+                src="https://grupomgitech.com.br/wp-content/uploads/2026/01/logo-grupomgi.png" alt="Grupo MGITECH" />
             <h2 style="font-size: 1.6rem; color: var(--navy); margin-bottom: 18px;">Uma empresa do Grupo MGITECH</h2>
-            <p style="font-size: 1.08rem; color: var(--muted); line-height: 1.7; margin: 0;">Há mais de 34 anos, o Grupo MGITECH conecta tecnologia e operação. Somos referência em outsourcing de TI e hardware corporativo, com gestão remota e suporte técnico de alta disponibilidade.</p>
+            <p style="font-size: 1.08rem; color: var(--muted); line-height: 1.7; margin: 0;">Há mais de 34 anos, o Grupo
+                MGITECH conecta tecnologia e operação. Somos referência em outsourcing de TI, locação de computadores e
+                notebooks corporativos, assistência técnica especializada e gestão inteligente de ativos.</p>
         </div>
     </section>
 
     <!-- CTA FINAL -->
     <section class="cta">
         <div class="wrap" style="text-align: center;">
-            <h2>Renove a tecnologia da sua empresa com custo previsível</h2>
-            <p style="max-width: 60ch; margin: 0 auto 24px;">Receba uma proposta dimensionada para a quantidade de colaboradores do seu negócio.</p>
-            <a class="btn btn-ghost" href="#orcamento">Solicitar orçamento</a>
+            <h2>Tecnologia sob Demanda para sua Empresa Crescer</h2>
+            <p style="max-width: 60ch; margin: 0 auto 24px;">Receba uma proposta sob medida com notebooks modernos,
+                suporte dedicado e gestão completa via MyINsights.</p>
+            <a class="btn btn-ghost" href="#orcamento">Solicitar proposta</a>
         </div>
     </section>
 
     <!-- COOKIE BAR -->
     <div id="mgi-cookie-bar" class="cookie-bar">
         <div class="wrap">
-            <p>Utilizamos cookies para melhorar sua experiência de navegação, personalizar conteúdos e analisar o tráfego do site. Ao continuar navegando, você concorda com a nossa <a href="/politica-de-privacidade/">Política de Privacidade</a>.</p>
+            <p>Utilizamos cookies para melhorar sua experiência de navegação, personalizar conteúdos e analisar o
+                tráfego do site. Ao continuar navegando, você concorda com a nossa <a
+                    href="/politica-de-privacidade/">Política de Privacidade</a>.</p>
             <button class="btn">Aceitar</button>
         </div>
     </div>
