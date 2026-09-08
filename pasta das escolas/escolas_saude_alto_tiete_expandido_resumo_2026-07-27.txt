@@ -1,0 +1,44 @@
+Total final: 3877
+Duplicados removidos/mesclados: 90
+Erros de coleta: 0
+
+Resumo por Cidade
+Arujá: 197
+Guarulhos: 1816
+Itaquaquecetuba: 316
+Mogi das Cruzes: 1003
+Suzano: 545
+
+Resumo por Tipo
+Escola: 1662
+Saúde: 2215
+
+Resumo por Cidade, Tipo
+Arujá / Escola: 88
+Arujá / Saúde: 109
+Guarulhos / Escola: 740
+Guarulhos / Saúde: 1076
+Itaquaquecetuba / Escola: 220
+Itaquaquecetuba / Saúde: 96
+Mogi das Cruzes / Escola: 404
+Mogi das Cruzes / Saúde: 599
+Suzano / Escola: 210
+Suzano / Saúde: 335
+
+Resumo por Categoria
+Centro Educacional: 42
+Clínica: 2078
+Clínica / Centro Médico: 2
+Colégio: 259
+Curso Técnico: 9
+Escola: 1078
+Escola Infantil: 268
+Faculdade / Ensino Superior: 6
+Hospital: 69
+Maternidade: 13
+Pronto Atendimento / UPA: 53
+
+Resumo por Classificação comercial
+Prioridade Alta: 1
+Prioridade Baixa: 2455
+Prioridade Média: 1421

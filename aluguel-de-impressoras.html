@@ -1,0 +1,936 @@
+< !-- wp:html --><p><style>@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+.mgi-lp>p,
+.mgi-lp>br {
+    display: none !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.mgi-lp {
+    --navy: #0b2440;
+    --navy-2: #123a63;
+    --blue: #1e6fd9;
+    --blue-dark: #1657ad;
+    --ink: #1c2733;
+    --muted: #5b6b7b;
+    --line: #e3e9f0;
+    --bg-soft: #f4f7fb;
+    --white: #fff;
+    --radius: 14px;
+    --shadow: 0 10px 30px rgba(11, 36, 64, .08);
+    color: var(--ink);
+    line-height: 1.6;
+    font-family: 'DM Sans', -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    margin-top: -1px;
+}
+
+.mgi-lp * {
+    box-sizing: border-box
+}
+
+.mgi-lp a {
+    color: var(--blue);
+    text-decoration: none
+}
+
+.mgi-lp .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 22px
+}
+
+.mgi-lp h1,
+.mgi-lp h2,
+.mgi-lp h3 {
+    line-height: 1.2;
+    color: var(--navy);
+    margin: 0 0 .5em
+}
+
+.mgi-lp h2 {
+    font-size: 1.75rem;
+    margin-top: 0
+}
+
+.mgi-lp .btn {
+    display: inline-block;
+    background: var(--blue);
+    color: #fff;
+    padding: 14px 26px;
+    border-radius: 10px;
+    font-weight: 600;
+    border: 0;
+    cursor: pointer;
+    transition: .2s
+}
+
+.mgi-lp .btn:hover {
+    background: var(--blue-dark)
+}
+
+.mgi-lp .btn-ghost {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff
+}
+
+.mgi-lp .hero {
+    background: #1b3a6b;
+    color: #fff;
+    padding: 72px 0 72px;
+    position: relative;
+    overflow: hidden
+}
+
+.mgi-lp .hero::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 65%;
+    height: 130%;
+    pointer-events: none;
+    opacity: .55;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700'%3E%3Cg fill='none' stroke='%234f76b3' stroke-width='1.1'%3E%3Cellipse cx='430' cy='350' rx='300' ry='150' transform='rotate(25 430 350)'/%3E%3Cellipse cx='430' cy='350' rx='250' ry='150' transform='rotate(50 430 350)'/%3E%3Cellipse cx='430' cy='350' rx='300' ry='150' transform='rotate(75 430 350)'/%3E%3Cellipse cx='430' cy='350' rx='250' ry='150' transform='rotate(100 430 350)'/%3E%3Cellipse cx='430' cy='350' rx='300' ry='150' transform='rotate(125 430 350)'/%3E%3Cellipse cx='430' cy='350' rx='250' ry='150' transform='rotate(150 430 350)'/%3E%3Cellipse cx='430' cy='350' rx='300' ry='150' transform='rotate(175 430 350)'/%3E%3C/g%3E%3C/svg%3E")
+}
+
+.mgi-lp .hero .wrap {
+    position: relative;
+    z-index: 2
+}
+
+.mgi-lp .hero h1 {
+    color: #fff;
+    font-size: 2.6rem;
+    max-width: 16ch
+}
+
+.mgi-lp .hero .tag {
+    font-size: 1.2rem;
+    color: #cfe0f5;
+    max-width: 52ch;
+    margin: .4em 0 1.6em
+}
+
+.mgi-lp .hero-grid {
+    display: grid;
+    grid-template-columns: 1.3fr .9fr;
+    gap: 40px;
+    align-items: center
+}
+
+.mgi-lp .hero-card {
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: var(--radius);
+    padding: 26px
+}
+
+.mgi-lp .hero-card h3 {
+    color: #fff;
+    margin-top: 0
+}
+
+.mgi-lp .hero-card ul {
+    margin: 0;
+    padding-left: 18px;
+    color: #dce8f7
+}
+
+.mgi-lp .answer {
+    background: var(--bg-soft);
+    border-left: 5px solid var(--blue);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 22px 26px;
+    margin: 0 0 8px
+}
+
+.mgi-lp .answer p {
+    margin: 0;
+    font-size: 1.1rem
+}
+
+.mgi-lp .answer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center
+}
+
+.mgi-lp .answer-grid img {
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    object-fit: contain;
+    display: block;
+    transform: scale(1.45);
+}
+
+.mgi-lp section {
+    padding: 56px 0
+}
+
+.mgi-lp .lead {
+    color: var(--muted);
+    max-width: 70ch;
+    font-size: 1.08rem
+}
+
+.mgi-lp .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 28px
+}
+
+.mgi-lp .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow)
+}
+
+.mgi-lp .card h3 {
+    font-size: 1.15rem
+}
+
+.mgi-lp .card p {
+    color: var(--muted);
+    margin: 0;
+    font-size: .97rem
+}
+
+.mgi-lp .benefits {
+    background: var(--bg-soft)
+}
+
+.mgi-lp .ben-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 28px
+}
+
+.mgi-lp .ben {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 24px;
+    border: 1px solid var(--line)
+}
+
+.mgi-lp .ben .ico {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    background: #e7f0fd;
+    color: var(--blue);
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
+    margin-bottom: 12px
+}
+
+.mgi-lp .ben h3 {
+    font-size: 1.05rem;
+    margin-bottom: .3em
+}
+
+.mgi-lp .ben p {
+    color: var(--muted);
+    margin: 0;
+    font-size: .94rem
+}
+
+.mgi-lp .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 28px;
+    counter-reset: s
+}
+
+.mgi-lp .step {
+    position: relative;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px 20px
+}
+
+.mgi-lp .step::before {
+    counter-increment: s;
+    content: counter(s);
+    position: absolute;
+    top: -16px;
+    left: 20px;
+    width: 34px;
+    height: 34px;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 700
+}
+
+.mgi-lp .step h3 {
+    font-size: 1rem;
+    margin: .4em 0 .3em
+}
+
+.mgi-lp .step p {
+    color: var(--muted);
+    font-size: .92rem;
+    margin: 0
+}
+
+.mgi-lp .cluster {
+    background: var(--navy);
+    color: #fff
+}
+
+.mgi-lp .cluster h2 {
+    color: #fff
+}
+
+.mgi-lp .map-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.mgi-lp .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px
+}
+
+.mgi-lp .chips a {
+    background: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .2);
+    color: #fff;
+    padding: 9px 16px;
+    border-radius: 30px;
+    font-size: .92rem
+}
+
+.mgi-lp .chips a:hover {
+    background: var(--blue)
+}
+
+.mgi-lp .faq details {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 4px 18px;
+    margin-bottom: 12px;
+    background: #fff
+}
+
+.mgi-lp .faq summary {
+    font-weight: 600;
+    color: var(--navy);
+    cursor: pointer;
+    padding: 14px 0;
+    list-style: none
+}
+
+.mgi-lp .faq summary::-webkit-details-marker {
+    display: none
+}
+
+.mgi-lp .faq summary::after {
+    content: "+";
+    float: right;
+    color: var(--blue);
+    font-weight: 700
+}
+
+.mgi-lp .faq details[open] summary::after {
+    content: "–"
+}
+
+.mgi-lp .faq p {
+    color: var(--muted);
+    margin: 0 0 14px
+}
+
+.mgi-lp .cta {
+    background: linear-gradient(120deg, var(--blue), var(--blue-dark));
+    color: #fff
+}
+
+.mgi-lp .cta h2 {
+    color: #fff
+}
+
+.mgi-lp .cta p {
+    color: #e6f0ff
+}
+
+.mgi-lp .form-card {
+    background: #000000;
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.mgi-lp .form-card label,
+.mgi-lp .form-card .hs-form-field>label,
+.mgi-lp .form-card .hs-form-field,
+.mgi-lp .form-card legend,
+.mgi-lp .form-card p {
+    color: #ffffff !important;
+}
+
+.mgi-lp .cookie-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: var(--navy);
+    color: #dce8f7;
+    padding: 16px 20px;
+    box-shadow: 0 -6px 24px rgba(11, 36, 64, .25);
+    font-size: .92rem
+}
+
+.mgi-lp .cookie-bar .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap
+}
+
+.mgi-lp .cookie-bar p {
+    margin: 0;
+    max-width: 82ch
+}
+
+.mgi-lp .cookie-bar a {
+    color: #9fc2f0;
+    text-decoration: underline
+}
+
+.mgi-lp .cookie-bar .btn {
+    padding: 10px 24px;
+    white-space: nowrap
+}
+
+.mgi-lp .carousel-wrapper {
+    position: relative;
+    margin: 40px 0
+}
+
+.mgi-lp .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding-bottom: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--blue) var(--line)
+}
+
+.mgi-lp .carousel::-webkit-scrollbar {
+    height: 8px
+}
+
+.mgi-lp .carousel::-webkit-scrollbar-track {
+    background: var(--line);
+    border-radius: 4px
+}
+
+.mgi-lp .carousel::-webkit-scrollbar-thumb {
+    background: var(--blue);
+    border-radius: 4px
+}
+
+.mgi-lp .carousel-item {
+    flex: 0 0 85%;
+    max-width: 320px;
+    scroll-snap-align: center;
+    background: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line)
+}
+
+.mgi-lp .carousel-item img {
+    width: 100%;
+    height: 260px;
+    object-fit: contain;
+    padding: 20px;
+    background: #fff;
+    display: block
+}
+
+.mgi-lp .setores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 36px
+}
+
+.mgi-lp .setor-card {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: transform .2s
+}
+
+.mgi-lp .setor-card:hover {
+    transform: translateY(-5px)
+}
+
+.mgi-lp .setor-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block
+}
+
+.mgi-lp .setor-card .setor-title {
+    background: var(--navy);
+    color: #fff;
+    padding: 16px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px
+}
+
+@media(max-width:820px) {
+    .mgi-lp .hero {
+        clip-path: none;
+        padding: 48px 0 40px
+    }
+
+    .mgi-lp .hero-grid {
+        grid-template-columns: 1fr
+    }
+
+    .mgi-lp .hero h1 {
+        font-size: 2rem
+    }
+
+    .mgi-lp .answer-grid {
+        grid-template-columns: 1fr
+    }
+
+    .mgi-lp .cards {
+        grid-template-columns: 1fr
+    }
+
+    .mgi-lp .ben-grid {
+        grid-template-columns: 1fr
+    }
+
+    .mgi-lp .steps {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .mgi-lp .cta-grid {
+        grid-template-columns: 1fr
+    }
+
+    .mgi-lp .cookie-bar .wrap {
+        justify-content: center;
+        text-align: center
+    }
+
+    .mgi-lp .carousel-item {
+        max-width: 280px
+    }
+
+    .mgi-lp .setores {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .mgi-lp .map-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+@media(max-width:500px) {
+    .mgi-lp .setores {
+        grid-template-columns: 1fr
+    }
+}
+
+</style></p><section><img src="https://mgi.com.br/wp-content/uploads/2025/12/logo-mgi.svg" alt="MGI" width="220" height="64" />Aluguel de Impressora para empresas <h1>Aluguel de Impressoras e Outsourcing</h1><p>Transfira a gestão de equipamentos,
+manutenção e suprimentos de impressão para a MGI — com mensalidade fixa e suporte técnico especializado em todo o Alto Tietê.</p><a href="#orcamento">Solicitar orçamento</a><a href="https://wa.me/5511986350609?text=Olá,%20tenho%20interesse%20em%20locação%20de%20impressoras" target="_blank" rel="noopener">Falar pelo WhatsApp</a><ul aria-label="Diferenciais da MGI"><li>✓ Atendimento em todo o Alto Tietê</li><li>✓ Instalação rápida</li><li>✓ Suporte especializado</li><li>✓ Impressoras das principais marcas</li></ul></section><section id="numeros" style="padding: 64px 0; background: var(--bg-soft);"><h2 style="font-size: 1.8rem; color: var(--navy); margin-bottom: 36px; font-weight: bold; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.3;">Mais do que números,
+são pessoas que confiam na MGI todos os dias.</h2>+34 Anos de mercado+34.000 Equipamentos locados sendo+4.000 impressoras+238.000 Equipamentos sob gestão+1.000 Contratos ativos Ao longo de mais de 34 anos,
+construímos relacionamentos sólidos que se transformam diariamente em resultados e excelência operacional.</section><section style="padding-top: 40px; padding-bottom: 40px;"><p>Ao longo de mais de 34 anos de mercado,
+a MGI se consolidou como a principal parceira de tecnologia e impressão para empresas da região. Sabe o que isso significa na prática? Que não dependemos de intermediários. Nossa infraestrutura técnica e logística são próprias,
+garantindo um atendimento rápido e dedicado à sua empresa.</p><p style="margin-top: 14px;">Já vimos de perto a dor de cabeça que é ter uma impressora parada na hora em que você mais precisa. Entendemos o ritmo acelerado das indústrias,
+comércios,
+clínicas e escolas,
+e tratamos o seu problema como se fosse nosso. Com atendimento ágil,
+evitamos que pequenos problemas virem grandes prejuízos.</p><p style="margin-top: 14px;">Estar fisicamente próximo de nossos clientes nos permite entregar o que realmente importa: tranquilidade. É o técnico da MGI que chega rapidamente. É o toner novo na sua mão antes do atual acabar. Tudo isso sem pacotes inflados,
+sem burocracia e sem surpresas na fatura. O nosso compromisso é simples: a sua impressão não para,
+para que o seu negócio também não pare.</p><img src="https://mgi.com.br/wp-content/uploads/2026/06/aluguel-de-impressoras.png" alt="Aluguel de impressoras e outsourcing de impressão para empresas" /></section><section id="cobertura" style="background: var(--navy); padding: 56px 0;"><h2>Área de Cobertura e Atendimento Local</h2><p style="color: #cfe0f5; max-width: 70ch; margin-bottom: 40px; font-size: 1.08rem;">A MGI oferece logística ágil e suporte técnico com equipe própria para aluguel e outsourcing de impressão. Confira no mapa a nossa área de atuação,
+atendendo a capital,
+grande São Paulo e todo o Alto Tietê.</p><h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 16px;">Principais Cidades Atendidas:</h3><a href="/aluguel-de-impressoras/mogi-das-cruzes/">Mogi das Cruzes</a><a href="/aluguel-de-impressoras/suzano/">Suzano</a><a href="/aluguel-de-impressoras/itaquaquecetuba/">Itaquaquecetuba</a><a href="/aluguel-de-impressoras/poa/">Poá</a><a href="/aluguel-de-impressoras/ferraz-de-vasconcelos/">Ferraz de Vasconcelos</a><a href="/aluguel-de-impressoras/aruja/">Arujá</a><a href="/outsourcing/aluguel-de-impressoras-em-guarulhos/">Guarulhos</a><a href="/aluguel-de-impressoras/guararema/">Guararema</a><a href="/aluguel-de-impressoras/biritiba-mirim/">Biritiba Mirim</a><a href="/aluguel-de-impressoras/salesopolis/">Salesópolis</a><a href="/aluguel-de-impressoras/santa-branca/">Santa Branca</a><a href="/aluguel-de-impressoras/santa-isabel/">Santa Isabel</a><a href="/aluguel-de-impressoras/sao-paulo/">São Paulo (Capital)</a>< !-- SVG Network Map of Served Cities -->< !-- Grid Background -->< !-- Connections -->< !-- Central Node (Mogi) -->Sede MGI (Mogi das Cruzes) < !-- City Nodes -->SuzanoGuararemaPoáBiritiba MirimItaquaquecetubaSalesópolisGuarulhosFerraz de Vasc.Santa BrancaArujá</section><section id="cidades-atendidas" style="padding: 80px 0; background: #fff;"><h2>Cidades Atendidas em São Paulo</h2><p style="margin: 0 auto;">A MGI oferece aluguel de impressoras e outsourcing de impressão para empresas em todo o estado de São Paulo. Selecione a sua cidade para conhecer as soluções disponíveis na sua região,
+equipamento,
+manutenção e suprimentos numa mensalidade fixa.</p>A <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Adamantina</li><li>Adolfo</li><li>Aguaí</li><li>Águas da Prata</li><li>Águas de Lindóia</li><li>Águas de Santa Bárbara</li><li>Águas de São Pedro</li><li>Agudos</li><li>Alambari</li><li>Alfredo Marcondes</li><li>Altair</li><li>Altinópolis</li><li>Alto Alegre</li><li>Alumínio</li><li>Álvares Florence</li><li>Álvares Machado</li><li>Álvaro de Carvalho</li><li>Alvinlândia</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/americana/">Americana</a></li><li>Américo Brasiliense</li><li>Américo de Campos</li><li>Amparo</li><li>Analândia</li><li>Andradina</li><li>Angatuba</li><li>Anhembi</li><li>Anhumas</li><li>Aparecida</li><li>Aparecida D’Oeste</li><li>Apiaí</li><li>Araçariguama</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/aracatuba/">Araçatuba</a></li><li>Araçoiaba da Serra</li><li>Aramina</li><li>Arandu</li><li>Arapeí</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/araraquara/">Araraquara</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/araras/">Araras</a></li><li>Arco-Íris</li><li>Arealva</li><li>Areias</li><li>Areiópolis</li><li>Ariranha</li><li>Artur Nogueira</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/aruja/">Arujá</a></li><li>Aspásia</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/assis/">Assis</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/atibaia/">Atibaia</a></li><li>Auriflama</li><li>Avaí</li><li>Avanhandava</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/avare/">Avaré</a></li></ul>B <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Bady Bassitt</li><li>Balbinos</li><li>Bálsamo</li><li>Bananal</li><li>Barão de Antonina</li><li>Barbosa</li><li>Bariri</li><li>Barra Bonita</li><li>Barra do Chapéu</li><li>Barra do Turvo</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/barretos/">Barretos</a></li><li>Barrinha</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/barueri/">Barueri</a></li><li>Bastos</li><li>Batatais</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/bauru/">Bauru</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/bebedouro/">Bebedouro</a></li><li>Bento de Abreu</li><li>Bernardino de Campos</li><li>Bertioga</li><li>Bilac</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/birigui/">Birigui</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/biritiba-mirim/">Biritiba Mirim</a></li><li>Boa Esperança do Sul</li><li>Bocaina</li><li>Bofete</li><li>Boituva</li><li>Bom Jesus dos Perdões</li><li>Bom Sucesso de Itararé</li><li>Borá</li><li>Boraceia</li><li>Borborema</li><li>Borebi</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/botucatu/">Botucatu</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/braganca-paulista/">Bragança Paulista</a></li><li>Braúna</li><li>Brejo Alegre</li><li>Brodowski</li><li>Brotas</li><li>Buri</li><li>Buritama</li><li>Buritizal</li></ul>C <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Cabrália Paulista</li><li>Cabreúva</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/cacapava/">Caçapava</a></li><li>Cachoeira Paulista</li><li>Caconde</li><li>Cafelândia</li><li>Caiabu</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/caieiras/">Caieiras</a></li><li>Caiuá</li><li>Cajamar</li><li>Cajati</li><li>Cajobi</li><li>Cajuru</li><li>Campina do Monte Alegre</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/campinas/">Campinas</a></li><li>Campo Limpo Paulista</li><li>Campos do Jordão</li><li>Campos Novos Paulista</li><li>Cananeia</li><li>Canas</li><li>Cândido Mota</li><li>Cândido Rodrigues</li><li>Canitar</li><li>Capão Bonito</li><li>Capela do Alto</li><li>Capivari</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/caraguatatuba/">Caraguatatuba</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/carapicuiba/">Carapicuíba</a></li><li>Cardoso</li><li>Casa Branca</li><li>Cássia dos Coqueiros</li><li>Castilho</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/catanduva/">Catanduva</a></li><li>Catiguá</li><li>Cedral</li><li>Cerqueira César</li><li>Cerquilho</li><li>Cesário Lange</li><li>Charqueada</li><li>Chavantes</li><li>Clementina</li><li>Colina</li><li>Colômbia</li><li>Conchal</li><li>Conchas</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/cordeiropolis/">Cordeirópolis</a></li><li>Coroados</li><li>Coronel Macedo</li><li>Corumbataí</li><li>Cosmópolis</li><li>Cosmorama</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/cotia/">Cotia</a></li><li>Cravinhos</li><li>Cristais Paulista</li><li>Cruzália</li><li>Cruzeiro</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/cubatao/">Cubatão</a></li><li>Cunha</li></ul>D <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Descalvado</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/diadema/">Diadema</a></li><li>Dirce Reis</li><li>Divinolândia</li><li>Dobrada</li><li>Dois Córregos</li><li>Dolcinópolis</li><li>Dourado</li><li>Dracena</li><li>Duartina</li><li>Dumont</li></ul>E <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Echaporã</li><li>Eldorado</li><li>Elias Fausto</li><li>Elisiário</li><li>Embaúba</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/embu-das-artes/">Embu das Artes</a></li><li>Embu-Guaçu</li><li>Emilianópolis</li><li>Engenheiro Coelho</li><li>Espírito Santo do Pinhal</li><li>Espírito Santo do Turvo</li><li>Estiva Gerbi</li><li>Estrela D’Oeste</li><li>Estrela do Norte</li><li>Euclides da Cunha Paulista</li></ul>F <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Fartura</li><li>Fernando Prestes</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/fernandopolis/">Fernandópolis</a></li><li>Fernão</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/ferraz-de-vasconcelos/">Ferraz de Vasconcelos</a></li><li>Flora Rica</li><li>Floreal</li><li>Flórida Paulista</li><li>Florínea</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/franca/">Franca</a></li><li>Francisco Morato</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/franco-da-rocha/">Franco da Rocha</a></li></ul>G <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Gabriel Monteiro</li><li>Gália</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/garca/">Garça</a></li><li>Gastão Vidigal</li><li>Gavião Peixoto</li><li>General Salgado</li><li>Getulina</li><li>Glicério</li><li>Guaiçara</li><li>Guaimbê</li><li>Guaíra</li><li>Guapiaçu</li><li>Guapiara</li><li>Guará</li><li>Guaraçaí</li><li>Guaraci</li><li>Guarani D’Oeste</li><li>Guarantã</li><li>Guararapes</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/guararema/">Guararema</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/guaratingueta/">Guaratinguetá</a></li><li>Guareí</li><li>Guariba</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/guaruja/">Guarujá</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/guarulhos/">Guarulhos</a></li><li>Guatapará</li><li>Guzolândia</li></ul>H <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Herculândia</li><li>Holambra</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/hortolandia/">Hortolândia</a></li></ul>I <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Iacanga</li><li>Iacri</li><li>Iaras</li><li>Ibaté</li><li>Ibirá</li><li>Ibirarema</li><li>Ibitinga</li><li>Ibiúna</li><li>Icém</li><li>Iepê</li><li>Igaraçu do Tietê</li><li>Igarapava</li><li>Igaratá</li><li>Iguape</li><li>Ilha Comprida</li><li>Ilha Solteira</li><li>Ilhabela</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/indaiatuba/">Indaiatuba</a></li><li>Indiana</li><li>Indiaporã</li><li>Inúbia Paulista</li><li>Ipaussu</li><li>Iperó</li><li>Ipeúna</li><li>Ipiguá</li><li>Iporanga</li><li>Ipuã</li><li>Iracemápolis</li><li>Irapuã</li><li>Irapuru</li><li>Itaberá</li><li>Itaí</li><li>Itajobi</li><li>Itajú</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/itanhaem/">Itanhaém</a></li><li>Itaoca</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/itapecerica-da-serra/">Itapecerica da Serra</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/itapetininga/">Itapetininga</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/itapeva/">Itapeva</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/itapevi/">Itapevi</a></li><li>Itapira</li><li>Itapirapuã Paulista</li><li>Itápolis</li><li>Itaporanga</li><li>Itapuí</li><li>Itapura</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/itaquaquecetuba/">Itaquaquecetuba</a></li><li>Itararé</li><li>Itariri</li><li>Itatiba</li><li>Itatinga</li><li>Itirapina</li><li>Itirapuã</li><li>Itobi</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/itu/">Itu</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/itupeva/">Itupeva</a></li><li>Ituverava</li></ul>J <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Jaborandi</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/jaboticabal/">Jaboticabal</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/jacarei/">Jacareí</a></li><li>Jaci</li><li>Jacupiranga</li><li>Jaguariúna</li><li>Jales</li><li>Jambeiro</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/jandira/">Jandira</a></li><li>Jardinópolis</li><li>Jarinú</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/jau/">Jaú</a></li><li>Jeriquara</li><li>Joanópolis</li><li>João Ramalho</li><li>José Bonifácio</li><li>Júlio Mesquita</li><li>Jumirim</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/jundiai/">Jundiaí</a></li><li>Junqueirópolis</li><li>Juquiá</li><li>Juquitiba</li></ul>L <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Lagoinha</li><li>Laranjal Paulista</li><li>Lavínia</li><li>Lavrinhas</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/leme/">Leme</a></li><li>Lençóis Paulista</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/limeira/">Limeira</a></li><li>Lindoia</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/lins/">Lins</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/lorena/">Lorena</a></li><li>Lourdes</li><li>Louveira</li><li>Lucélia</li><li>Lucianópolis</li><li>Luiz Antonio</li><li>Luiziânia</li><li>Lupércio</li><li>Lutécia</li></ul>M <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Macatuba</li><li>Macaubal</li><li>Macedônia</li><li>Magda</li><li>Mairinque</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/mairipora/">Mairiporã</a></li><li>Manduri</li><li>Marabá Paulista</li><li>Maracaí</li><li>Marapoama</li><li>Mariápolis</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/marilia/">Marília</a></li><li>Marinópolis</li><li>Martinópolis</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/matao/">Matão</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/maua/">Mauá</a></li><li>Mendonça</li><li>Meridiano</li><li>Mesópolis</li><li>Miguelópolis</li><li>Mineiros do Tietê</li><li>Mira Estrela</li><li>Miracatu</li><li>Mirandópolis</li><li>Mirante do Paranapanema</li><li>Mirassol</li><li>Mirassolândia</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/mococa/">Mococa</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/mogi-das-cruzes/">Mogi das Cruzes</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/mogi-guacu/">Mogi-Guaçu</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/mogi-mirim/">Mogi-Mirim</a></li><li>Mombuca</li><li>Monções</li><li>Mongaguá</li><li>Monte Alegre do Sul</li><li>Monte Alto</li><li>Monte Aprazível</li><li>Monte Azul Paulista</li><li>Monte Castelo</li><li>Monte Mor</li><li>Monteiro Lobato</li><li>Morro Agudo</li><li>Morungaba</li><li>Motuca</li><li>Murutinga do Sul</li></ul>N <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Nantes</li><li>Narandiba</li><li>Natividade da Serra</li><li>Nazaré Paulista</li><li>Neves Paulista</li><li>Nhandeara</li><li>Nipoã</li><li>Nova Aliança</li><li>Nova Campina</li><li>Nova Canaã Paulista</li><li>Nova Castilho</li><li>Nova Europa</li><li>Nova Granada</li><li>Nova Guataporanga</li><li>Nova Independência</li><li>Nova Luzitânia</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/nova-odessa/">Nova Odessa</a></li><li>Novais</li><li>Novo Horizonte</li><li>Nuporanga</li></ul>O <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Ocauçu</li><li>Óleo</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/olimpia/">Olímpia</a></li><li>Onda Verde</li><li>Oriente</li><li>Orindiúva</li><li>Orlândia</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/osasco/">Osasco</a></li><li>Oscar Bressane</li><li>Osvaldo Cruz</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/ourinhos/">Ourinhos</a></li><li>Ouro Verde</li><li>Ouroeste</li></ul>P <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Pacaembu</li><li>Palestina</li><li>Palmares Paulista</li><li>Palmeira D’Oeste</li><li>Palmital</li><li>Panorama</li><li>Paraguaçu Paulista</li><li>Paraibuna</li><li>Paraíso</li><li>Paranapanema</li><li>Paranapuã</li><li>Parapuã</li><li>Pardinho</li><li>Pariquera-Açu</li><li>Parisi</li><li>Patrocínio Paulista</li><li>Pauliceia</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/paulinia/">Paulínia</a></li><li>Paulistânia</li><li>Paulo de Faria</li><li>Pederneiras</li><li>Pedra Bela</li><li>Pedranópolis</li><li>Pedregulho</li><li>Pedreira</li><li>Pedrinhas Paulista</li><li>Pedro de Toledo</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/penapolis/">Penápolis</a></li><li>Pereira Barreto</li><li>Pereiras</li><li>Peruíbe</li><li>Piacatu</li><li>Piedade</li><li>Pilar do Sul</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/pindamonhangaba/">Pindamonhangaba</a></li><li>Pindorama</li><li>Pinhalzinho</li><li>Piquerobi</li><li>Piquete</li><li>Piracaia</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/piracicaba/">Piracicaba</a></li><li>Piraju</li><li>Pirajuí</li><li>Pirangi</li><li>Pirapora do Bom Jesus</li><li>Pirapozinho</li><li>Pirassununga</li><li>Piratininga</li><li>Pitangueiras</li><li>Planalto</li><li>Platina</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/poa/">Poá</a></li><li>Poloni</li><li>Pompeia</li><li>Pongaí</li><li>Pontal</li><li>Pontalinda</li><li>Pontes Gestal</li><li>Populina</li><li>Porangaba</li><li>Porto Feliz</li><li>Porto Ferreira</li><li>Potim</li><li>Potirendaba</li><li>Pracinha</li><li>Pradópolis</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/praia-grande/">Praia Grande</a></li><li>Pratânia</li><li>Presidente Alves</li><li>Presidente Bernardes</li><li>Presidente Epitácio</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/presidente-prudente/">Presidente Prudente</a></li><li>Presidente Venceslau</li><li>Promissão</li></ul>Q <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Quadra</li><li>Quatá</li><li>Queiroz</li><li>Queluz</li><li>Quintana</li></ul>R <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Rafard</li><li>Rancharia</li><li>Redenção da Serra</li><li>Regente Feijó</li><li>Reginópolis</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/registro/">Registro</a></li><li>Restinga</li><li>Ribeira</li><li>Ribeirão Bonito</li><li>Ribeirão Branco</li><li>Ribeirão Corrente</li><li>Ribeirão do Sul</li><li>Ribeirão dos Índios</li><li>Ribeirão Grande</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/ribeirao-pires/">Ribeirão Pires</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/ribeirao-preto/">Ribeirão Preto</a></li><li>Rifaina</li><li>Rincão</li><li>Rinópolis</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/rio-claro/">Rio Claro</a></li><li>Rio das Pedras</li><li>Rio Grande da Serra</li><li>Riolândia</li><li>Riversul</li><li>Rosana</li><li>Roseira</li><li>Rubiácea</li><li>Rubineia</li></ul>S <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Sabino</li><li>Sagres</li><li>Sales</li><li>Sales Oliveira</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/salesopolis/">Salesópolis</a></li><li>Salmourão</li><li>Saltinho</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/salto/">Salto</a></li><li>Salto de Pirapora</li><li>Salto Grande</li><li>Sandovalina</li><li>Santa Adélia</li><li>Santa Albertina</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/santa-barbara-d-oeste/">Santa Bárbara d’Oeste</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/santa-branca/">Santa Branca</a></li><li>Santa Clara D’Oeste</li><li>Santa Cruz da Conceição</li><li>Santa Cruz da Esperança</li><li>Santa Cruz das Palmeiras</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/santa-cruz-do-rio-pardo/">Santa Cruz do Rio Pardo</a></li><li>Santa Ernestina</li><li>Santa Fé do Sul</li><li>Santa Gertrudes</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/santa-isabel/">Santa Isabel</a></li><li>Santa Lúcia</li><li>Santa Maria da Serra</li><li>Santa Mercedes</li><li>Santa Rita D’Oeste</li><li>Santa Rita do Passa Quatro</li><li>Santa Rosa de Viterbo</li><li>Santa Salete</li><li>Santana da Ponte Pensa</li><li>Santana de Parnaíba</li><li>Santo Anastácio</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/santo-andre/">Santo André</a></li><li>Santo Antonio da Alegria</li><li>Santo Antonio de Posse</li><li>Santo Antonio do Aracanguá</li><li>Santo Antonio do Jardim</li><li>Santo Antonio do Pinhal</li><li>Santo Expedito</li><li>Santópolis do Aguapeí</li><li>Santos</li><li>São Bento do Sapucaí</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/sao-bernardo-do-campo/">São Bernardo do Campo</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/sao-caetano-do-sul/">São Caetano do Sul</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/sao-carlos/">São Carlos</a></li><li>São Francisco</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/sao-joao-da-boa-vista/">São João da Boa Vista</a></li><li>São João das Duas Pontes</li><li>São João de Iracema</li><li>São João do Pau D’Alho</li><li>São Joaquim da Barra</li><li>São José da Bela Vista</li><li>São José do Barreiro</li><li>São José do Rio Pardo</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/sao-jose-do-rio-preto/">São José do Rio Preto</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/sao-jose-dos-campos/">São José dos Campos</a></li><li>São Lourenço da Serra</li><li>São Luiz do Paraitinga</li><li>São Manuel</li><li>São Miguel Arcanjo</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/sao-paulo/">São Paulo</a></li><li>São Pedro</li><li>São Pedro do Turvo</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/sao-roque/">São Roque</a></li><li>São Sebastião</li><li>São Sebastião da Grama</li><li>São Simão</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/sao-vicente/">São Vicente</a></li><li>Sarapuí</li><li>Sarutaiá</li><li>Sebastianópolis do Sul</li><li>Serra Azul</li><li>Serra Negra</li><li>Serrana</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/sertaozinho/">Sertãozinho</a></li><li>Sete Barras</li><li>Severínia</li><li>Silveiras</li><li>Socorro</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/sorocaba/">Sorocaba</a></li><li>Sud Mennucci</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/sumare/">Sumaré</a></li><li>Suzanápolis</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/suzano/">Suzano</a></li></ul>T <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Tabapuã</li><li>Tabatinga</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/taboao-da-serra/">Taboão da Serra</a></li><li>Taciba</li><li>Taguaí</li><li>Taiaçú</li><li>Taiuva</li><li>Tambaú</li><li>Tanabi</li><li>Tapiraí</li><li>Tapiratiba</li><li>Taquaral</li><li>Taquaritinga</li><li>Taquarituba</li><li>Taquarivaí</li><li>Tarabaí</li><li>Tarumã</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/tatui/">Tatuí</a></li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/taubate/">Taubaté</a></li><li>Tejupá</li><li>Teodoro Sampaio</li><li>Terra Roxa</li><li>Tietê</li><li>Timburi</li><li>Torre de Pedra</li><li>Torrinha</li><li>Trabijú</li><li>Tremembé</li><li>Três Fronteiras</li><li>Tuiutí</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/tupa/">Tupã</a></li><li>Tupi Paulista</li><li>Turiúba</li><li>Turmalina</li></ul>U <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Ubarana</li><li>Ubatuba</li><li>Ubirajara</li><li>Uchôa</li><li>União Paulista</li><li>Urânia</li><li>Uru</li><li>Urupês</li></ul>V <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Valentim Gentil</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/valinhos/">Valinhos</a></li><li>Valparaíso</li><li>Vargem</li><li>Vargem Grande do Sul</li><li>Vargem Grande Paulista</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/varzea-paulista/">Várzea Paulista</a></li><li>Vera Cruz</li><li>Vinhedo</li><li>Viradouro</li><li>Vista Alegre do Alto</li><li>Vitória Brasil</li><li><a style="color: var(--blue); font-weight: 500; text-decoration: none; transition: .2s; font-size: 0.95rem;" href="/aluguel-de-impressoras/votorantim/">Votorantim</a></li><li>Votuporanga</li></ul>Z <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li>Zacarias</li></ul></section><p><style>.city-group a:hover {
+    text-decoration: underline !important;
+    padding-left: 5px;
+}
+
+/* Hero atualizado seguindo o modelo validado de Mogi das Cruzes */
+.mgi-lp .hero {
+    min-height: 690px;
+    padding: 70px 0 64px;
+    background-color: #0d2e58;
+    background-image: linear-gradient(90deg, rgba(6, 27, 55, .98) 0%, rgba(7, 35, 72, .91) 38%, rgba(11, 51, 99, .44) 65%, rgba(9, 39, 77, .10) 80%), url('https://mgi.com.br/wp-content/uploads/2026/07/banner-aluguel-de-impressoras-3.png');
+    background-size: cover, 170% auto;
+    background-repeat: no-repeat;
+    background-position: center, right 50px center;
+    display: flex;
+    align-items: center;
+    isolation: isolate;
+}
+
+.mgi-lp .hero::before {
+    display: none;
+}
+
+.mgi-lp .hero-shell {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+    align-items: end;
+    gap: 40px;
+    width: 100%;
+}
+
+.mgi-lp .hero-copy {
+    max-width: 680px;
+}
+
+.mgi-lp .hero-logo {
+    width: 190px;
+    height: auto;
+    margin: 0 0 26px;
+    display: block;
+}
+
+.mgi-lp .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: .11em;
+    font-size: .76rem;
+    font-weight: 800;
+    color: #bfe7ff;
+    background: rgba(255, 255, 255, .10);
+    border: 1px solid rgba(255, 255, 255, .19);
+    padding: 8px 13px;
+    border-radius: 999px;
+}
+
+.mgi-lp .hero h1 {
+    color: #fff;
+    font-size: clamp(2.65rem, 5vw, 4.75rem);
+    line-height: 1.01;
+    letter-spacing: -.055em;
+    max-width: 720px;
+    margin: 20px 0;
+}
+
+.mgi-lp .hero .tag {
+    color: rgba(255, 255, 255, .88);
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    line-height: 1.65;
+    max-width: 650px;
+}
+
+.mgi-lp .hero-actions {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+    margin: 30px 0 28px;
+}
+
+.mgi-lp .btn-primary {
+    background: #fff;
+    color: #103a6b;
+}
+
+.mgi-lp .btn-primary:hover {
+    background: #e9f4ff;
+    color: #103a6b;
+}
+
+.mgi-lp .btn-whatsapp {
+    background: #20bf69;
+    color: #fff;
+}
+
+.mgi-lp .btn-whatsapp:hover {
+    background: #159d54;
+}
+
+.mgi-lp .hero-trust {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 18px;
+    color: rgba(255, 255, 255, .92);
+    font-size: .9rem;
+    list-style: none;
+    padding: 0;
+    margin-left: 0;
+}
+
+.mgi-lp .hero-trust li {
+    display: flex;
+    gap: 7px;
+}
+
+@media(max-width:820px) {
+    .mgi-lp .hero {
+        min-height: 0;
+        padding: 48px 0 40px;
+    }
+
+    .mgi-lp .hero-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .mgi-lp .hero h1 {
+        font-size: 2.35rem;
+    }
+
+    .mgi-lp .hero-trust {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:520px) {
+    .mgi-lp .hero-logo {
+        width: 160px;
+    }
+
+    .mgi-lp .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .mgi-lp .hero-actions .btn {
+        width: 100%;
+    }
+}
+
+/* Hero atualizado seguindo o modelo validado de Mogi das Cruzes */
+.mgi-lp .hero {
+    min-height: 690px;
+    padding: 70px 0 64px;
+    background-color: #0d2e58;
+    background-image: linear-gradient(90deg, rgba(6, 27, 55, .98) 0%, rgba(7, 35, 72, .91) 38%, rgba(11, 51, 99, .44) 65%, rgba(9, 39, 77, .10) 80%), url('https://mgi.com.br/wp-content/uploads/2026/07/banner-aluguel-de-impressoras-3.png');
+    background-size: cover, 170% auto;
+    background-repeat: no-repeat;
+    background-position: center, right 50px center;
+    display: flex;
+    align-items: center;
+    isolation: isolate;
+}
+
+.mgi-lp .hero::before {
+    display: none;
+}
+
+.mgi-lp .hero-shell {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+    align-items: end;
+    gap: 40px;
+    width: 100%;
+}
+
+.mgi-lp .hero-copy {
+    max-width: 680px;
+}
+
+.mgi-lp .hero-logo {
+    width: 190px;
+    height: auto;
+    margin: 0 0 26px;
+    display: block;
+}
+
+.mgi-lp .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: .11em;
+    font-size: .76rem;
+    font-weight: 800;
+    color: #bfe7ff;
+    background: rgba(255, 255, 255, .10);
+    border: 1px solid rgba(255, 255, 255, .19);
+    padding: 8px 13px;
+    border-radius: 999px;
+}
+
+.mgi-lp .hero h1 {
+    color: #fff;
+    font-size: clamp(2.65rem, 5vw, 4.75rem);
+    line-height: 1.01;
+    letter-spacing: -.055em;
+    max-width: 720px;
+    margin: 20px 0;
+}
+
+.mgi-lp .hero .tag {
+    color: rgba(255, 255, 255, .88);
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    line-height: 1.65;
+    max-width: 650px;
+}
+
+.mgi-lp .hero-actions {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+    margin: 30px 0 28px;
+}
+
+.mgi-lp .btn-primary {
+    background: #fff;
+    color: #103a6b;
+}
+
+.mgi-lp .btn-primary:hover {
+    background: #e9f4ff;
+    color: #103a6b;
+}
+
+.mgi-lp .btn-whatsapp {
+    background: #20bf69;
+    color: #fff;
+}
+
+.mgi-lp .btn-whatsapp:hover {
+    background: #159d54;
+}
+
+.mgi-lp .hero-trust {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 18px;
+    color: rgba(255, 255, 255, .92);
+    font-size: .9rem;
+    list-style: none;
+    padding: 0;
+    margin-left: 0;
+}
+
+.mgi-lp .hero-trust li {
+    display: flex;
+    gap: 7px;
+}
+
+@media(max-width:820px) {
+    .mgi-lp .hero {
+        min-height: 0;
+        padding: 48px 0 40px;
+    }
+
+    .mgi-lp .hero-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .mgi-lp .hero h1 {
+        font-size: 2.35rem;
+    }
+
+    .mgi-lp .hero-trust {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:520px) {
+    .mgi-lp .hero-logo {
+        width: 160px;
+    }
+
+    .mgi-lp .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .mgi-lp .hero-actions .btn {
+        width: 100%;
+    }
+}
+
+</style></p><section id="solucoes"><h2>Soluções de locação de impressoras para sua empresa</h2><p>Linha completa de equipamentos para atender qualquer demanda de impressão com excelência:</p><h3>Multifuncional</h3><p>Imprime,
+copia,
+digitaliza e envia por e-mail em um só aparelho,
+com digitalização para a nuvem e integração com a rede da empresa.</p><h3>Impressora colorida</h3><p>Qualidade profissional para propostas,
+marketing e relatórios — internamente,
+com agilidade e sigilo,
+sem depender de gráfica.</p><h3>Impressora laser</h3><p>Tecnologia laser de alto volume,
+baixo custo por página e impressões nítidas para contratos,
+notas e documentação operacional.</p><h3>Impressora A3</h3><p>Projetos,
+plantas e cartazes em formato grande para engenharia,
+arquitetura e marketing,
+sem terceirizar fora da empresa.</p><h3>Copiadora multifuncional</h3><p>Equipamentos robustos para alto volume de cópias,
+com produtividade e custo previsível por página.</p><h3>Outsourcing de impressão</h3><p>Terceirização completa: diagnóstico,
+equipamentos,
+suprimentos e gestão sob um único contrato e custo por página claro.</p><a style="background: #25D366; color: #fff; display: inline-flex; align-items: center; gap: 12px; font-size: 1.05rem; padding: 14px 28px;" href="https://wa.me/5511986350609?text=Olá,%20tenho%20interesse%20em%20locação%20de%20impressoras" target="_blank" rel="noopener">Fale com consultor !<br />pelo WhatsApp </a></section><section id="equipamentos" style="background: var(--bg-soft);"><h2>Alguns dos Modelos Disponíveis</h2><p style="margin: 0 auto;">Conheça alguns dos equipamentos de alta performance disponíveis para locação:</p><img src="https://mgi.com.br/wp-content/uploads/2026/06/5912-2.png" alt="Aluguel de impressora MGI" /><img src="https://mgi.com.br/wp-content/uploads/2026/06/5912-1.png" alt="Locação de impressoras MGI" /><img src="https://mgi.com.br/wp-content/uploads/2026/06/5912.png" alt="Outsourcing de impressão MGI" /><img src="https://mgi.com.br/wp-content/uploads/2026/06/1.jpg" alt="Aluguel de impressora multifuncional" /><img src="https://mgi.com.br/wp-content/uploads/2026/06/2.jpg" alt="Locação de impressora laser colorida" /><img src="https://mgi.com.br/wp-content/uploads/2026/06/3.jpg" alt="Outsourcing de impressão A3 para empresas" /><img src="https://mgi.com.br/wp-content/uploads/2026/06/4.jpg" alt="Equipamento de impressão corporativo MGI" /><img src="https://mgi.com.br/wp-content/uploads/2026/06/5.jpg" alt="Impressora multifuncional com baixo custo por página" /><img src="https://mgi.com.br/wp-content/uploads/2026/06/6.jpg" alt="Serviço de locação de impressoras" /><h3 style="color: var(--navy); font-size: 1.6rem; text-align: center; margin-bottom: 12px;">Impressoras Térmicas e de Etiquetas</h3><p style="color: var(--ink); font-size: 1.05rem; margin-bottom: 20px; text-align: center;">Esses equipamentos são genericamente chamados de impressoras térmicas ou impressoras de etiquetas. Elas utilizam tecnologia de impressão sem tinta e são divididas em duas categorias principais de funcionamento:</p><p style="margin: 0; font-size: 1.02rem; color: var(--muted); line-height: 1.6;"><strong style="color: var(--blue); font-size: 1.1rem;">1. Térmica Direta:</strong>A impressão é feita pelo calor diretamente sobre um papel com tratamento químico especial. É ideal para etiquetas de uso rápido (como envios e logística).</p><p style="margin: 0; font-size: 1.02rem; color: var(--muted); line-height: 1.6;"><strong style="color: var(--blue); font-size: 1.1rem;">2. Transferência Térmica:</strong>Usa o calor para transferir a tinta de uma fita (chamada de Ribbon) para a etiqueta. É mais resistente,
+ideal para longa duração e código de barras duradouros.</p><img src="https://mgi.com.br/wp-content/uploads/2026/06/HT600-HT630-Thermal-Transfer-Barcode-Label-Printer.jpg" alt="Impressora Térmica HT600" /><img src="https://mgi.com.br/wp-content/uploads/2026/06/HPRT-HT800-3.png" alt="Impressora Térmica HPRT HT800" /><img src="https://mgi.com.br/wp-content/uploads/2026/06/142146__06558.jpg" alt="Impressora de Etiquetas Térmica" /><img src="https://mgi.com.br/wp-content/uploads/2026/06/zebra-zt231-4-wide-203-dpi-12-ips-industrial-thermal-transfer-label-printer-peel-or-zt23142-t11000fz-zt23142-t11000fz__38716.jpg" alt="Zebra ZT231 Industrial" /><img src="https://mgi.com.br/wp-content/uploads/2026/06/LPQ58-2-inch-Thermal-Label-Printer.png" alt="Impressora LPQ58" /></section><section id="setores" style="padding-top: 60px; padding-bottom: 20px;"><h2 style="text-align: center; color: var(--navy); text-transform: uppercase; font-size: 1.75rem;">Setores Atendidos</h2><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Hospitais e Clínicas" />Hospitais e Clínicas <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Cartórios" />Cartórios <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Escolas e Faculdades" />Escolas e Faculdades <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Indústrias e Fábricas" />Indústrias e Fábricas <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Prestadores de Serviços" />Prestadores de Serviços <img src="https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=600&amp;q=80" alt="Comércio" />Comércio <a style="background: #25D366; color: #fff; display: inline-flex; align-items: center; gap: 12px; font-size: 1.05rem; padding: 14px 28px;" href="https://wa.me/5511986350609?text=Olá,%20tenho%20interesse%20em%20locação%20de%20impressoras" target="_blank" rel="noopener">Fale com consultor !<br />pelo WhatsApp </a></section><section id="beneficios"><h2>Por que alugar impressoras com a MGI?</h2>📊 <h3>Custo previsível</h3><p>Mensalidade fixa que já inclui equipamento,
+manutenção e suprimentos. Sem investimento inicial.</p>🛠️ <h3>Manutenção inclusa</h3><p>Equipe técnica local dedicada,
+sem custos surpresa de peças,
+visitas ou reparos adicionais.</p>🚀 <h3>Tecnologia atualizada</h3><p>Máquinas modernas e eficientes,
+com possibilidade de upgrade conforme a demanda cresce.</p>📄 <h3>Franquia sob medida</h3><p>Dimensionamos a franquia mensal pelo volume real,
+mantendo o custo por página competitivo.</p>📈 <h3>Gestão e controle</h3><p>Relatórios de uso por setor ou usuário ajudam a reduzir desperdício de papel e toner.</p>🤝 <h3>Suporte local</h3><p>Logística e assistência técnica ágeis para que sua empresa nunca fique sem imprimir.</p></section><section id="como-funciona"><h2>Como funciona o aluguel de impressora corporativo</h2><h3>Diagnóstico</h3><p>Avaliamos o volume e o perfil de impressão da sua empresa para entender suas necessidades.</p><h3>Proposta</h3><p>Indicamos os equipamentos certos,
+a franquia ideal e uma mensalidade fixa que cabe no orçamento.</p><h3>Instalação</h3><p>Entregamos,
+instalamos e configuramos tudo na sua rede,
+garantindo treinamento adequado à equipe.</p><h3>Suporte contínuo</h3><p>Manutenção,
+reposição de peças e suprimentos por nossa conta durante toda a vigência do contrato.</p><a style="background: #25D366; color: #fff; display: inline-flex; align-items: center; gap: 12px; font-size: 1.05rem; padding: 14px 28px;" href="https://wa.me/5511986350609?text=Olá,%20tenho%20interesse%20em%20locação%20de%20impressoras" target="_blank" rel="noopener">Fale com consultor !<br />pelo WhatsApp </a></section><section id="faq"><h2>Perguntas frequentes</h2><details open=""><summary>Quanto custa alugar uma impressora para minha empresa?</summary><p>O preço depende do tipo de equipamento (multifuncional, colorida, laser ou A3),
+do volume mensal e da franquia de páginas. Como manutenção e suprimentos já entram na mensalidade,
+o custo é previsível e sem surpresas.</p></details><details><summary>Vale a pena alugar ou comprar impressora?</summary><p>Para a maioria das empresas,
+alugar vale mais a pena: você evita o investimento inicial,
+não arca com manutenção e troca de peças,
+e mantém os equipamentos sempre atualizados.</p></details><details><summary>A manutenção está inclusa no aluguel?</summary><p>Sim. Todos os contratos da MGI incluem manutenção preventiva e corretiva,
+com atendimento técnico especializado,
+sem custos adicionais de mão de obra ou peças.</p></details><details><summary>Quais cidades a MGI atende?</summary><p>A MGI possui base técnica própria para atender com agilidade Mogi das Cruzes,
+Suzano,
+Itaquaquecetuba,
+Poá,
+Ferraz de Vasconcelos,
+Arujá,
+Guarulhos,
+São Paulo (capital) e toda a região do Alto Tietê.</p></details></section><section id="sobre" style="background: var(--bg-soft); padding: 64px 0;"><img style="height: 48px; width: auto; margin-bottom: 20px; display: inline-block;" src="https://grupomgitech.com.br/wp-content/uploads/2026/01/logo-grupomgi.png" alt="Grupo MGITECH" /><h2 style="font-size: 1.6rem; color: var(--navy); margin-bottom: 18px;">Uma empresa do Grupo MGITECH</h2><p style="font-size: 1.08rem; color: var(--muted); line-height: 1.7; margin: 0;">Há mais de 34 anos,
+o Grupo MGITECH conecta tecnologia e operação. Somos especialistas em equipamentos robustos e outsourcing de TI,
+unindo hardware,
+suporte técnico corporativo,
+gestão remota de dispositivos e inteligência de dados.</p></section><section><h2>Peça seu orçamento de aluguel de impressoras</h2><p style="max-width: 60ch; margin: 0 auto 24px;">Receba uma proposta sem compromisso,
+dimensionada para o volume da sua empresa. Resposta rápida da nossa equipe local.</p><a href="#orcamento">Solicitar orçamento</a></section><p>Utilizamos cookies para melhorar sua experiência de navegação,
+personalizar conteúdos e analisar o tráfego do site. Ao continuar navegando,
+você concorda com a utilização de cookies conforme nossa <a href="/politica-de-privacidade/">Política de Privacidade</a>.</p><p><button>Aceitar</button></p>< !-- /wp:html -->

@@ -1,0 +1,15 @@
+[
+  {
+    "id": "mgi",
+    "name": "Grupo MGI",
+    "domain": "mgi.com.br",
+    "mcpEndpointEnv": "MCP_MGI_ENDPOINT",
+    "mcpTokenEnv": "MCP_MGI_TOKEN",
+    "active": true,
+    "allowedAbilities": [
+      "novamira/gutenberg-get-content",
+      "novamira/gutenberg-add-pending-change",
+      "novamira/gutenberg-enable-batch-finalization"
+    ]
+  }
+]

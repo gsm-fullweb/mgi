@@ -1,0 +1,15 @@
+{
+  "name": "mcp-central-multicliente",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Gateway MCP central com isolamento por cliente WordPress/Novamira",
+  "scripts": {
+    "start": "node src/server.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.25.0"
+  }
+}

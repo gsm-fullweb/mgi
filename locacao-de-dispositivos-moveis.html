@@ -1,0 +1,836 @@
+﻿﻿<!-- wp:html -->
+<meta charset="UTF-8">
+<div class="lp-outsourcing-mgi mgi-lp">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+        .mgi-lp>p,
+        .mgi-lp>br {
+            display: none !important;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .mgi-lp {
+            --navy: #0b2440;
+            --navy-2: #123a63;
+            --blue: #1e6fd9;
+            --blue-dark: #1657ad;
+            --ink: #1c2733;
+            --muted: #5b6b7b;
+            --line: #e3e9f0;
+            --bg-soft: #f4f7fb;
+            --white: #fff;
+            --radius: 14px;
+            --shadow: 0 10px 30px rgba(11, 36, 64, .08);
+            color: var(--ink);
+            line-height: 1.6;
+            font-family: 'DM Sans', -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            margin-top: -1px;
+        }
+
+        .mgi-lp * {
+            box-sizing: border-box;
+        }
+
+        .mgi-lp a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        .mgi-lp .wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 22px;
+        }
+
+        .mgi-lp h1,
+        .mgi-lp h2,
+        .mgi-lp h3 {
+            line-height: 1.2;
+            color: var(--navy);
+            margin: 0 0 .5em;
+        }
+
+        .mgi-lp h2 {
+            font-size: 1.75rem;
+            margin-top: 0;
+        }
+
+        .mgi-lp .btn {
+            display: inline-block;
+            background: var(--blue);
+            color: #fff;
+            padding: 14px 26px;
+            border-radius: 10px;
+            font-weight: 600;
+            border: 0;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .mgi-lp .btn:hover {
+            background: var(--blue-dark);
+        }
+
+        .mgi-lp .btn-ghost {
+            background: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+                        .mgi-lp .hero {
+            min-height: 640px;
+            padding: 56px 0 60px;
+            background-color: #060527;
+            background-image: url('hero-banner-fundo.webp');
+            background-size: auto 88%;
+            background-repeat: no-repeat;
+            background-position: right 30px bottom 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mgi-lp .hero::before {
+            display: none;
+        }
+
+        .mgi-lp .hero-shell {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            display: grid;
+            grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .mgi-lp .hero-copy {
+            max-width: 620px;
+        }
+
+        .mgi-lp .hero-logo {
+            width: 180px;
+            height: auto;
+            margin: 0 0 20px;
+            display: block;
+        }
+
+        .mgi-lp .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            font-size: .8rem;
+            font-weight: 800;
+            color: #d1baff;
+            background: rgba(108, 5, 255, 0.25);
+            border: 1px solid rgba(168, 120, 255, 0.35);
+            padding: 8px 16px;
+            border-radius: 999px;
+            margin-bottom: 14px;
+        }
+
+        .mgi-lp .hero-kicker-text {
+            color: #ffffff;
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 1.25;
+            display: block;
+            letter-spacing: -0.01em;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .mgi-lp .hero-heading {
+            color: #ffffff;
+            font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin: 4px 0 16px;
+            text-shadow: 0 3px 14px rgba(0, 0, 0, 0.6);
+        }
+
+        .mgi-lp .hero-pill-badge {
+            display: inline-flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, #5b00ee 0%, #7000ff 100%);
+            color: #ffffff;
+            padding: 10px 22px;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(98, 0, 234, 0.45);
+            margin-bottom: 18px;
+        }
+
+        .mgi-lp .hero-pill-badge .pill-line-1 {
+            font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+            font-weight: 750;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+
+        .mgi-lp .hero-pill-badge .pill-line-2 {
+            font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+            font-weight: 850;
+            line-height: 1.15;
+            color: #ffffff;
+        }
+
+        .mgi-lp .hero-tagline {
+            color: #ffffff;
+            font-size: clamp(1.05rem, 1.3vw, 1.18rem);
+            font-weight: 500;
+            line-height: 1.5;
+            margin: 0 0 24px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .mgi-lp .hero-actions {
+            display: flex;
+            gap: 13px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .mgi-lp .btn-primary {
+            background: #ffffff;
+            color: #103a6b;
+            font-weight: 750;
+        }
+
+        .mgi-lp .btn-primary:hover {
+            background: #e9f4ff;
+            color: #103a6b;
+        }
+
+        .mgi-lp .btn-whatsapp {
+            background: #20bf69;
+            color: #ffffff;
+            font-weight: 750;
+        }
+
+        .mgi-lp .btn-whatsapp:hover {
+            background: #159d54;
+        }
+
+        .mgi-lp .hero-trust {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px 16px;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.9rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .mgi-lp .hero-trust li {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .mgi-lp .hero-hud-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-self: end;
+            max-width: 330px;
+            margin-top: 80px;
+        }
+
+        .mgi-lp .hud-box {
+            position: relative;
+            border: 2px solid rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 16px 20px;
+            background: rgba(12, 8, 70, 0.65);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 750;
+            line-height: 1.4;
+            text-align: right;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.08);
+        }
+
+        .mgi-lp .hud-box p {
+            color: #ffffff !important;
+            margin: 0;
+            font-size: 0.95rem;
+            font-weight: 750;
+            line-height: 1.4;
+        }
+
+        .mgi-lp .hud-pointer-line {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            align-self: flex-start;
+            pointer-events: none;
+        }
+
+        .mgi-lp .hud-circle-node {
+            width: 8px;
+            height: 8px;
+            background: #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #ffffff;
+        }
+
+        .mgi-lp .hud-horizontal-line {
+            width: 70px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .mgi-lp .lead-form-section {
+            background: linear-gradient(180deg, #f5f9fd 0%, #fff 100%);
+        }
+
+        .mgi-lp .lead-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+            gap: 36px;
+            align-items: start;
+        }
+
+        .mgi-lp .form-card {
+            background: #07111f;
+            color: #fff;
+            border: 1px solid #152a43;
+            border-radius: 24px;
+            padding: 38px;
+            box-shadow: 0 24px 70px rgba(8, 31, 58, .18);
+        }
+
+        .mgi-lp .form-kicker {
+            color: #7bd2ff;
+        }
+
+        .mgi-lp .form-intro {
+            color: #cbd6e3;
+            margin: 10px 0 24px;
+        }
+
+        .mgi-lp .form-benefits {
+            padding: 20px 12px 20px 30px;
+        }
+
+        .mgi-lp .section-kicker {
+            color: var(--blue);
+            margin-bottom: 12px;
+        }
+
+        .mgi-lp .form-benefits h3 {
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            margin-bottom: 24px;
+        }
+
+        .mgi-lp .form-benefits ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px;
+            display: grid;
+            gap: 15px;
+        }
+
+        .mgi-lp .form-benefits li {
+            position: relative;
+            padding-left: 36px;
+            font-size: 1.02rem;
+        }
+
+        .mgi-lp .form-benefits li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: -1px;
+            width: 24px;
+            height: 24px;
+            display: grid;
+            place-items: center;
+            background: #e7f8ef;
+            color: #149854;
+            border-radius: 50%;
+            font-weight: 900;
+        }
+
+        .mgi-lp .benefit-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mgi-lp .benefit-pills li {
+            font-size: .82rem;
+            font-weight: 700;
+            color: #174b7d;
+            background: #eaf4ff;
+            padding: 8px 11px;
+            border-radius: 999px;
+        }
+
+        .mgi-lp .response-note {
+            margin-top: 25px;
+            padding: 20px 22px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: #fff;
+            box-shadow: 0 12px 32px rgba(11, 36, 64, .06);
+            color: var(--muted);
+        }
+
+        .mgi-lp .response-note strong {
+            color: var(--navy);
+        }
+
+        .mgi-lp .card,
+        .mgi-lp .ben,
+        .mgi-lp .answer,
+        .mgi-lp .step {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            box-shadow: 0 12px 38px rgba(11, 36, 64, .07);
+            transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+        }
+
+        .mgi-lp .card:hover,
+        .mgi-lp .ben:hover,
+        .mgi-lp .answer:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 46px rgba(11, 36, 64, .11);
+            border-color: #c7d9ed;
+        }
+
+        .mgi-lp .benefits {
+            background: linear-gradient(145deg, #eef7ff 0%, #f9fcff 100%);
+        }
+
+        .mgi-lp .ico {
+            background: linear-gradient(135deg, #e9f4ff, #dff8ff);
+            border-radius: 14px;
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .mgi-lp .step {
+            position: relative;
+            padding: 34px 24px;
+            counter-reset: none;
+        }
+
+        .mgi-lp .steps {
+            counter-reset: mgiStep;
+            gap: 20px;
+        }
+
+        .mgi-lp .step:before {
+            counter-increment: mgiStep;
+            content: '0' counter(mgiStep);
+            display: block;
+            color: var(--blue);
+            font-weight: 900;
+            font-size: .85rem;
+            letter-spacing: .08em;
+            margin-bottom: 14px;
+            position: static;
+            width: auto;
+            height: auto;
+            background: none;
+            border-radius: 0;
+        }
+
+        .mgi-lp .faq details {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            margin: 11px 0;
+            padding: 4px 18px;
+            box-shadow: 0 8px 24px rgba(11, 36, 64, .05);
+        }
+
+        .mgi-lp .faq summary {
+            padding: 17px 0;
+            font-weight: 750;
+            color: var(--navy);
+        }
+
+        .mgi-lp .cta {
+            background: linear-gradient(135deg, #0b2440 0%, #164f8d 60%, #147fb4 100%);
+            text-align: center;
+        }
+
+        .mgi-lp .cta h2,
+        .mgi-lp .cta p {
+            color: #fff;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mgi-lp .cta .btn {
+            background: #fff;
+            color: #103a6b;
+        }
+
+                        @media(max-width:980px) {
+            .mgi-lp .hero {
+                min-height: auto;
+                padding: 44px 0 44px;
+                background-size: cover;
+                background-position: 75% center;
+            }
+            .mgi-lp .hero-shell {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .mgi-lp .hero-hud-card {
+                justify-self: start;
+                max-width: 100%;
+                margin-top: 10px;
+                align-items: flex-start;
+            }
+            .mgi-lp .hud-box {
+                text-align: left;
+                width: 100%;
+            }
+            .mgi-lp .hero-actions {
+                width: 100%;
+            }
+            .mgi-lp .hero-actions .btn {
+                flex: 1;
+                min-width: 160px;
+            }
+            .mgi-lp .lead-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:600px) {
+            .mgi-lp .hero-trust {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+            <!-- HERO SECTION (FULL BLEED / FULL BACKGROUND + REAL SEO TEXT OVERLAY) -->
+    <section class="hero">
+        <div class="wrap hero-shell">
+            <div class="hero-copy">
+                <img class="hero-logo" src="https://mgi.com.br/wp-content/uploads/2025/12/logo-mgi.svg" alt="MGI" width="180" height="52" />
+                <span class="hero-eyebrow">Mobilidade Corporativa &amp; Gest&atilde;o de Dispositivos (MDM)</span>
+                <span class="hero-kicker-text">Loca&ccedil;&atilde;o de Coletores de Dados,</span>
+                <h1 class="hero-heading">Coletores de Dados</h1>
+                <div class="hero-pill-badge" aria-label="Tablets e Celulares Corporativos">
+                    <span class="pill-line-1">Tablets e celulares</span>
+                    <span class="pill-line-2">Corporativos</span>
+                </div>
+                <p class="hero-tagline">Reposi&ccedil;&atilde;o r&aacute;pida sem imobilizar capital.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#orcamento">Solicitar proposta</a>
+                    <a class="btn btn-whatsapp" href="https://wa.me/5511986350609?text=Ol%C3%A1,%20tenho%20interesse%20em%20Loca%C3%A7%C3%A3o%20de%20Dispositivos%20M%C3%B3veis" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+                </div>
+                <ul class="hero-trust" aria-label="Diferenciais da Locação de Móveis MGI">
+                    <li>✓ Plataforma MDM (Mobile Device Management) Inclusa</li>
+                    <li>✓ Coletores Android Industriais (Zebra, Honeywell, etc.)</li>
+                    <li>✓ Bloqueio de Apps Indesejados (Modo Kiosk)</li>
+                    <li>✓ Pronta Troca com Estoque de Backup</li>
+                </ul>
+            </div>
+            <div class="hero-hud-card">
+                <div class="hud-pointer-line" aria-hidden="true">
+                    <span class="hud-circle-node"></span>
+                    <span class="hud-horizontal-line"></span>
+                </div>
+                <div class="hud-box">
+                    <p>Equipe sua for&ccedil;a de vendas, campo e armaz&eacute;m com dispositivos m&oacute;veis robustos, gest&atilde;o remota centralizada, suporte t&eacute;cnico</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEAD / ORÇAMENTO -->
+    <section id="orcamento" class="lead-form-section">
+        <div class="wrap lead-grid">
+            <div class="form-card">
+                <div class="form-kicker">Proposta Personalizada</div>
+                <p class="form-intro">Informe a quantidade de dispositivos e a aplicação desejada para elaborarmos a proposta.</p>
+                <script src="https://js.hsforms.net/forms/embed/developer/114501.js" defer></script>
+                <div class="hs-form-html" data-region="na1" data-portal-id="114501" data-form-id="16dedfe0-84bc-4703-ad69-ab0ea2a9c1d7">&nbsp;</div>
+            </div>
+            <aside class="form-benefits" aria-label="Benefícios da locação de dispositivos móveis">
+                <span class="section-kicker">Controle e Segurança para sua Equipe</span>
+                <h3>Incluso no Contrato</h3>
+                <ul>
+                    <li>Dispositivos corporativos homologados com garantia total</li>
+                    <li>Gestão remota MDM com bloqueio de apps e rastreamento GPS</li>
+                    <li>Capas antiqueda, películas de vidro e baterias sobressalentes</li>
+                    <li>Reposição expressa e manutenção preventiva/corretiva</li>
+                    <li>Configuração prévia de apps, Wi-Fi e certificados digitais</li>
+                </ul>
+                <ul class="benefit-pills" aria-label="Benefícios rápidos">
+                    <li>Zero uso indevido de dados</li>
+                    <li>Proteção contra perda/furto</li>
+                    <li>Locação pontual ou contínua</li>
+                    <li>Benefício fiscal OPEX</li>
+                </ul>
+                <div class="response-note">
+                    <strong>Piloto de Validação</strong><br />Enviamos unidades para testes práticos no seu sistema de vendas ou armazém sem custo.
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- NÚMEROS E AUTORIDADE -->
+    <section id="numeros" style="padding: 64px 0; background: var(--bg-soft);">
+        <div class="wrap" style="text-align: center;">
+            <h2 style="font-size: 1.8rem; color: var(--navy); margin-bottom: 36px; font-weight: bold; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.3;">
+                Mais de 34 anos de experiência em conectividade e hardware corporativo.
+            </h2>
+            <div style="background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 40px 24px; box-shadow: var(--shadow); max-width: 900px; margin: 0 auto 36px; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-evenly; text-align: center;">
+                <div style="min-width: 180px;">
+                    <div style="font-size: 2.8rem; font-weight: bold; color: var(--blue); line-height: 1.1; margin-bottom: 8px;">+34</div>
+                    <div style="font-size: 1.05rem; color: var(--navy); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Anos de Mercado</div>
+                </div>
+                <div style="min-width: 180px;">
+                    <div style="font-size: 2.8rem; font-weight: bold; color: var(--blue); line-height: 1.1; margin-bottom: 8px;">+238.000</div>
+                    <div style="font-size: 1.05rem; color: var(--navy); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Dispositivos sob Gestão</div>
+                    <div style="font-size: 0.9rem; color: var(--muted); margin-top: 4px;">Monitoramento remoto</div>
+                </div>
+                <div style="min-width: 180px;">
+                    <div style="font-size: 2.8rem; font-weight: bold; color: var(--blue); line-height: 1.1; margin-bottom: 8px;">100%</div>
+                    <div style="font-size: 1.05rem; color: var(--navy); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Segurança de Dados</div>
+                </div>
+                <div style="min-width: 180px;">
+                    <div style="font-size: 2.8rem; font-weight: bold; color: var(--blue); line-height: 1.1; margin-bottom: 8px;">+1.000</div>
+                    <div style="font-size: 1.05rem; color: var(--navy); font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Contratos Ativos</div>
+                </div>
+            </div>
+            <div style="font-size: 1.15rem; color: var(--muted); max-width: 700px; margin: 0 auto; line-height: 1.6;">
+                Unimos hardware robusto, controle por software e assistência técnica para manter sua operação externa e interna 100% produtiva.
+            </div>
+        </div>
+    </section>
+
+    <!-- PROPOSTA DE VALOR / APRESENTAÇÃO -->
+    <section style="padding-top: 40px; padding-bottom: 40px;">
+        <div class="wrap answer-grid">
+            <div class="answer">
+                <p>Gerenciar celulares, tablets e coletores de dados espalhados entre dezenas de colaboradores costuma ser um pesadelo: aparelhos que quebram, uso indevido de pacote de dados, perda de inventário e risco de vazamento de informações corporativas.</p>
+                <p style="margin-top: 14px;">Com a locação de dispositivos móveis da MGI, sua empresa recebe equipamentos já protegidos com capas industriais e configurados com software MDM. Os aparelhos funcionam exclusivamente com os aplicativos da sua empresa, bloqueando redes sociais e jogos.</p>
+                <p style="margin-top: 14px;">Seja para equipes de vendas externas, operadores de logística, entregadores ou atendimento em loja, você garante máxima produtividade com reposição rápida e mensalidade 100% dedutível.</p>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&w=700&q=80" alt="Coletores de dados e smartphones corporativos em uso" />
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUÇÕES / TIPOLOGIAS -->
+    <section id="solucoes">
+        <div class="wrap">
+            <h2>Modelos e Tipos de Dispositivos Móveis</h2>
+            <p class="lead">Soluções completas para operações de campo, frente de caixa e armazém:</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>Coletores de Dados Industriais</h3>
+                    <p>Leitores de código de barras 1D/2D, QR Code e RFID com carcaça ultra resistente a quedas e poeira (IP65/IP67).</p>
+                </div>
+                <div class="card">
+                    <h3>Smartphones Corporativos</h3>
+                    <p>Celulares Android modernos homologados para equipes de vendas externas, entregas e técnicos em campo.</p>
+                </div>
+                <div class="card">
+                    <h3>Tablets para Vendas e Vistoria</h3>
+                    <p>Telas amplas para catálogo digital de produtos, ordens de serviço, vistorias técnicas e coleta de assinaturas.</p>
+                </div>
+                <div class="card">
+                    <h3>Tablets e Terminais Veiculares</h3>
+                    <p>Fixação robusta para empilhadeiras, caminhões e vans com alimentação contínua e conexão 4G/5G.</p>
+                </div>
+                <div class="card">
+                    <h3>Plataforma de Gestão MDM</h3>
+                    <p>Controle remoto centralizado: instalação em lote de apps, bloqueio em caso de roubo e monitoramento de bateria.</p>
+                </div>
+                <div class="card">
+                    <h3>Locação para Inventário Sazonal</h3>
+                    <p>Lotes de coletores prontos para uso em balanços de estoque, inventários anuais, feiras e Black Friday.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a class="btn" style="background: #25D366; color: #fff; display: inline-flex; align-items: center; gap: 12px; font-size: 1.05rem; padding: 14px 28px;" href="https://wa.me/5511986350609?text=Olá,%20tenho%20interesse%20em%20Locação%20de%20Dispositivos%20Móveis" target="_blank" rel="noopener">
+                    <span style="text-align: left; line-height: 1.2;">Fale com um consultor!<br /><span style="font-weight: normal; font-size: 0.85em; opacity: 0.95;">pelo WhatsApp</span></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SETORES ATENDIDOS -->
+    <section id="setores" style="padding-top: 60px; padding-bottom: 20px;">
+        <div class="wrap">
+            <h2 style="text-align: center; color: var(--navy); text-transform: uppercase; font-size: 1.75rem;">Aplicações e Segmentos</h2>
+            <div class="setores">
+                <div class="setor-card">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Logística e Centros de Distribuição" />
+                    <div class="setor-title">Logística e Armazéns</div>
+                </div>
+                <div class="setor-card">
+                    <img src="https://images.unsplash.com/photo-1556742049-0a67e5572293?auto=format&fit=crop&w=600&q=80" alt="Supermercados e Varejo" />
+                    <div class="setor-title">Varejo e Supermercados</div>
+                </div>
+                <div class="setor-card">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80" alt="Equipes de Vendas Externas (Trade)" />
+                    <div class="setor-title">Força de Vendas Externa</div>
+                </div>
+                <div class="setor-card">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Indústrias e Manufatura" />
+                    <div class="setor-title">Indústria e Produção</div>
+                </div>
+                <div class="setor-card">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80" alt="Hospitais e Saúde" />
+                    <div class="setor-title">Saúde e Beira-Leito</div>
+                </div>
+                <div class="setor-card">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80" alt="Prestadores de Serviços Técnicos" />
+                    <div class="setor-title">Serviços e Manutenção</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section id="beneficios" class="benefits">
+        <div class="wrap">
+            <h2>Por que alugar dispositivos móveis corporativos com a MGI?</h2>
+            <div class="ben-grid">
+                <div class="ben">
+                    <div class="ico">🔒</div>
+                    <h3>Controle Total por MDM</h3>
+                    <p>Bloqueie apps pessoais, sites não autorizados e restrinja o aparelho ao uso exclusivo de trabalho.</p>
+                </div>
+                <div class="ben">
+                    <div class="ico">🔄</div>
+                    <h3>Troca Expressa Garantida</h3>
+                    <p>Se o aparelho quebrar, enviamos outro imediatamente com suas configurações prontas.</p>
+                </div>
+                <div class="ben">
+                    <div class="ico">🛡️</div>
+                    <h3>Proteção LGPD</h3>
+                    <p>Em caso de perda ou furto, apague todos os dados corporativos remotamente com um clique.</p>
+                </div>
+                <div class="ben">
+                    <div class="ico">📊</div>
+                    <h3>Gestão Centralizada de Faturas</h3>
+                    <p>Controle financeiro simples em uma única fatura mensal, eliminando múltiplos reembolsos.</p>
+                </div>
+                <div class="ben">
+                    <div class="ico">🔋</div>
+                    <h3>Acessórios Inclusos</h3>
+                    <p>Docas de carregamento, capas reforçadas, baterias sobressalentes e garras de leitura.</p>
+                </div>
+                <div class="ben">
+                    <div class="ico">🤝</div>
+                    <h3>Suporte Especializado MGI</h3>
+                    <p>Mais de 34 anos de liderança em gestão de equipamentos e suporte técnico corporativo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="como-funciona">
+        <div class="wrap">
+            <h2>Como funciona o processo de locação</h2>
+            <div class="steps">
+                <div class="step">
+                    <h3>Definição do Perfil</h3>
+                    <p>Avaliamos os aplicativos necessários e indicamos os modelos ideais.</p>
+                </div>
+                <div class="step">
+                    <h3>Parametrização MDM</h3>
+                    <p>Configuramos os perfis de segurança, políticas de acesso e apps padrão.</p>
+                </div>
+                <div class="step">
+                    <h3>Entrega Pronta para Uso</h3>
+                    <p>Dispositivos chegam com chips, capas e apps pré-instalados para uso imediato.</p>
+                </div>
+                <div class="step">
+                    <h3>Gestão Contínua</h3>
+                    <p>Monitoramento remoto, relatórios de uso e suporte técnico permanente.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a class="btn" style="background: #25D366; color: #fff; display: inline-flex; align-items: center; gap: 12px; font-size: 1.05rem; padding: 14px 28px;" href="https://wa.me/5511986350609?text=Olá,%20tenho%20interesse%20em%20Locação%20de%20Dispositivos%20Móveis" target="_blank" rel="noopener">
+                    <span style="text-align: left; line-height: 1.2;">Fale com um consultor!<br /><span style="font-weight: normal; font-size: 0.85em; opacity: 0.95;">pelo WhatsApp</span></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="wrap">
+            <h2>Perguntas Frequentes sobre Locação de Dispositivos Móveis</h2>
+            <details open="">
+                <summary>Como funciona o gerenciamento remoto de dispositivos (MDM)?</summary>
+                <p>Com a plataforma MDM inclusa, nossa equipe bloqueia o acesso a aplicativos não autorizados (modo Kiosk), atualiza softwares remotamente, rastreia os aparelhos por GPS e realiza bloqueio e limpeza de dados em caso de perda ou furto.</p>
+            </details>
+            <details>
+                <summary>Vocês realizam locação pontual para inventário ou Black Friday?</summary>
+                <p>Sim. Atendemos demandas de locação temporária para inventários de estoque, feiras, períodos sazonais de alta demanda e contratos de longo prazo.</p>
+            </details>
+            <details>
+                <summary>Os coletores de dados e smartphones acompanham acessórios?</summary>
+                <p>Sim. Fornecemos capas de alta absorção de impacto, películas blindadas, pistolas de gatilho (pistol grip), docas de recarga múltipla e baterias sobressalentes.</p>
+            </details>
+            <details>
+                <summary>Qual o prazo de substituição em caso de quebra?</summary>
+                <p>Mantemos estoque de buffer dedicado para envio imediato de um novo dispositivo já configurado com suas aplicações, sem que sua operação fique parada.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- SOBRE O GRUPO -->
+    <section id="sobre" style="background: var(--bg-soft); padding: 64px 0;">
+        <div class="wrap" style="text-align: center; max-width: 760px;">
+            <img style="height: 48px; width: auto; margin-bottom: 20px; display: inline-block;" src="https://grupomgitech.com.br/wp-content/uploads/2026/01/logo-grupomgi.png" alt="Grupo MGITECH" />
+            <h2 style="font-size: 1.6rem; color: var(--navy); margin-bottom: 18px;">Uma empresa do Grupo MGITECH</h2>
+            <p style="font-size: 1.08rem; color: var(--muted); line-height: 1.7; margin: 0;">Há mais de 34 anos, o Grupo MGITECH conecta tecnologia e operação. Somos líderes em mobilidade corporativa, outsourcing de hardware e gestão remota de frotas de dispositivos em todo o país.</p>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta">
+        <div class="wrap" style="text-align: center;">
+            <h2>Dê mobilidade e segurança à sua força de trabalho</h2>
+            <p style="max-width: 60ch; margin: 0 auto 24px;">Solicite uma proposta personalizada e faça um teste piloto com coletores e smartphones na sua operação.</p>
+            <a class="btn btn-ghost" href="#orcamento">Solicitar proposta</a>
+        </div>
+    </section>
+
+    <!-- COOKIE BAR -->
+    <div id="mgi-cookie-bar" class="cookie-bar">
+        <div class="wrap">
+            <p>Utilizamos cookies para melhorar sua experiência de navegação, personalizar conteúdos e analisar o tráfego do site. Ao continuar navegando, você concorda com a nossa <a href="/politica-de-privacidade/">Política de Privacidade</a>.</p>
+            <button class="btn">Aceitar</button>
+        </div>
+    </div>
+</div>
+<!-- /wp:html -->
