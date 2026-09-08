@@ -565,6 +565,12 @@
             .mgi-lp .setores {
                 grid-template-columns: 1fr;
             }
+            .mgi-lp #solucoes h2,
+            .mgi-lp #beneficios h2,
+            .mgi-lp #como-funciona h2,
+            .mgi-lp #faq h2 {
+                white-space: normal !important;
+            }
         }
     </style>
     <script type="application/ld+json">
@@ -922,12 +928,12 @@
         }
 
         .mgi-lp .form-card {
-            background: #07111f;
+            background: #000000;
             color: #fff;
-            border: 1px solid #152a43;
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 24px;
             padding: 38px;
-            box-shadow: 0 24px 70px rgba(8, 31, 58, .18);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, .35);
         }
 
         .mgi-lp .form-kicker {
@@ -953,7 +959,7 @@
             margin-bottom: 24px;
         }
 
-        .mgi-lp .form-benefits ul {
+        .mgi-lp .form-benefits ul:not(.benefit-pills) {
             list-style: none;
             padding: 0;
             margin: 0 0 24px;
@@ -961,13 +967,14 @@
             gap: 15px;
         }
 
-        .mgi-lp .form-benefits li {
+        .mgi-lp .form-benefits ul:not(.benefit-pills) li {
             position: relative;
             padding-left: 36px;
             font-size: 1.02rem;
+            line-height: 1.5;
         }
 
-        .mgi-lp .form-benefits li:before {
+        .mgi-lp .form-benefits ul:not(.benefit-pills) li:before {
             content: '✓';
             position: absolute;
             left: 0;
@@ -985,19 +992,28 @@
         .mgi-lp .benefit-pills {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
         .mgi-lp .benefit-pills li {
-            font-size: .82rem;
+            position: static;
+            font-size: .88rem;
             font-weight: 700;
             color: #174b7d;
             background: #eaf4ff;
-            padding: 8px 11px;
+            padding: 8px 16px;
             border-radius: 999px;
+            line-height: 1.4;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .mgi-lp .benefit-pills li:before {
+            content: none !important;
+            display: none !important;
         }
 
         .mgi-lp .response-note {
@@ -1136,7 +1152,8 @@
             justify-content: center;
         }
 
-        .mgi-lp .tech-card-img-wrap img {
+        .mgi-lp .tech-card-img-wrap img,
+        .mgi-lp .tech-card-img-wrap video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -1144,7 +1161,8 @@
             transition: transform .35s ease;
         }
 
-        .mgi-lp .tech-card:hover .tech-card-img-wrap img {
+        .mgi-lp .tech-card:hover .tech-card-img-wrap img,
+        .mgi-lp .tech-card:hover .tech-card-img-wrap video {
             transform: scale(1.05);
         }
 
@@ -1386,11 +1404,19 @@
         .mgi-lp .media-carousel-section .wrap {
             max-width: 1240px;
             position: relative;
+            text-align: center;
+        }
+
+        .mgi-lp .media-carousel-section .section-kicker {
+            display: block;
+            text-align: center;
+            margin: 0 auto 10px;
         }
 
         .mgi-lp .media-carousel-section h2 {
             color: #fff;
-            margin-bottom: 10px;
+            margin: 0 auto 12px;
+            text-align: center;
             font-size: clamp(2rem, 3.2vw, 2.75rem);
         }
 
@@ -1399,6 +1425,7 @@
             max-width: 680px;
             margin: 0 auto 40px;
             font-size: 1.06rem;
+            text-align: center;
         }
 
         .mgi-lp .robots-carousel-wrapper {
@@ -1659,7 +1686,7 @@
     <!-- SOLUÇÕES / TIPOS DE ROBÔS -->
     <section id="solucoes">
         <div class="wrap">
-            <h2>Modelos e Aplicações de Robôs de Atendimento</h2>
+            <h2 style="font-size: clamp(1.4rem, 2.35vw, 1.85rem); white-space: nowrap;">Modelos e Aplicações de Robôs de Atendimento</h2>
             <p class="lead">Soluções flexíveis e adaptáveis para diferentes formatos de negócios:</p>
             <div class="cards">
                 <div class="card">
@@ -1697,10 +1724,10 @@
 
     <!-- CARROSSEL MODELOS DE ROBÔS HOMOLOGADOS MGI (EXACT FROM LIVE SITE) -->
     <section class="media-carousel-section">
-        <div class="wrap">
-            <span class="section-kicker" style="color: #7bd2ff; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;">Frota Homologada</span>
-            <h2>Robôs Inteligentes em Operação</h2>
-            <p class="carousel-sub">Conheça os principais modelos autônomos integrados pela MGI para recepção, atendimento ao cliente, garçom e entregas internas.</p>
+        <div class="wrap" style="text-align: center;">
+            <span class="section-kicker" style="display: block; text-align: center; color: #7bd2ff; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin: 0 auto 10px;">Frota Homologada</span>
+            <h2 style="text-align: center; color: #fff; margin: 0 auto 12px;">Robôs Inteligentes em Operação</h2>
+            <p class="carousel-sub" style="text-align: center; margin: 0 auto 40px; max-width: 680px;">Conheça os principais modelos autônomos integrados pela MGI para recepção, atendimento ao cliente, garçom e entregas internas.</p>
             
             <div class="robots-carousel-wrapper">
                 <!-- Floating Arrows -->
@@ -1904,13 +1931,15 @@
                     </div>
                 </div>
                 <div class="tech-card">
-                    <div class="tech-card-img-wrap" style="background: #112a4d;">
-                        <img src="https://cdn.pudutech.com/website/images/pc/kettybot/rear_yellow.png" alt="Versatilidade de operação e compartimentos" style="object-fit: contain; padding: 12px;" />
+                    <div class="tech-card-img-wrap" style="background: #071933;">
+                        <video autoplay muted loop playsinline poster="https://cdn.pudutech.com/website/images/pc/kettybot2024/kettybot2024-rgbd.png">
+                            <source src="https://cdn.pudutech.com/website/video/kettybot/pc_cooperation_en.mp4" type="video/mp4">
+                        </video>
                     </div>
                     <div class="tech-card-body">
-                        <span class="tech-card-tag">Versatilidade Operacional</span>
-                        <h3>Bandejas Abertas ou Fechadas</h3>
-                        <p>Configurações modulares com bandejas multiníveis para restaurantes ou compartimentos fechados com travas para entregas seguras de itens e documentos.</p>
+                        <span class="tech-card-tag">Cooperação & Frota</span>
+                        <h3>Cooperação Multirrobô & Despacho</h3>
+                        <p>Comunicação autônoma entre unidades para coordenação de rotas e passagens no salão, evitando cruzamentos e garantindo máxima fluidez operacional.</p>
                     </div>
                 </div>
                 <div class="tech-card">
@@ -1929,10 +1958,10 @@
 
     <!-- ESPECIFICAÇÕES TÉCNICAS GERAIS DA FROTA -->
     <section class="specs-section">
-        <div class="wrap">
-            <span class="section-kicker" style="display: block; text-align: center; color: #7bd2ff; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;">Ficha Técnica</span>
-            <h2>Especificações Técnicas — Frota de Robôs de Atendimento e Entrega</h2>
-            <p class="specs-lead">Parâmetros e capacidades técnicas homologadas pela engenharia MGI para frotas de atendimento ao cliente, garçom e entregas internas corporativas.</p>
+        <div class="wrap" style="text-align: center;">
+            <span class="section-kicker" style="display: block; text-align: center; color: #7bd2ff; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin: 0 auto 10px;">Ficha Técnica</span>
+            <h2 style="text-align: center; color: #fff; margin: 0 auto 12px; max-width: 860px;">Especificações Técnicas da Frota de Robôs de Atendimento e Entrega</h2>
+            <p class="specs-lead" style="text-align: center; margin: 0 auto 36px; max-width: 780px;">Parâmetros e capacidades técnicas homologadas pela engenharia MGI para frotas de atendimento ao cliente, garçom e entregas internas corporativas.</p>
             <div class="specs-table-wrapper">
                 <table class="specs-table">
                     <thead>
@@ -2002,7 +2031,7 @@
     <!-- BENEFÍCIOS -->
     <section id="beneficios" class="benefits">
         <div class="wrap">
-            <h2>Por que alugar robôs de atendimento com a MGI?</h2>
+            <h2 style="text-align: center; margin: 0 auto 36px; font-size: 1.75rem; white-space: nowrap;">Por que alugar robôs de atendimento com a MGI?</h2>
             <div class="ben-grid">
                 <div class="ben">
                     <div class="ico">✨</div>
@@ -2041,7 +2070,7 @@
     <!-- COMO FUNCIONA -->
     <section id="como-funciona">
         <div class="wrap">
-            <h2>Como funciona a implantação dos robôs</h2>
+            <h2 style="text-align: center; margin: 0 auto 36px; font-size: 1.75rem; white-space: nowrap;">Como funciona a implantação dos robôs</h2>
             <div class="steps">
                 <div class="step">
                     <h3>Estudo e Demonstração</h3>
@@ -2071,7 +2100,7 @@
     <!-- FAQ -->
     <section id="faq" class="faq">
         <div class="wrap">
-            <h2>Perguntas Frequentes sobre Robôs de Atendimento</h2>
+            <h2 style="text-align: center; margin: 0 auto 32px; font-size: 1.75rem; white-space: nowrap;">Perguntas Frequentes sobre Robôs de Atendimento</h2>
             <details open="">
                 <summary>Como os robôs de atendimento desviam de pessoas e obstáculos?</summary>
                 <p>Eles utilizam sistemas avançados de sensores LIDAR, câmeras 3D e inteligência artificial para mapear o ambiente em tempo real e recalcular rotas de desvio com precisão e segurança absoluta.</p>
