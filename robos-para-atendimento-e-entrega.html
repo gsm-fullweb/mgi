@@ -1268,41 +1268,36 @@
             margin: 0;
         }
 
-        .mgi-lp .carousel-container {
-            position: relative;
-            max-width: 1160px;
-            margin: 0 auto;
+        /* SEGMENTOS QUE ATENDEMOS (CARDS FIXOS) */
+        .mgi-lp .segmentos-section {
+            padding: 80px 0 88px;
+            background: var(--bg-soft);
         }
 
-        .mgi-lp .carousel-track {
-            display: flex;
-            gap: 22px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            padding: 10px 4px 24px;
-            scrollbar-width: thin;
-            scrollbar-color: var(--blue) var(--line);
-            -webkit-overflow-scrolling: touch;
+        .mgi-lp .segmentos-header {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto 48px;
         }
 
-        .mgi-lp .carousel-track::-webkit-scrollbar {
-            height: 6px;
+        .mgi-lp .segmentos-header h2 {
+            margin: 12px auto 10px;
+            color: var(--navy);
         }
 
-        .mgi-lp .carousel-track::-webkit-scrollbar-track {
-            background: var(--line);
-            border-radius: 3px;
+        .mgi-lp .segmentos-header p {
+            color: var(--muted);
+            font-size: 1.06rem;
+            margin: 0;
         }
 
-        .mgi-lp .carousel-track::-webkit-scrollbar-thumb {
-            background: var(--blue);
-            border-radius: 3px;
+        .mgi-lp .segmentos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
         }
 
-        .mgi-lp .segmento-slide {
-            flex: 0 0 340px;
-            scroll-snap-align: start;
+        .mgi-lp .segmento-card {
             background: #fff;
             border-radius: 20px;
             border: 1px solid var(--line);
@@ -1313,14 +1308,14 @@
             transition: transform .25s ease, box-shadow .25s ease;
         }
 
-        .mgi-lp .segmento-slide:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 18px 45px rgba(11, 36, 64, .13);
+        .mgi-lp .segmento-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(11, 36, 64, .13);
         }
 
         .mgi-lp .segmento-img-box {
             width: 100%;
-            height: 200px;
+            height: 210px;
             overflow: hidden;
             background: #0b2440;
         }
@@ -1333,8 +1328,8 @@
             transition: transform .35s ease;
         }
 
-        .mgi-lp .segmento-slide:hover .segmento-img-box img {
-            transform: scale(1.05);
+        .mgi-lp .segmento-card:hover .segmento-img-box img {
+            transform: scale(1.06);
         }
 
         .mgi-lp .segmento-body {
@@ -1362,39 +1357,20 @@
         .mgi-lp .segmento-desc {
             font-size: 0.94rem;
             color: var(--muted);
-            line-height: 1.55;
+            line-height: 1.6;
             margin: 0;
         }
 
-        .mgi-lp .carousel-nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 16px;
-            margin-top: 20px;
+        @media(max-width:992px) {
+            .mgi-lp .segmentos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        .mgi-lp .carousel-btn {
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            background: #fff;
-            border: 1px solid var(--line);
-            color: var(--navy);
-            display: grid;
-            place-items: center;
-            cursor: pointer;
-            box-shadow: 0 6px 16px rgba(11, 36, 64, 0.08);
-            transition: all .2s ease;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .mgi-lp .carousel-btn:hover {
-            background: var(--blue);
-            color: #fff;
-            border-color: var(--blue);
-            transform: scale(1.05);
+        @media(max-width:640px) {
+            .mgi-lp .segmentos-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* MEDIA CAROUSEL ROBOS (MODELOS HOMOLOGADOS / LIVE SCREENSHOT) */
@@ -1762,7 +1738,7 @@
         </div>
     </section>
 
-    <!-- CARROSSEL SEGMENTOS QUE ATENDEMOS -->
+    <!-- CARDS FIXOS: SEGMENTOS QUE ATENDEMOS -->
     <section id="segmentos" class="segmentos-section">
         <div class="wrap">
             <div class="segmentos-header">
@@ -1770,89 +1746,83 @@
                 <h2>Segmentos que Atendemos</h2>
                 <p>Tecnologia e gestão que modernizam o atendimento, reduzem custos operacionais e encantam o cliente final.</p>
             </div>
-            <div class="carousel-container">
-                <div class="carousel-track" id="segmentosTrack">
-                    <!-- Slide 1: Logística -->
-                    <div class="segmento-slide">
-                        <div class="segmento-img-box">
-                            <img src="https://mgi.com.br/wp-content/uploads/2026/07/two-diverse-male-warehouse-workers-reaching-up-to-2026-04-13-21-39-08-utc-1024x683.jpg" alt="Logística e Centros de Distribuição" />
-                        </div>
-                        <div class="segmento-body">
-                            <div class="segmento-title">Logística</div>
-                            <div class="segmento-divider"></div>
-                            <p class="segmento-desc">Operações logísticas vivem de agilidade e continuidade. Qualquer parada afeta prazos e produtividade. Atuamos com tecnologia e gestão que mantêm o fluxo rodando, reduzem downtime e dão visibilidade sobre a operação.</p>
-                        </div>
+            <div class="segmentos-grid">
+                <!-- Card 1: Logística -->
+                <div class="segmento-card">
+                    <div class="segmento-img-box">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/07/two-diverse-male-warehouse-workers-reaching-up-to-2026-04-13-21-39-08-utc-1024x683.jpg" alt="Logística e Centros de Distribuição" loading="lazy" />
                     </div>
-                    <!-- Slide 2: Indústria -->
-                    <div class="segmento-slide">
-                        <div class="segmento-img-box">
-                            <img src="https://mgi.com.br/wp-content/uploads/2026/07/high-angle-view-over-the-factory-floor-and-assembl-2026-01-09-09-42-55-utc-1024x683.jpg" alt="Indústria e Chão de Fábrica" />
-                        </div>
-                        <div class="segmento-body">
-                            <div class="segmento-title">Indústria</div>
-                            <div class="segmento-divider"></div>
-                            <p class="segmento-desc">A indústria não pode parar. Do chão de fábrica ao controle de produção, entregamos tecnologia e gestão que garantem continuidade, padronização e controle, mesmo em ambientes exigentes.</p>
-                        </div>
-                    </div>
-                    <!-- Slide 3: Varejo -->
-                    <div class="segmento-slide">
-                        <div class="segmento-img-box">
-                            <img src="https://mgi.com.br/wp-content/uploads/2026/07/woman-in-crafting-workshop-2026-03-20-01-02-40-utc-1024x683.jpg" alt="Varejo e Shoppings" />
-                        </div>
-                        <div class="segmento-body">
-                            <div class="segmento-title">Varejo</div>
-                            <div class="segmento-divider"></div>
-                            <p class="segmento-desc">No varejo, cada minuto de operação conta e a experiência do cliente é decisiva. Apoiamos lojas, redes e shoppings com tecnologia que agiliza o atendimento e sustenta a operação no ritmo do negócio.</p>
-                        </div>
-                    </div>
-                    <!-- Slide 4: Saúde -->
-                    <div class="segmento-slide">
-                        <div class="segmento-img-box">
-                            <img src="https://mgi.com.br/wp-content/uploads/2026/07/diverse-doctors-discussing-work-and-walking-throug-2026-03-25-02-18-27-utc-1024x683.jpg" alt="Saúde e Hospitais" />
-                        </div>
-                        <div class="segmento-body">
-                            <div class="segmento-title">Saúde</div>
-                            <div class="segmento-divider"></div>
-                            <p class="segmento-desc">Ambientes de saúde exigem precisão, segurança e disponibilidade constante. Entregamos tecnologia e gestão que apoiam a rotina de hospitais e clínicas, com foco em continuidade operacional e controle.</p>
-                        </div>
-                    </div>
-                    <!-- Slide 5: Hotelaria -->
-                    <div class="segmento-slide">
-                        <div class="segmento-img-box">
-                            <img src="https://mgi.com.br/wp-content/uploads/2026/07/happy-receptionists-cooperating-while-working-on-a-2026-01-06-10-26-51-utc-1024x683.jpg" alt="Hotelaria e Resorts" />
-                        </div>
-                        <div class="segmento-body">
-                            <div class="segmento-title">Hotelaria</div>
-                            <div class="segmento-divider"></div>
-                            <p class="segmento-desc">A hotelaria se sustenta na experiência do hóspede e na eficiência da operação. Apoiamos hotéis e resorts com tecnologia que moderniza o atendimento e mantém os serviços funcionando em horários estendidos.</p>
-                        </div>
-                    </div>
-                    <!-- Slide 6: Condomínios -->
-                    <div class="segmento-slide">
-                        <div class="segmento-img-box">
-                            <img src="https://mgi.com.br/wp-content/uploads/2026/07/houses-in-suburb-at-summer-in-the-north-america-l-2026-03-26-11-36-51-utc-1024x683.jpg" alt="Condomínios Residenciais e Comerciais" />
-                        </div>
-                        <div class="segmento-body">
-                            <div class="segmento-title">Condomínios</div>
-                            <div class="segmento-divider"></div>
-                            <p class="segmento-desc">Condomínios residenciais e comerciais buscam eficiência, segurança e conveniência no dia a dia. Entregamos tecnologia e gestão que organizam a operação predial e melhoram a experiência de quem vive e trabalha ali.</p>
-                        </div>
-                    </div>
-                    <!-- Slide 7: Facilities -->
-                    <div class="segmento-slide">
-                        <div class="segmento-img-box">
-                            <img src="https://mgi.com.br/wp-content/uploads/2026/07/people-walking-in-modern-office-hallway-2026-01-09-10-24-53-utc-1024x683.jpg" alt="Gestão de Facilities" />
-                        </div>
-                        <div class="segmento-body">
-                            <div class="segmento-title">Facilities</div>
-                            <div class="segmento-divider"></div>
-                            <p class="segmento-desc">A gestão de facilities precisa padronizar serviços e controlar custos em múltiplos ambientes. Apoiamos operações com tecnologia e gestão que trazem eficiência, padronização e previsibilidade.</p>
-                        </div>
+                    <div class="segmento-body">
+                        <div class="segmento-title">Logística</div>
+                        <div class="segmento-divider"></div>
+                        <p class="segmento-desc">Operações logísticas vivem de agilidade e continuidade. Qualquer parada afeta prazos e produtividade. Atuamos com tecnologia e gestão que mantêm o fluxo rodando, reduzem downtime e dão visibilidade sobre a operação.</p>
                     </div>
                 </div>
-                <div class="carousel-nav">
-                    <button type="button" class="carousel-btn" onclick="document.getElementById('segmentosTrack').scrollBy({left: -360, behavior: 'smooth'})" aria-label="Anterior">&#10094;</button>
-                    <button type="button" class="carousel-btn" onclick="document.getElementById('segmentosTrack').scrollBy({left: 360, behavior: 'smooth'})" aria-label="Próximo">&#10095;</button>
+                <!-- Card 2: Indústria -->
+                <div class="segmento-card">
+                    <div class="segmento-img-box">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/07/high-angle-view-over-the-factory-floor-and-assembl-2026-01-09-09-42-55-utc-1024x683.jpg" alt="Indústria e Chão de Fábrica" loading="lazy" />
+                    </div>
+                    <div class="segmento-body">
+                        <div class="segmento-title">Indústria</div>
+                        <div class="segmento-divider"></div>
+                        <p class="segmento-desc">A indústria não pode parar. Do chão de fábrica ao controle de produção, entregamos tecnologia e gestão que garantem continuidade, padronização e controle, mesmo em ambientes exigentes.</p>
+                    </div>
+                </div>
+                <!-- Card 3: Varejo -->
+                <div class="segmento-card">
+                    <div class="segmento-img-box">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/07/woman-in-crafting-workshop-2026-03-20-01-02-40-utc-1024x683.jpg" alt="Varejo e Shoppings" loading="lazy" />
+                    </div>
+                    <div class="segmento-body">
+                        <div class="segmento-title">Varejo</div>
+                        <div class="segmento-divider"></div>
+                        <p class="segmento-desc">No varejo, cada minuto de operação conta e a experiência do cliente é decisiva. Apoiamos lojas, redes e shoppings com tecnologia que agiliza o atendimento e sustenta a operação no ritmo do negócio.</p>
+                    </div>
+                </div>
+                <!-- Card 4: Saúde -->
+                <div class="segmento-card">
+                    <div class="segmento-img-box">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/07/diverse-doctors-discussing-work-and-walking-throug-2026-03-25-02-18-27-utc-1024x683.jpg" alt="Saúde e Hospitais" loading="lazy" />
+                    </div>
+                    <div class="segmento-body">
+                        <div class="segmento-title">Saúde</div>
+                        <div class="segmento-divider"></div>
+                        <p class="segmento-desc">Ambientes de saúde exigem precisão, segurança e disponibilidade constante. Entregamos tecnologia e gestão que apoiam a rotina de hospitais e clínicas, com foco em continuidade operacional e controle.</p>
+                    </div>
+                </div>
+                <!-- Card 5: Hotelaria -->
+                <div class="segmento-card">
+                    <div class="segmento-img-box">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/07/happy-receptionists-cooperating-while-working-on-a-2026-01-06-10-26-51-utc-1024x683.jpg" alt="Hotelaria e Resorts" loading="lazy" />
+                    </div>
+                    <div class="segmento-body">
+                        <div class="segmento-title">Hotelaria</div>
+                        <div class="segmento-divider"></div>
+                        <p class="segmento-desc">A hotelaria se sustenta na experiência do hóspede e na eficiência da operação. Apoiamos hotéis e resorts com tecnologia que moderniza o atendimento e mantém os serviços funcionando em horários estendidos.</p>
+                    </div>
+                </div>
+                <!-- Card 6: Condomínios -->
+                <div class="segmento-card">
+                    <div class="segmento-img-box">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/07/houses-in-suburb-at-summer-in-the-north-america-l-2026-03-26-11-36-51-utc-1024x683.jpg" alt="Condomínios Residenciais e Comerciais" loading="lazy" />
+                    </div>
+                    <div class="segmento-body">
+                        <div class="segmento-title">Condomínios</div>
+                        <div class="segmento-divider"></div>
+                        <p class="segmento-desc">Condomínios residenciais e comerciais buscam eficiência, segurança e conveniência no dia a dia. Entregamos tecnologia e gestão que organizam a operação predial e melhoram a experiência de quem vive e trabalha ali.</p>
+                    </div>
+                </div>
+                <!-- Card 7: Facilities -->
+                <div class="segmento-card">
+                    <div class="segmento-img-box">
+                        <img src="https://mgi.com.br/wp-content/uploads/2026/07/people-walking-in-modern-office-hallway-2026-01-09-10-24-53-utc-1024x683.jpg" alt="Gestão de Facilities" loading="lazy" />
+                    </div>
+                    <div class="segmento-body">
+                        <div class="segmento-title">Facilities</div>
+                        <div class="segmento-divider"></div>
+                        <p class="segmento-desc">A gestão de facilities precisa padronizar serviços e controlar custos em múltiplos ambientes. Apoiamos operações com tecnologia e gestão que trazem eficiência, padronização e previsibilidade.</p>
+                    </div>
                 </div>
             </div>
         </div>
