@@ -54,10 +54,25 @@ SEGMENTOS = {
 
 # variantes (plural/sinônimo) que canibalizam a página principal: consolidar como H2/seção
 CONSOLIDAR = {
+    # plural/sinonimo
     "tablet para empresas": "tablet para empresa",
     "tablet empresarial": "tablet para empresa",
     "tablet para órgãos públicos": "tablet para órgão público",
     "tablet para hospitais": "tablet para hospital",
+    # mesma intencao, so muda o adjetivo (robusto/industrial/resistente/samsung)
+    "tablet samsung para empresa": "tablet para empresa",
+    "tablet profissional para trabalho": "tablet samsung para trabalho",
+    "tablet robusto para prefeitura": "tablet para prefeitura",
+    "tablet robusto para logística": "tablet para logística",
+    "tablet industrial para logística": "tablet para logística",
+    "tablet robusto para indústria": "tablet para indústria",
+    "tablet industrial para fábrica": "tablet para fábrica",
+    "tablet robusto para chão de fábrica": "tablet para chão de fábrica",
+    "tablet robusto para mineração": "tablet para mineração",
+    "tablet industrial para mineração": "tablet para mineração",
+    "tablet resistente para mineração": "tablet para mineração",
+    "tablet robusto para hospital": "tablet para hospital",
+    "tablet robusto para trabalho em campo": "tablet para trabalho em campo",
 }
 
 def slugify(t):
@@ -86,6 +101,13 @@ for seg, (pilar, dor, kws) in SEGMENTOS.items():
             "dor_cliente": dor,
             "cta_whatsapp": f"Olá, vim pelo site MGD e gostaria de orçamento de {PRODUTO} para {kw.replace('tablet ', '', 1)}.",
         })
+
+sec = {}
+for r in rows:
+    if r["acao"].startswith("CONSOLIDAR"):
+        sec.setdefault(r["canonical"].strip("/"), []).append(r["palavra_chave"])
+for r in rows:
+    r["kw_secundarias"] = " | ".join(sec.get(r["slug"], [])) if r["acao"].startswith("CRIAR") else ""
 
 with open("matriz-100-lps.csv", "w", newline="", encoding="utf-8-sig") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0]), delimiter=";")

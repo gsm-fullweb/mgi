@@ -31,7 +31,7 @@ Base: Keyword Stats do Planejador (Set/2025 a Ago/2026, 690 termos). Dados da ma
 
 **Negativar no Google Ads e evitar no conteúdo:** leitura (ebook/pdf), estudar, desenho, jogos, barato, criança, iPad, Xiaomi.
 
-## 2. Arquitetura SEO (9 pilares → 96 LPs)
+## 2. Arquitetura SEO (9 pilares → 83 LPs (após consolidar canibalização, seção 7))
 
 Página principal: Samsung Galaxy Tab Active5 5G. Cada pilar liga de volta a ela, e cada LP filha tem canonical próprio e liga ao seu pilar.
 
@@ -111,3 +111,35 @@ Conferir cada dado técnico no site da Samsung antes de publicar.
 1. Coloque as 4 perguntas "Sim" em FAQ com schema `FAQPage` em todas as LPs, variando a resposta pelo segmento.
 2. Crie um post de blog "Tablet robusto x tablet comum: qual escolher para a empresa" que responda as 4 e ligue ao hub.
 3. Não escreva conteúdo para as 3 perguntas de HD externo e leitura.
+
+## 7. Unicidade: sem canibalização e sem duplicidade
+
+### Canibalização (duas URLs disputando a mesma busca)
+Auditei a matriz: 17 pares tinham a mesma intenção e mudavam só o adjetivo (*robusto / industrial / resistente / samsung*). O Google trata como a mesma busca e rankeia só uma. Por exemplo, "tablet para mineração", "tablet robusto para mineração", "tablet industrial para mineração" e "tablet resistente para mineração".
+
+**Regra adotada:** uma intenção = uma URL. As variantes viram **palavras secundárias** da URL principal (aparecem em H2, FAQ e texto), não ganham página própria. A matriz foi regenerada:
+- **83 LPs únicas** (antes 96) e 17 linhas marcadas CONSOLIDAR.
+- Nova coluna `kw_secundarias` com as variantes que cada página deve cobrir.
+- Cada palavra principal aponta para **uma só URL**. Não repita a palavra principal de outra LP no title, H1 ou H2.
+
+As 13 vagas liberadas devem ir para intenções realmente diferentes (Bens de consumo e Leitura de dados em campo, seção 2).
+
+### Duplicidade (texto igual com uma palavra trocada)
+Trocar "logística" por "mineração" no mesmo molde é duplicidade. Cada LP precisa destes 6 elementos **únicos**:
+
+1. **Persona e cenário real.** Ex.: "conferente no CD com luvas às 5h" ≠ "fiscal de posturas sob chuva".
+2. **Problema específico da atividade**, não do segmento.
+3. **Requisito do Active5 priorizado para aquele caso.** Ex.: luva e bateria removível (logística), IP68 (saneamento), higienização (saúde).
+4. **Fluxo de trabalho de ponta a ponta:** o que o usuário faz no tablet, passo a passo.
+5. **FAQ próprio**, com 4 a 6 perguntas, das quais no máximo 2 podem ser compartilhadas com outras LPs.
+6. **Title, H1, meta description e slug exclusivos.** A ficha técnica e o rodapé comercial podem se repetir, mas ficam abaixo de 30% do texto.
+
+### Trava antes de publicar
+`verificar_unicidade.py <pasta-com-html>` barra a publicação se houver:
+- title, H1 ou meta description repetidos ou vazios;
+- canonical que não aponta para a própria página (causa do status "alternativa com canonical adequada");
+- menos de 600 palavras ou title com mais de 60 caracteres;
+- pergunta de FAQ repetida em mais de 2 páginas;
+- similaridade de texto acima de 30% entre qualquer par de LPs (shingles de 5 palavras).
+
+Fluxo: gerar HTML → rodar o verificador → só publicar em rascunho quando sair sem problemas. Testei o verificador com páginas de exemplo e ele pegou uma cópia com 97% de similaridade.
