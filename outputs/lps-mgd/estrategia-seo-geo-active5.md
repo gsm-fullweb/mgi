@@ -160,3 +160,34 @@ O produto é um só: [Active5 5G](https://mgd-dist.com.br/produtos/active5/). O 
 Consequência: a variação entre as LPs é de **situação**, e os fatos do produto ficam constantes. Por isso a ficha técnica se repete, mas deve ficar abaixo de 30% do texto para passar no verificador. O diferencial de cada LP precisa ser o cenário.
 
 **Fatos que não constam na página e não devem ser afirmados:** Excel/Office, teclado acessório, leitor de código de barras integrado, autonomia em horas, peso, tamanho de tela e preço. Se quiser usá-los, confirme com a Samsung ou a equipe da MGD primeiro.
+
+## 9. Modelo oficial: LP de Logística
+
+Li a [LP de Logística](https://mgd-dist.com.br/tablet-robusto-active5-logistica/) publicada e salvei o bloco de conteúdo em `modelo-logistica.html` (CSS `.mgd-lp`, 14 seções, 2 JSON-LD, ~2.100 palavras, 7 FAQs). O `index.html` local não está acessível daqui; usei a versão publicada. Se o `index.html` for diferente, me envie.
+
+### Estrutura (todas as categorias seguem)
+| # | Bloco | Muda por categoria? |
+|---|---|---|
+| 1 | Hero: H1 "Melhor Tablet para {situação}: Samsung Galaxy Tab Active5 5G" + CTAs | H1, subtítulo, bullets |
+| 2 | Formulário HubSpot (`#orcamento`) + WhatsApp | Só a mensagem do WhatsApp |
+| 3 | Critérios do melhor tablet para {situação} (6 cards `h3`) | **Sim, totalmente** |
+| 4 | Aplicações (6 cards: recebimento, separação, inventário…) | **Sim, totalmente** |
+| 5 | Recursos e ficha técnica | Ficha fixa, destaque por situação |
+| 6 | "Por que o tablet robusto é indispensável…" (3 `h3`) | **Sim, totalmente** |
+| 7 | Benefícios da operação (6 `h3`: doca, empilhadeira, turnos, chuva/EPI, Knox) | **Sim, totalmente** |
+| 8 | Como funciona (4 passos) | Texto adaptado |
+| 9 | FAQ (7 perguntas) + `FAQPage` | **Sim, 5 das 7 únicas** |
+| 10 | Links para produto e outros segmentos | Lista de segmentos irmãos |
+| 11 | CTA final | Situação no texto |
+| - | JSON-LD: `BreadcrumbList`, `Product`, `Organization`, `FAQPage` | URLs e FAQ |
+
+Os blocos 3, 4, 6, 7 e 9 concentram o conteúdo único. É onde o verificador de duplicidade deve atuar.
+
+### Pontos de atenção no modelo (conferir antes de replicar 83 vezes)
+1. **Afirmações que não constam na página do produto:** "Tela de 8”", "Wi-Fi 6", "Leitura 1D/2D e Assinatura Digital", "Samsung Knox", "Integração WMS/ERP e Menor TCO", "Modo Sem Bateria", "Wet Touch". Confirme com a Samsung ou a equipe da MGD, porque serão repetidas em todas as LPs. Em especial: o FAQ pergunta se o Active5 "substitui um coletor de dados com leitor de código de barras". A resposta precisa ser honesta sobre como a leitura é feita (câmera ou acessório), para não gerar reclamação de cliente.
+2. **Palavra-chave:** o H1 do modelo começa com "Melhor Tablet para Logística", que pode ter intenção de comparação ("melhor"). Mantenha, mas o title "Tablet robusto Active5 para logística | MGD" repete o termo de marca do produto. Nas novas LPs o title deve ser a situação: "Tablet para controle de estoque | Samsung Galaxy Tab Active5 | MGD".
+3. **Canonical:** o modelo já tem canonical próprio (`/tablet-robusto-active5-logistica/`), ok. Como as 8 LPs originais também são pilares, as filhas devem ligar ao pilar e ao produto.
+4. **Slug do modelo** (`tablet-robusto-active5-logistica`) difere do padrão da matriz (`tablet-para-logistica`). Decisão: manter os 9 slugs dos pilares como estão e usar o padrão da matriz nas filhas.
+
+### Próximo passo
+Gerar cada LP a partir do `modelo-logistica.html`, mantendo CSS e blocos fixos e reescrevendo os blocos 3, 4, 6, 7 e 9 por situação, com `verificar_unicidade.py` como trava.

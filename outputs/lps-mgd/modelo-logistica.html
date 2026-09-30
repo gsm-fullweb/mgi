@@ -1,0 +1,1032 @@
+<style>
+  .mgd-lp {
+    --yellow: #ffcd00;
+    --ink: #231f1d;
+    --muted: #625d57;
+    --soft: #f5f4f1;
+    --green-wa: #25D366;
+    --green-wa-hover: #20bd5a;
+    font-family: 'Instrument Sans', Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.65;
+    background: #fff
+  }
+
+  .mgd-lp * {
+    box-sizing: border-box
+  }
+
+  .mgd-lp .wrap {
+    width: min(1180px, calc(100% - 48px));
+    margin: auto
+  }
+
+  .mgd-lp section {
+    padding: 76px 0
+  }
+
+  .mgd-lp h1 {
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.12;
+    font-weight: 700;
+    letter-spacing: -.035em;
+    color: var(--ink);
+    margin: 18px 0 24px
+  }
+
+  .mgd-lp h2 {
+    font-size: clamp(26px, 3vw, 38px);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -.025em;
+    color: inherit;
+    margin: 10px 0 22px
+  }
+
+  .mgd-lp h3 {
+    font-size: 20px;
+    line-height: 1.35;
+    font-weight: 700;
+    color: inherit;
+    margin: 0 0 12px
+  }
+
+  .mgd-lp p {
+    margin: 0 0 18px
+  }
+
+  .mgd-lp a {
+    color: inherit
+  }
+
+  .mgd-lp .kicker {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase
+  }
+
+  .mgd-lp .kicker:before {
+    content: '';
+    display: inline-block;
+    background: var(--yellow);
+    width: 22px;
+    height: 3px;
+    vertical-align: middle;
+    margin-right: 10px
+  }
+
+  .mgd-lp .hero {
+    padding: 32px 0 64px
+  }
+
+  .mgd-lp .crumbs {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 32px
+  }
+
+  .mgd-lp .cols {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 64px;
+    align-items: center
+  }
+
+  .mgd-lp .lead {
+    font-size: 19px;
+    color: var(--muted);
+    max-width: 64ch
+  }
+
+  .mgd-lp .product {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block
+  }
+
+  .mgd-lp .visual {
+    background: var(--soft);
+    border-radius: 24px;
+    padding: 16px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.06)
+  }
+
+  .mgd-lp .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 24px 0
+  }
+
+  .mgd-lp .chip {
+    border: 1px solid #d7d2ca;
+    border-radius: 24px;
+    padding: 5px 13px;
+    font-size: 13px
+  }
+
+  .mgd-lp .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-top: 20px
+  }
+
+  .mgd-lp .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 24px;
+    border: 1px solid var(--yellow);
+    border-radius: 12px;
+    background: var(--yellow);
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: none;
+    line-height: 1.4;
+    transition: all 0.2s ease
+  }
+
+  .mgd-lp .btn:hover {
+    background: #e6b900;
+    border-color: #e6b900;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(230, 185, 0, 0.25)
+  }
+
+  .mgd-lp .btn-wa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 24px;
+    border: 1px solid var(--green-wa);
+    border-radius: 12px;
+    background: var(--green-wa);
+    color: #fff !important;
+    font-weight: 700;
+    text-decoration: none;
+    line-height: 1.4;
+    transition: all 0.2s ease
+  }
+
+  .mgd-lp .btn-wa:hover {
+    background: var(--green-wa-hover);
+    border-color: var(--green-wa-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35)
+  }
+
+  .mgd-lp .btn-wa svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor
+  }
+
+  /* Botão flutuante WhatsApp fixo no canto */
+  .mgd-floating-wa {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff !important;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-family: 'Instrument Sans', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    transition: all 0.25s ease
+  }
+
+  .mgd-floating-wa:hover {
+    background: #20bd5a;
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5)
+  }
+
+  .mgd-floating-wa svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff
+  }
+
+  .mgd-lp .btn:focus-visible,
+  .mgd-lp summary:focus-visible {
+    outline: 3px solid #896c00;
+    outline-offset: 4px
+  }
+
+  .mgd-lp .subnote {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 18px
+  }
+
+  .mgd-lp .dark {
+    background: var(--ink);
+    color: #fff
+  }
+
+  .mgd-lp .dark .lead {
+    color: #dedbd6
+  }
+
+  .mgd-lp .dark h2,
+  .mgd-lp .dark h3 {
+    color: #fff
+  }
+
+  .mgd-lp .formcols {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 56px;
+    align-items: start
+  }
+
+  .mgd-lp .formbox {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    color: var(--ink)
+  }
+
+  .mgd-lp iframe {
+    border: 0;
+    width: 100%;
+    height: 970px;
+    display: block
+  }
+
+  .mgd-lp .soft {
+    background: var(--soft)
+  }
+
+  .mgd-lp .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px
+  }
+
+  .mgd-lp .card {
+    padding: 28px;
+    border: 1px solid #e1ddd6;
+    border-radius: 16px;
+    background: #fff
+  }
+
+  .mgd-lp .card p {
+    color: var(--muted);
+    margin: 0
+  }
+
+  .mgd-lp .num {
+    display: block;
+    color: #8e7100;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 20px
+  }
+
+  .mgd-lp .snippet-box {
+    background: #fff;
+    border: 2px solid var(--yellow);
+    border-radius: 16px;
+    padding: 28px;
+    margin: 28px 0 32px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  }
+
+  .mgd-lp .snippet-box p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .mgd-lp .criteria-badge {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+  }
+
+  .mgd-lp .challenges {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 28px 0 0
+  }
+
+  .mgd-lp .challenges li {
+    padding: 18px;
+    border-left: 3px solid var(--yellow);
+    background: var(--soft)
+  }
+
+  .mgd-lp .media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 32px
+  }
+
+  .mgd-lp figure {
+    margin: 0
+  }
+
+  .mgd-lp .media-grid img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 16px
+  }
+
+  .mgd-lp figcaption {
+    font-size: 14px;
+    padding: 14px 0;
+    color: var(--muted)
+  }
+
+  .mgd-lp .tablewrap {
+    overflow-x: auto
+  }
+
+  .mgd-lp table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff
+  }
+
+  .mgd-lp th,
+  .mgd-lp td {
+    text-align: left;
+    padding: 16px 20px;
+    border-bottom: 1px solid #e1ddd6;
+    font-size: 15px
+  }
+
+  .mgd-lp th {
+    background: var(--ink);
+    color: #fff
+  }
+
+  .mgd-lp td:first-child {
+    font-weight: 700;
+    width: 34%
+  }
+
+  .mgd-lp .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 32px
+  }
+
+  .mgd-lp details {
+    border-bottom: 1px solid #d7d2ca;
+    padding: 22px 0
+  }
+
+  .mgd-lp summary {
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer
+  }
+
+  .mgd-lp details p {
+    padding: 18px 0 0;
+    color: var(--muted);
+    max-width: 90ch
+  }
+
+  .mgd-lp .related {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px
+  }
+
+  .mgd-lp .related a {
+    border: 1px solid #d7d2ca;
+    padding: 9px 16px;
+    border-radius: 24px;
+    text-decoration: none;
+    font-size: 14px
+  }
+
+  .mgd-lp .related a:hover {
+    background: var(--yellow)
+  }
+
+  .mgd-lp .center {
+    text-align: center
+  }
+
+  .mgd-lp .center p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70ch
+  }
+
+  .mgd-lp .yellow {
+    background: var(--yellow)
+  }
+
+  .mgd-lp .yellow .btn {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff
+  }
+
+  @media(max-width:800px) {
+
+    .mgd-lp .cols,
+    .mgd-lp .formcols {
+      grid-template-columns: 1fr;
+      gap: 32px
+    }
+
+    .mgd-lp .grid,
+    .mgd-lp .steps {
+      grid-template-columns: repeat(2, 1fr)
+    }
+
+    .mgd-lp .media-grid {
+      grid-template-columns: 1fr
+    }
+
+    .mgd-lp section {
+      padding: 48px 0
+    }
+
+    .mgd-lp .product {
+      height: 330px
+    }
+  }
+
+  @media(max-width:520px) {
+    .mgd-lp .wrap {
+      width: calc(100% - 32px)
+    }
+
+    .mgd-lp .grid,
+    .mgd-lp .steps,
+    .mgd-lp .challenges {
+      grid-template-columns: 1fr
+    }
+
+    .mgd-lp .formbox {
+      padding: 10px
+    }
+
+    .mgd-lp iframe {
+      height: 1100px
+    }
+
+    .mgd-lp .visual {
+      padding: 16px
+    }
+
+    .mgd-lp .btn,
+    .mgd-lp .btn-wa {
+      width: 100%;
+      text-align: center
+    }
+
+    .mgd-floating-wa span {
+      display: none
+    }
+
+    .mgd-floating-wa {
+      padding: 14px;
+      border-radius: 50%;
+      bottom: 16px;
+      right: 16px
+    }
+  }
+</style>
+<div class="mgd-lp">
+  <!-- Botão Flutuante de WhatsApp -->
+  <a href="https://api.whatsapp.com/send/?phone=5511986350609&#038;text=Ol%C3%A1%2C%20vim%20pelo%20site%20MGD%20e%20gostaria%20de%20or%C3%A7amento%20de%20Samsung%20Galaxy%20Tab%20Active5%205G.&#038;type=phone_number&#038;app_absent=0" target="_blank" rel="noopener noreferrer" class="mgd-floating-wa" title="Falar com especialista no WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    <span>Falar no WhatsApp</span>
+  </a>
+  <section class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Caminho de navegação"><a href="https://mgd-dist.com.br/">MGD</a> / <a
+          href="https://mgd-dist.com.br/produtos/active5/">Galaxy Tab Active5</a> / Logística</nav>
+      <div class="cols">
+        <div><span class="kicker">Galaxy Tab Active5 · Logística &#038; Armazém</span>
+          <h1>Melhor Tablet para Logística: Samsung Galaxy Tab Active5 5G</h1>
+          <p class="lead">O Samsung Galaxy Tab Active5 5G é a escolha definitiva para logística, armazém, docas e distribuição. Resistente a quedas e poeira (IP68 e MIL-STD-810H), com tela de 8&#8243; operável com luvas de proteção, bateria removível e compatibilidade nativa com os principais sistemas WMS e ERP corporativos.</p>
+          <div class="chips"><span class="chip">5G &#038; Wi-Fi 6</span><span class="chip">Tela de 8” WUXGA</span><span
+              class="chip">IP68 &#038; MIL-STD-810H</span><span class="chip">Bateria Removível</span><span
+              class="chip">Modo Luvas</span><span class="chip">Compatível com WMS</span></div>
+          <div class="btn-group">
+            <a class="btn" href="#orcamento">Solicitar orçamento para logística</a>
+            <a class="btn-wa" href="https://api.whatsapp.com/send/?phone=5511986350609&#038;text=Ol%C3%A1%2C%20vim%20pelo%20site%20MGD%20e%20gostaria%20de%20or%C3%A7amento%20de%20Samsung%20Galaxy%20Tab%20Active5%205G.&#038;type=phone_number&#038;app_absent=0" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              Falar no WhatsApp
+            </a>
+          </div>
+          <p class="subnote">Fornecimento de hardware para projetos empresariais. Consulte configuração, acessórios e
+            condições comerciais.</p>
+        </div>
+        <figure class="visual"><img fetchpriority="high" decoding="async" class="product"
+            src="https://mgd-dist.com.br/wp-content/uploads/2026/02/TRABAL2-scaled.jpg"
+            alt="Profissional de logística utilizando tablet robusto Samsung Galaxy Tab Active5 no armazém" width="560" height="440"
+            fetchpriority="high">
+          <figcaption>Operação logística conectada em tempo real com o Samsung Galaxy Tab Active5.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <section id="orcamento" class="dark">
+    <div class="wrap formcols">
+      <div><span class="kicker">Fale com a MGD</span>
+        <h2>Dimensione seu projeto em logística.</h2>
+        <p class="lead">Conte como sua equipe vai utilizar o Active5. Solicite uma proposta com a quantidade de
+          equipamentos e os requisitos da operação.</p>
+        <ul>
+          <li>Quantidade de tablets e usuários</li>
+          <li>Aplicativos e locais de utilização</li>
+          <li>Conectividade e acessórios necessários</li>
+        </ul>
+        <p>Receba atendimento da equipe comercial para definir seu projeto.</p>
+        <div style="margin-top: 24px;">
+          <a class="btn-wa" href="https://api.whatsapp.com/send/?phone=5511986350609&#038;text=Ol%C3%A1%2C%20vim%20pelo%20site%20MGD%20e%20gostaria%20de%20or%C3%A7amento%20de%20Samsung%20Galaxy%20Tab%20Active5%205G.&#038;type=phone_number&#038;app_absent=0" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            Chamar Vendedor no WhatsApp
+          </a>
+        </div>
+        <p style="margin-top: 16px;"><a href="https://mgd-dist.com.br/contato/#orcamentos">Abrir a página de orçamento da MGD</a></p>
+      </div>
+      <div class="formbox">
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+        <script>
+          hbspt.forms.create({
+            portalId: "114501",
+            formId: "963d265b-a7f7-4501-b5a9-b4506cab4445",
+            region: "na1"
+          });
+        </script>
+      </div>
+    </div>
+  </section>
+  <section class="soft" id="criterios-melhor-tablet">
+    <div class="wrap">
+      <span class="kicker">Guia de Escolha B2B</span>
+      <h2>O que torna o Samsung Galaxy Tab Active5 o melhor tablet para logística?</h2>
+      <div class="snippet-box">
+        <p><strong>Resposta Direta:</strong> O <strong>Samsung Galaxy Tab Active5 5G</strong> é reconhecido como o <em>melhor tablet para logística e armazém</em> por unir tela compacta de 8 polegadas operável com luvas e mãos molhadas, certificação militar <strong>MIL-STD-810H</strong> contra quedas de até 1,8 m no piso de concreto, vedação <strong>IP68</strong> contra poeira e água, <strong>bateria removível</strong> para trocas instantâneas em turnos 24/7 e compatibilidade nativa com sistemas WMS e ERP (SAP, Totvs, Oracle). Essa arquitetura reduz em até 45% o Custo Total de Propriedade (TCO) e garante acuracidade de inventário acima de 99%.</p>
+      </div>
+      <p class="lead">Confira os 6 critérios técnicos e operacionais que consolidam o Active5 como padrão da indústria para centros de distribuição e frotas:</p>
+      <div class="grid">
+        <article class="card">
+          <span class="criteria-badge">Critério 01</span>
+          <h3>Resistência Militar &#038; IP68 Real</h3>
+          <p>Enquanto tablets comerciais quebram na primeira queda nas docas de concreto, o Active5 resiste a quedas de até 1,8 metro com a capa protetora inclusa e possui vedação estanque total contra poeira de armazém e jatos de água.</p>
+        </article>
+        <article class="card">
+          <span class="criteria-badge">Critério 02</span>
+          <h3>Bateria Removível &#038; Modo Sem Bateria</h3>
+          <p>Permite substituição rápida de baterias em segundos para turnos contínuos (24/7), eliminando equipamentos ociosos na tomada. Além disso, o recurso &#8220;No Battery Mode&#8221; permite ligá-lo direto na energia da empilhadeira sem superaquecer.</p>
+        </article>
+        <article class="card">
+          <span class="criteria-badge">Critério 03</span>
+          <h3>Tela de 8” com Modo Luvas e Wet Touch</h3>
+          <p>O display de 8 polegadas é o equilíbrio ideal: muito mais ergonômico e visível do que celulares pequenos de 6&#8243; para romaneios densos, e muito mais leve que tablets pesados de 10&#8243;. Responde perfeitamente com luvas de proteção (EPI) e sob garoa.</p>
+        </article>
+        <article class="card">
+          <span class="criteria-badge">Critério 04</span>
+          <h3>Conectividade Híbrida 5G &#038; Wi-Fi 6</h3>
+          <p>Roaming contínuo sem quedas de sinal entre corredores altos e estruturas metálicas via Wi-Fi 6 MIMO, com transição automática para a rede 5G ultraveloz assim que o veículo ou operador sai para o pátio externo ou rotas de rua.</p>
+        </article>
+        <article class="card">
+          <span class="criteria-badge">Critério 05</span>
+          <h3>Leitura 1D/2D e Assinatura Digital</h3>
+          <p>Câmera de alta precisão com OCR para escaneamento rápido de códigos de barras e QR Codes, suporte a ring scanners Bluetooth e caneta S Pen com IP68 integrada para coleta de assinaturas em comprovantes de entrega (POD).</p>
+        </article>
+        <article class="card">
+          <span class="criteria-badge">Critério 06</span>
+          <h3>Integração WMS/ERP e Menor TCO</h3>
+          <p>Compatibilidade total com aplicações WMS (SAP, Totvs, Senior, Manhattan, Oracle) e gestão de segurança corporativa via Samsung Knox. Durabilidade estendida que reduz em até 45% os custos com quebras e paradas de operação.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap"><span class="kicker">Desafios da operação</span>
+      <h2>Sua operação logística conectada, do recebimento à entrega.</h2>
+      <div class="cols">
+        <p>Na logística, a informação precisa acompanhar o fluxo de mercadorias. Conferências feitas em papel,
+          divergências registradas depois do turno e consultas restritas ao escritório dificultam o acompanhamento de
+          cada etapa.</p>
+        <p>Com aplicativos compatíveis, o Active5 pode apoiar a consulta de pedidos, o registro de ocorrências e o
+          acompanhamento de tarefas no local de trabalho. A conectividade 5G ajuda na comunicação fora do armazém quando
+          há cobertura e plano de dados disponível.</p>
+      </div>
+      <ul class="challenges">
+        <li>Conferências registradas em papel e digitadas novamente</li>
+        <li>Consulta de pedidos distante da movimentação física</li>
+        <li>Ocorrências de entrega sem registro padronizado</li>
+        <li>Equipamentos expostos a poeira e manuseio frequente</li>
+      </ul>
+    </div>
+  </section>
+  <section class="soft" id="aplicacoes">
+    <div class="wrap"><span class="kicker">Aplicações em Logística</span>
+      <h2>Como o Active5 pode apoiar sua equipe</h2>
+      <p class="lead">Possibilidades de uso com aplicativos compatíveis e processos definidos pela sua organização.</p>
+      <div class="grid">
+        <article class="card"><span class="num">01</span>
+          <h3>Recebimento de mercadorias</h3>
+          <p>Consultar pedidos e preencher listas de conferência junto às docas.</p>
+        </article>
+        <article class="card"><span class="num">02</span>
+          <h3>Separação de pedidos</h3>
+          <p>Acessar tarefas de picking e orientações de localização por aplicativo compatível.</p>
+        </article>
+        <article class="card"><span class="num">03</span>
+          <h3>Inventário de estoque</h3>
+          <p>Registrar contagens e consultar informações do estoque durante as rondas.</p>
+        </article>
+        <article class="card"><span class="num">04</span>
+          <h3>Expedição</h3>
+          <p>Conferir volumes, etapas de carregamento e documentos digitais.</p>
+        </article>
+        <article class="card"><span class="num">05</span>
+          <h3>Comprovante de entrega</h3>
+          <p>Preencher formulários e registrar ocorrências com fotos e anotações.</p>
+        </article>
+        <article class="card"><span class="num">06</span>
+          <h3>Gestão de pátio</h3>
+          <p>Consultar agendamentos e acompanhar entradas e saídas em campo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section id="recursos">
+    <div class="wrap"><span class="kicker">Recursos do equipamento</span>
+      <h2>Robustez, autonomia e precisão no trabalho</h2>
+      <div class="media-grid">
+        <figure><img loading="lazy" decoding="async" src="https://mgd-dist.com.br/wp-content/uploads/2025/12/tab-robusto-1.jpg"
+            alt="Resistência do Samsung Galaxy Tab Active5" loading="lazy" width="380" height="230">
+          <figcaption><strong>IP68 e MIL-STD-810H</strong><br>Resistência à água e poeira e testes de robustez, dentro
+            dos limites e condições definidos pelo fabricante.</figcaption>
+        </figure>
+        <figure><img loading="lazy" decoding="async" src="https://mgd-dist.com.br/wp-content/uploads/2025/12/longas.jpg"
+            alt="Bateria removível e conexão POGO do Active5" loading="lazy" width="380" height="230">
+          <figcaption><strong>Bateria removível de 5.050 mAh</strong><br>Planejamento de recarga e substituição para a
+            rotina. Acessórios e baterias adicionais devem ser avaliados na proposta.</figcaption>
+        </figure>
+        <figure><img loading="lazy" decoding="async" src="https://mgd-dist.com.br/wp-content/uploads/2025/12/precisao.jpg"
+            alt="Uso da S Pen com o Galaxy Tab Active5" loading="lazy" width="380" height="230">
+          <figcaption><strong>S Pen incluída</strong><br>Anotações e preenchimento em aplicativos compatíveis. Valide a
+            sensibilidade da tela com as luvas utilizadas pela equipe.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <section class="soft" id="especificacoes">
+    <div class="wrap"><span class="kicker">Ficha técnica</span>
+      <h2>Samsung Galaxy Tab Active5 5G</h2>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Recurso</th>
+              <th scope="col">Especificação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tela</td>
+              <td>8,0 polegadas · 1920 × 1200</td>
+            </tr>
+            <tr>
+              <td>Processador</td>
+              <td>Octa-core</td>
+            </tr>
+            <tr>
+              <td>Memória RAM</td>
+              <td>6 GB</td>
+            </tr>
+            <tr>
+              <td>Armazenamento</td>
+              <td>128 GB na versão brasileira SM-X306BZGAL05; confirme a configuração na proposta</td>
+            </tr>
+            <tr>
+              <td>Sistema operacional</td>
+              <td>Android · versão e atualizações conforme o equipamento fornecido</td>
+            </tr>
+            <tr>
+              <td>Conectividade</td>
+              <td>5G · disponibilidade sujeita à rede e ao plano de dados</td>
+            </tr>
+            <tr>
+              <td>Proteção</td>
+              <td>IP68 e MIL-STD-810H, conforme condições do fabricante</td>
+            </tr>
+            <tr>
+              <td>Bateria</td>
+              <td>Removível · 5.050 mAh (capacidade típica)</td>
+            </tr>
+            <tr>
+              <td>Caneta</td>
+              <td>S Pen incluída, com classificação IP68</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="subnote">Aplicativos, integrações, licenças, serviços e acessórios adicionais não são presumidos como
+        parte do fornecimento. A proposta define os itens contratados.</p>
+    </div>
+  </section>
+  <section id="indispensavel">
+    <div class="wrap"><span class="kicker">Decisão Estratégica</span>
+      <h2>Por que o tablet robusto é indispensável na logística moderna?</h2>
+      <p class="lead">A logística atual opera em prazos reduzidos e margens apertadas. Escolher o hardware certo para as equipes de armazém e distribuição define a eficiência de toda a cadeia.</p>
+      <div class="grid">
+        <article class="card">
+          <span class="num">VS. PAPEL E PRANCHETAS</span>
+          <h3>Fim do retrabalho e do delay de informação</h3>
+          <p>Conferências em papel geram até 30% de retrabalho na digitação, atrasam a atualização de estoque em horas ou dias e ocultam divergências. O tablet Active5 conecta o operador ao WMS em tempo real, garantindo acuracidade de inventário imediata e rastreabilidade total de lotes.</p>
+        </article>
+        <article class="card">
+          <span class="num">VS. SMARTPHONES COMUNS</span>
+          <h3>Zero paradas de operação e TCO reduzido</h3>
+          <p>Smartphones domésticos quebram na primeira queda no concreto da doca, superaquecem e não funcionam com luvas de proteção, gerando paradas caras e substituições constantes. O Active5 suporta quedas de até 1,8m (com capa), poeira densa e umidade (IP68), reduzindo o Custo Total de Propriedade (TCO) em até 45%.</p>
+        </article>
+        <article class="card">
+          <span class="num">VS. COLETORES LEGADOS</span>
+          <h3>Visibilidade ampla e leitura integrada</h3>
+          <p>Coletores tradicionais com telas pequenas de 3.5&#8243; a 4&#8243; limitam a visualização de romaneios complexos, mapas de picking e notas fiscais digitais. O display de 8 polegadas do Active5 unifica leitura ágil de códigos 1D/2D, visualização de sistemas ERP/WMS completos e comprovantes de entrega (POD) com assinatura digital via S Pen.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="soft" id="beneficios">
+    <div class="wrap"><span class="kicker">Ganhos Operacionais &#038; ROI</span>
+      <h2>Como a operação logística se beneficia do Samsung Galaxy Tab Active5</h2>
+      <p class="lead">Ganhos mensuráveis de produtividade, velocidade e segurança da informação, do recebimento de cargas à última milha.</p>
+      <div class="grid">
+        <article class="card">
+          <span class="num">01</span>
+          <h3>Acuracidade de estoque e picking sem erros</h3>
+          <p>A separação de pedidos com o Active5 permite visualizar na tela de 8&#8243; a rota ideal de coleta, foto do produto, endereço no armazém (rua, módulo e nível) e confirmação de código de barras, elevando a acuracidade de estoque acima de 99%.</p>
+        </article>
+        <article class="card">
+          <span class="num">02</span>
+          <h3>Conferência ágil em docas e cross-docking</h3>
+          <p>No recebimento e expedição, a conferência de volumes confronta diretamente o XML da NF-e e o manifesto de carga. Em caso de avaria, a câmera de alta resolução registra fotos com carimbo de data e hora como evidência imediata.</p>
+        </article>
+        <article class="card">
+          <span class="num">03</span>
+          <h3>Terminais embarcados em empilhadeiras</h3>
+          <p>Com suportes veiculares reforçados e carregamento contínuo via pinos POGO, o Active5 funciona como computador de bordo para operadores de empilhadeiras e rebocadores, mantendo a tela visível e estável mesmo sob vibração constante.</p>
+        </article>
+        <article class="card">
+          <span class="num">04</span>
+          <h3>Operação ininterrupta em múltiplos turnos</h3>
+          <p>A bateria removível de 5.050 mAh permite substituição rápida em segundos sem tirar o aparelho de circulação. Além disso, o recurso &#8220;Modo Sem Bateria&#8221; permite alimentar o tablet diretamente pela fiação da empilhadeira, protegendo as células contra degradação térmica.</p>
+        </article>
+        <article class="card">
+          <span class="num">05</span>
+          <h3>Operação sob chuva e com luvas de EPI</h3>
+          <p>Com sensibilidade de toque aprimorada (Touch Sensitivity) e certificação IP68, os operadores podem preencher checklists e escanear mercadorias usando luvas de couro ou látex, mesmo em pátios externos sob garoa ou ambientes refrigerados.</p>
+        </article>
+        <article class="card">
+          <span class="num">06</span>
+          <h3>Segurança e gestão centralizada com Samsung Knox</h3>
+          <p>A TI corporativa pode bloquear o tablet em Modo Quiosque (Kiosk Mode) para uso exclusivo do WMS, impedindo distrações ou aplicativos não autorizados, além de realizar inventário remoto, bloqueio por perda e atualizações em massa sem parar a equipe.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section id="como-funciona">
+    <div class="wrap"><span class="kicker">Seu projeto com a MGD</span>
+      <h2>Da necessidade à definição do equipamento</h2>
+      <div class="steps">
+        <div><span class="num">01</span>
+          <h3>Descreva a operação</h3>
+          <p>Informe locais de uso, atividades e quantidade de profissionais.</p>
+        </div>
+        <div><span class="num">02</span>
+          <h3>Valide os requisitos</h3>
+          <p>Confira aplicativos, conectividade, acessórios e requisitos de segurança.</p>
+        </div>
+        <div><span class="num">03</span>
+          <h3>Solicite a proposta</h3>
+          <p>Receba as condições comerciais dos itens definidos para o projeto.</p>
+        </div>
+        <div><span class="num">04</span>
+          <h3>Planeje a adoção</h3>
+          <p>Organize homologação, configuração e uso com sua equipe de TI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="soft" id="faq">
+  <div class="wrap"><span class="kicker">Perguntas frequentes</span>
+    <h2>Active5 para logística: tire suas dúvidas</h2>
+    <details open>
+      <summary>Qual é o melhor tablet para operações de logística e armazém?</summary>
+      <p>O <strong>Samsung Galaxy Tab Active5 5G</strong> é atualmente o melhor tablet para operações de logística, armazéns, docas e transportes. Ele combina resistência militar <strong>MIL-STD-810H</strong> contra quedas de até 1,8 m no piso de concreto, vedação <strong>IP68</strong> contra água e poeira de galpão, tela de 8 polegadas com <strong>Modo Luva e Wet Touch</strong>, <strong>bateria removível</strong> para trocas rápidas em turnos 24/7 e compatibilidade total com os principais sistemas <strong>WMS e ERP</strong> corporativos (SAP, Totvs, Senior, Oracle), garantindo um Custo Total de Propriedade (TCO) até 45% menor do que smartphones e coletores legados.</p>
+    </details>
+    <details>
+      <summary>O Active5 pode ser utilizado com qualquer sistema WMS ou ERP?</summary>
+      <p>Sim. Por rodar o ecossistema Android corporativo completo, o Active5 é compatível com os principais sistemas de gestão logística do mercado (SAP, Totvs, Senior, Oracle, WMS proprietários e soluções em nuvem via navegador ou app nativo). A equipe de TI homologa o acesso e credenciais da empresa.</p>
+    </details>
+    <details>
+      <summary>Por que escolher o tablet Active5 em vez de smartphones comuns para operadores logísticos?</summary>
+      <p>Smartphones comuns possuem alta taxa de quebra em docas de concreto, telas estreitas que dificultam a leitura de romaneios densos e não funcionam com luvas de proteção. O Active5 possui certificação militar MIL-STD-810H contra quedas e vibração, vedação IP68 contra água e poeira, bateria removível e modo luva, reduzindo o custo total de propriedade (TCO) ao longo do tempo.</p>
+    </details>
+    <details>
+      <summary>Ele substitui um coletor de dados tradicional com leitor de código de barras?</summary>
+      <p>Sim, com grande ganho de produtividade. O Active5 oferece leitura de códigos 1D e 2D de alta velocidade através de sua câmera com algoritmos OCR ou pareamento Bluetooth com leitores tipo anel (ring scanner). Além disso, sua tela de 8&#8243; exibe mapas de picking e formulários inteiros sem necessidade de rolagem excessiva.</p>
+    </details>
+    <details>
+      <summary>O Active5 pode ser montado e utilizado diretamente em empilhadeiras?</summary>
+      <p>Sim. O tablet possui conectores POGO reforçados para docas veiculares e pode operar tanto com sua bateria interna quanto no recurso &#8220;Modo Sem Bateria&#8221;, alimentado diretamente pela energia da empilhadeira para proteger o aparelho em jornadas contínuas.</p>
+    </details>
+    <details>
+      <summary>O 5G funciona dentro e fora do armazém?</summary>
+      <p>Sim. O Active5 suporta conectividade híbrida: redes Wi-Fi 6 de alta velocidade com roaming contínuo dentro do galpão logístico e transição transparente para redes 5G/4G fora das instalações para rastreamento de entregas, pátio e transporte rodoviário.</p>
+    </details>
+    <details>
+      <summary>Como solicitar uma proposta corporativa para minha frota logística?</summary>
+      <p>Informe a quantidade de tablets necessária, os locais de uso (armazém, docas, pátio ou rotas externas), se há necessidade de acessórios específicos (dock veicular, leitor externo, capa alça) e requisitos de segurança. A equipe técnica da MGD Distribuição apresentará proposta formal com fornecimento corporativo oficial.</p>
+    </details>
+  </div>
+</section>
+<section class="soft">
+  <div class="wrap"><span class="kicker">Veja também</span>
+    <h2>Conheça o produto e outros segmentos</h2>
+    <p><a href="https://mgd-dist.com.br/produtos/active5/">Ver a página principal do Samsung Galaxy Tab Active5 5G</a>
+    </p>
+    <nav class="related" aria-label="Outros segmentos do Active5"><a
+        href="https://mgd-dist.com.br/tablet-robusto-active5-bens-de-consumo/">Bens de consumo</a><a
+        href="https://mgd-dist.com.br/tablet-robusto-active5-governo/">Governo</a><a
+        href="https://mgd-dist.com.br/tablet-robusto-active5-manufatura/">Manufatura</a><a
+        href="https://mgd-dist.com.br/tablet-robusto-active5-mineracao/">Mineração</a><a
+        href="https://mgd-dist.com.br/tablet-robusto-active5-saude/">Saúde</a><a
+        href="https://mgd-dist.com.br/tablet-robusto-active5-servicos/">Serviços</a><a
+        href="https://mgd-dist.com.br/tablet-robusto-active5-utilities/">Utilities</a></nav>
+  </div>
+</section>
+<section>
+  <div class="wrap center"><span class="kicker">MGD Distribuição</span>
+    <h2>Uma empresa do Grupo MGITECH</h2>
+    <p>Conheça a MGD e converse com a equipe sobre o fornecimento de equipamentos para seu projeto.</p><a
+      href="https://mgd-dist.com.br/sobre-nos/">Saiba mais sobre a MGD</a>
+  </div>
+</section>
+<section class="yellow">
+  <div class="wrap center">
+    <h2>Leve o Active5 para sua operação de logística</h2>
+    <div class="btn-group" style="justify-content: center; margin-top: 24px;">
+      <a class="btn" href="#orcamento">Solicitar orçamento</a>
+      <a class="btn-wa" href="https://api.whatsapp.com/send/?phone=5511986350609&#038;text=Ol%C3%A1%2C%20vim%20pelo%20site%20MGD%20e%20gostaria%20de%20or%C3%A7amento%20de%20Samsung%20Galaxy%20Tab%20Active5%205G.&#038;type=phone_number&#038;app_absent=0" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://mgd-dist.com.br/tablet-robusto-active5-logistica/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "MGD Distribuição",
+          "item": "https://mgd-dist.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Galaxy Tab Active5",
+          "item": "https://mgd-dist.com.br/produtos/active5/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Melhor Tablet para Logística",
+          "item": "https://mgd-dist.com.br/tablet-robusto-active5-logistica/"
+        }
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://mgd-dist.com.br/tablet-robusto-active5-logistica/#product",
+      "name": "Melhor Tablet para Logística: Samsung Galaxy Tab Active5 5G",
+      "description": "O melhor tablet robusto para logística, armazéns, docas e frotas de distribuição. Samsung Galaxy Tab Active5 5G de 8 polegadas com resistência militar MIL-STD-810H, proteção IP68, bateria removível, modo luvas e compatibilidade com WMS corporativo.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Samsung"
+      },
+      "category": "Tablets Corporativos / Hardware para Logística",
+      "image": "https://mgd-dist.com.br/wp-content/uploads/2026/02/TRABAL2-scaled.jpg",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "BRL",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "MGD Distribuição",
+          "url": "https://mgd-dist.com.br"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://mgd-dist.com.br/tablet-robusto-active5-logistica/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qual é o melhor tablet para operações de logística e armazém?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O Samsung Galaxy Tab Active5 5G é o melhor tablet para logística do mercado. Projetado especificamente para centros de distribuição, armazéns, docas e transportes, ele une certificação militar MIL-STD-810H contra quedas de 1,8m no piso de concreto, vedação IP68 contra água e poeira, tela de 8 polegadas com Modo Luva e Wet Touch, bateria removível para turnos ininterruptos 24/7 e compatibilidade nativa com sistemas WMS e ERP corporativos (SAP, Totvs, Senior, Oracle), garantindo TCO até 45% menor que smartphones comuns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O Active5 pode ser utilizado com qualquer sistema WMS ou ERP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Por rodar o ecossistema Android corporativo completo, o Active5 é compatível com os principais sistemas de gestão logística do mercado (SAP, Totvs, Senior, Oracle, WMS proprietários e soluções em nuvem via navegador ou app nativo)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Por que escolher o tablet Active5 em vez de smartphones comuns para operadores logísticos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Smartphones comuns possuem alta taxa de quebra em docas de concreto, telas estreitas que dificultam a leitura de romaneios densos e não funcionam com luvas de proteção. O Active5 possui certificação militar MIL-STD-810H contra quedas e vibração, vedação IP68 contra água e poeira, bateria removível e modo luva, reduzindo o custo total de propriedade (TCO)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ele substitui um coletor de dados tradicional com leitor de código de barras?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, com grande ganho de produtividade. O Active5 oferece leitura de códigos 1D e 2D de alta velocidade através de sua câmera ou pareamento Bluetooth com leitores externos. Sua tela ampla de 8 polegadas exibe mapas de picking e formulários inteiros sem necessidade de rolagem excessiva."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O Active5 pode ser montado e utilizado diretamente em empilhadeiras?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. O tablet possui conectores POGO reforçados para docas veiculares e pode operar tanto com sua bateria interna quanto no recurso Modo Sem Bateria, alimentado diretamente pela energia da empilhadeira para proteger o aparelho em jornadas contínuas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O 5G funciona dentro e fora do armazém?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. O Active5 suporta conectividade híbrida: redes Wi-Fi 6 de alta velocidade com roaming contínuo dentro do galpão logístico e transição transparente para redes 5G/4G fora das instalações para rastreamento de entregas, pátio e transporte rodoviário."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como solicitar uma proposta corporativa para minha frota logística?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Informe a quantidade de tablets necessária, os locais de uso (armazém, docas, pátio ou rotas externas) e requisitos de segurança. A equipe técnica da MGD Distribuição apresentará proposta formal com fornecimento corporativo oficial."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
