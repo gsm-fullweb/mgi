@@ -82,3 +82,32 @@ A IA cita páginas que respondem de forma direta, com dados verificáveis. Em ca
 | Depois | As demais filhas, em ondas de 20 | Cobertura total |
 
 **Riscos:** volume baixo nos verticais (não prometa tráfego, prometa leads qualificados); conteúdo fino ou duplicado em escala; afirmações técnicas sem conferência. Meça por leads via WhatsApp, menções em IA (teste mensal com 20 perguntas) e impressões no Search Console, não por cliques.
+
+## 6. "As pessoas também perguntam" (PAA)
+
+Perguntas coletadas no Google, classificadas por aderência ao Active5.
+
+| Pergunta | Usar? | Onde |
+|---|---|---|
+| Qual o melhor tablet para uso corporativo? | **Sim, prioridade 1** | FAQ do hub "tablet para empresa" e do pilar Geral |
+| Qual tablet é resistente para uso no trabalho? | **Sim, prioridade 1** | FAQ do hub "tablet robusto" e de todas as LPs |
+| Qual tablet é bom para trabalhar com planilhas? | Sim, com ressalva | FAQ de Serviços, Logística e Bens de consumo (formulários, conferência, relatórios) |
+| Qual tablet substitui um notebook? | Parcial | Seção "Active5 x notebook em campo": substitui o notebook em rota e em vistoria, não no escritório |
+| Como acessar um HD externo no tablet? | Não | Intenção informacional e consumer. Não gera lead |
+| Qual o melhor tablet específico para leitura? | Não | E-reader. Fora do público B2B |
+| Como se chama o tablet de leitura? | Não | Idem |
+
+### Respostas-modelo (formato GEO: direta, 40 a 60 palavras)
+
+Conferir cada dado técnico no site da Samsung antes de publicar.
+
+- **Melhor tablet para uso corporativo?** Para equipes que trabalham fora do escritório, o melhor é um tablet robusto, como o Samsung Galaxy Tab Active5: tem certificação IP68 e MIL-STD-810H, suporta 5G e bateria removível. Para uso só em escritório, um tablet comum atende.
+- **Tablet resistente para o trabalho?** O Galaxy Tab Active5 resiste a água, poeira e quedas (IP68 e MIL-STD-810H) e funciona com luvas. É indicado para logística, indústria, mineração, saúde, serviços e campo.
+- **Tablet bom para planilhas?** Para planilhas e formulários em campo, o Active5 roda Excel e apps corporativos e tem teclado e caneta como acessórios. Para planilhas pesadas no escritório, o notebook ainda é mais indicado.
+- **Tablet que substitui notebook?** Em rotas de entrega, vistorias e fiscalização, o tablet robusto substitui o notebook: é mais leve, liga rápido e aguenta o uso externo. Para edição pesada, o notebook continua necessário.
+
+### Como usar
+
+1. Coloque as 4 perguntas "Sim" em FAQ com schema `FAQPage` em todas as LPs, variando a resposta pelo segmento.
+2. Crie um post de blog "Tablet robusto x tablet comum: qual escolher para a empresa" que responda as 4 e ligue ao hub.
+3. Não escreva conteúdo para as 3 perguntas de HD externo e leitura.
