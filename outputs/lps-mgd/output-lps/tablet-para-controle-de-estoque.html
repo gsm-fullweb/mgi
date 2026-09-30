@@ -1,0 +1,684 @@
+<!-- wp:html -->
+<style>
+    .mgd-lp {
+        --yellow: #ffcd00;
+        --ink: #231f1d;
+        --muted: #625d57;
+        --soft: #f5f4f1;
+        font-family: 'Instrument Sans', Arial, sans-serif;
+        color: var(--ink);
+        line-height: 1.65;
+        background: #fff;
+    }
+
+    .mgd-lp * {
+        box-sizing: border-box;
+    }
+
+    .mgd-lp .wrap {
+        width: min(1180px, calc(100% - 48px));
+        margin: auto;
+    }
+
+    .mgd-lp section {
+        padding: 76px 0;
+    }
+
+    .mgd-lp h1 {
+        font-size: clamp(32px, 4vw, 52px);
+        line-height: 1.12;
+        font-weight: 700;
+        letter-spacing: -.035em;
+        color: var(--ink);
+        margin: 18px 0 24px;
+    }
+
+    .mgd-lp h2 {
+        font-size: clamp(26px, 3vw, 38px);
+        line-height: 1.2;
+        font-weight: 700;
+        letter-spacing: -.025em;
+        color: inherit;
+        margin: 10px 0 22px;
+    }
+
+    .mgd-lp h3 {
+        font-size: 20px;
+        line-height: 1.35;
+        font-weight: 700;
+        color: inherit;
+        margin: 0 0 12px;
+    }
+
+    .mgd-lp p {
+        margin: 0 0 18px;
+    }
+
+    .mgd-lp a {
+        color: inherit;
+    }
+
+    .mgd-lp .kicker {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+    }
+
+    .mgd-lp .kicker:before {
+        content: '';
+        display: inline-block;
+        background: var(--yellow);
+        width: 22px;
+        height: 3px;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+
+    .mgd-lp .hero {
+        padding: 32px 0 64px;
+    }
+
+    .mgd-lp .crumbs {
+        font-size: 13px;
+        color: var(--muted);
+        margin-bottom: 32px;
+    }
+
+    .mgd-lp .cols {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: 64px;
+        align-items: center;
+    }
+
+    .mgd-lp .lead {
+        font-size: 19px;
+        color: var(--muted);
+        max-width: 64ch;
+    }
+
+    .mgd-lp .product {
+        width: 100%;
+        height: 440px;
+        object-fit: contain;
+        display: block;
+    }
+
+    .mgd-lp .visual {
+        background: var(--soft);
+        border-radius: 24px;
+        padding: 28px;
+    }
+
+    .mgd-lp .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 24px 0;
+    }
+
+    .mgd-lp .chip {
+        border: 1px solid #d7d2ca;
+        border-radius: 24px;
+        padding: 5px 13px;
+        font-size: 13px;
+        background: #fff;
+    }
+
+    .mgd-lp .btn {
+        display: inline-block;
+        padding: 14px 24px;
+        border: 1px solid var(--yellow);
+        border-radius: 12px;
+        background: var(--yellow);
+        color: var(--ink);
+        font-weight: 700;
+        text-decoration: none;
+        line-height: 1.4;
+        transition: all 0.2s ease;
+    }
+
+    .mgd-lp .btn:hover {
+        background: #e6b900;
+        border-color: #e6b900;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(230, 185, 0, 0.25);
+    }
+
+    .mgd-lp .btn:focus-visible,
+    .mgd-lp summary:focus-visible {
+        outline: 3px solid #896c00;
+        outline-offset: 4px;
+    }
+
+    .mgd-lp .subnote {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 18px;
+    }
+
+    .mgd-lp .dark {
+        background: var(--ink);
+        color: #fff;
+    }
+
+    .mgd-lp .dark .lead {
+        color: #dedbd6;
+    }
+
+    .mgd-lp .dark h2,
+    .mgd-lp .dark h3 {
+        color: #fff;
+    }
+
+    .mgd-lp .formcols {
+        display: grid;
+        grid-template-columns: .8fr 1.2fr;
+        gap: 56px;
+        align-items: start;
+    }
+
+    .mgd-lp .formbox {
+        background: #fff;
+        border-radius: 20px;
+        padding: 20px;
+        color: var(--ink);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .mgd-lp iframe {
+        border: 0;
+        width: 100%;
+        height: 970px;
+        display: block;
+    }
+
+    .mgd-lp .soft {
+        background: var(--soft);
+    }
+
+    .mgd-lp .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 32px;
+    }
+
+    .mgd-lp .card {
+        padding: 28px;
+        border: 1px solid #e1ddd6;
+        border-radius: 16px;
+        background: #fff;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .mgd-lp .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .mgd-lp .card p {
+        color: var(--muted);
+        margin: 0;
+    }
+
+    .mgd-lp .num {
+        display: block;
+        color: #8e7100;
+        font-weight: 700;
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .mgd-lp .challenges {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        list-style: none;
+        padding: 0;
+        margin: 28px 0 0;
+    }
+
+    .mgd-lp .challenges li {
+        padding: 18px;
+        border-left: 3px solid var(--yellow);
+        background: var(--soft);
+        font-weight: 500;
+    }
+
+    .mgd-lp .media-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 32px;
+    }
+
+    .mgd-lp figure {
+        margin: 0;
+    }
+
+    .mgd-lp .media-grid img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        border-radius: 16px;
+    }
+
+    .mgd-lp figcaption {
+        font-size: 14px;
+        padding: 14px 0;
+        color: var(--muted);
+    }
+
+    .mgd-lp .tablewrap {
+        overflow-x: auto;
+    }
+
+    .mgd-lp table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .mgd-lp th,
+    .mgd-lp td {
+        text-align: left;
+        padding: 16px 20px;
+        border-bottom: 1px solid #e1ddd6;
+        font-size: 15px;
+    }
+
+    .mgd-lp th {
+        background: var(--ink);
+        color: #fff;
+    }
+
+    .mgd-lp td:first-child {
+        font-weight: 700;
+        width: 34%;
+    }
+
+    .mgd-lp .steps {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        margin-top: 32px;
+    }
+
+    .mgd-lp details {
+        border-bottom: 1px solid #d7d2ca;
+        padding: 22px 0;
+    }
+
+    .mgd-lp summary {
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .mgd-lp details p {
+        padding: 18px 0 0;
+        color: var(--muted);
+        max-width: 90ch;
+    }
+
+    .mgd-lp .related {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
+    }
+
+    .mgd-lp .related a {
+        border: 1px solid #d7d2ca;
+        padding: 9px 16px;
+        border-radius: 24px;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background 0.15s ease;
+    }
+
+    .mgd-lp .related a:hover {
+        background: var(--yellow);
+    }
+
+    .mgd-lp .center {
+        text-align: center;
+    }
+
+    .mgd-lp .center p {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 70ch;
+    }
+
+    .mgd-lp .yellow {
+        background: var(--yellow);
+    }
+
+    .mgd-lp .yellow .btn {
+        background: var(--ink);
+        border-color: var(--ink);
+        color: #fff;
+    }
+
+    @media(max-width:800px) {
+        .mgd-lp .cols,
+        .mgd-lp .formcols {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        .mgd-lp .grid,
+        .mgd-lp .steps {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .mgd-lp .media-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .mgd-lp section {
+            padding: 48px 0;
+        }
+
+        .mgd-lp .product {
+            height: 330px;
+        }
+    }
+
+    @media(max-width:520px) {
+        .mgd-lp .wrap {
+            width: calc(100% - 32px);
+        }
+
+        .mgd-lp .grid,
+        .mgd-lp .steps,
+        .mgd-lp .challenges {
+            grid-template-columns: 1fr;
+        }
+
+        .mgd-lp .formbox {
+            padding: 10px;
+        }
+
+        .mgd-lp iframe {
+            height: 1100px;
+        }
+
+        .mgd-lp .visual {
+            padding: 16px;
+        }
+
+        .mgd-lp .btn {
+            width: 100%;
+            text-align: center;
+        }
+    }
+</style>
+<div class="mgd-lp">
+    <section class="hero">
+        <div class="wrap">
+            <nav class="crumbs" aria-label="Caminho de navegação"><a href="https://mgd-dist.com.br/">MGD</a> / <a
+                    href="https://mgd-dist.com.br/produtos/active5/">Galaxy Tab Active5</a> / Logística</nav>
+            <div class="cols">
+                <div><span class="kicker">Galaxy Tab Active5 · Almoxarifado & Estoque</span>
+                    <h1>Tablet Robusto para Controle de Estoque e Inventário Cíclico</h1>
+                    <p class="lead">Elimine divergências de estoque e acabe com pranchetas de papel. O Samsung Galaxy Tab Active5 oferece a velocidade necessária para auditar milhares de SKUs com acuracidade impecável.</p>
+                    <div class="chips"><span class="chip">Acuracidade Total</span><span class="chip">Leitura de Lotes</span><span class="chip">Bateria de Longa Duração</span><span class="chip">MIL-STD-810H</span></div>
+                    <a class="btn" href="#orcamento">Solicitar cotação para controle de estoque</a>
+                    <p class="subnote">Condições especiais para projetos de automação de estoque com faturamento corporativo.</p>
+                </div>
+                <figure class="visual"><img class="product"
+                        src="https://mgd-dist.com.br/wp-content/uploads/2025/12/Active-Site-V2.png"
+                        alt="Tablet para controle de estoque e auditoria de almoxarifado" width="560" height="440"
+                        fetchpriority="high">
+                    <figcaption>Controle ágil de entradas, saídas e movimentações internas de mercadorias.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+    <section id="orcamento" class="dark">
+        <div class="wrap formcols">
+            <div><span class="kicker">Fale com a MGD</span>
+                <h2>Modernize o controle do seu estoque agora.</h2>
+                <p class="lead">Fale com nossos consultores B2B para entender como integrar o Active5 ao seu software de gestão de estoque.</p>
+                <ul>
+                    <li>Quantidade de tablets e usuários</li>
+                    <li>Aplicativos e locais de utilização</li>
+                    <li>Conectividade e acessórios necessários</li>
+                </ul>
+                <p>Receba atendimento da equipe comercial para definir seu projeto.</p><a
+                    href="https://mgd-dist.com.br/contato/#orcamentos">Abrir a página de orçamento da MGD</a>
+            </div>
+            <div class="formbox"><iframe src="https://share.hsforms.com/1IddHF0FpSjCci97KJIJuBQ2gcl"
+                    title="Solicitar orçamento à MGD" loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        </div>
+    </section>
+    <section>
+        <div class="wrap"><span class="kicker">Desafios da operação</span>
+            <h2>Divergência de estoque custa caro para qualquer empresa.</h2>
+            <div class="cols">
+                <p>Erros manuais de contagem, papéis extraviados e atrasos na atualização do sistema geram rupturas de venda e excesso de estoque parado. Ambientes de almoxarifado demandam aparelhos robustos e rápidos.</p>
+                <p>Com o Active5, o almoxarife registra movimentações na hora, consulta lotes com fotos em alta definição e elimina etapas intermediárias de digitação.</p>
+            </div>
+            <ul class="challenges">
+                <li>Divergências crônicas entre estoque físico e estoque no sistema</li><li>Lentidão no processo de contagem física durante inventários gerais</li><li>Danos a equipamentos causados por poeira de depósitos e quedas acidentais</li><li>Dificuldade de localizar posições de paletes em estoques verticais</li>
+            </ul>
+        </div>
+    </section>
+    <section class="soft" id="aplicacoes">
+        <div class="wrap"><span class="kicker">Aplicações em Logística</span>
+            <h2>Como o Active5 pode apoiar sua equipe</h2>
+            <p class="lead">Possibilidades de uso com aplicativos compatíveis e processos definidos pela sua
+                organização.</p>
+            <div class="grid">
+                
+                <article class="card"><span class="num">01</span>
+                    <h3>Inventário Físico Rotativo</h3>
+                    <p>Contagens periódicas com atualização imediata no banco de dados do ERP.</p>
+                </article>
+                <article class="card"><span class="num">02</span>
+                    <h3>Entrada e Saída de Almoxarifado</h3>
+                    <p>Baixa instantânea de requisições de materiais para linhas de produção ou manutenção.</p>
+                </article>
+                <article class="card"><span class="num">03</span>
+                    <h3>Conferência de Validade e FEFO/FIFO</h3>
+                    <p>Identificação de produtos próximos ao vencimento e direcionamento prioritário de saída.</p>
+                </article>
+                <article class="card"><span class="num">04</span>
+                    <h3>Gestão de Localizações (Endereçamento)</h3>
+                    <p>Mapeamento e reendereçamento de produtos nas prateleiras com leitura óptica.</p>
+                </article>
+                <article class="card"><span class="num">05</span>
+                    <h3>Auditoria de Qualidade em Peças</h3>
+                    <p>Registro fotográfico de peças avariadas e devoluções para fornecedores.</p>
+                </article>
+                <article class="card"><span class="num">06</span>
+                    <h3>Requisições Mobile</h3>
+                    <p>Aprovação de pedidos e transferências entre filiais na tela do tablet.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section id="recursos">
+        <div class="wrap"><span class="kicker">Recursos do equipamento</span>
+            <h2>Robustez, autonomia e precisão no trabalho</h2>
+            <div class="media-grid">
+                <figure><img src="https://mgd-dist.com.br/wp-content/uploads/2025/12/tab-robusto-1.jpg"
+                        alt="Resistência do Samsung Galaxy Tab Active5" loading="lazy" width="380" height="230">
+                    <figcaption><strong>IP68 e MIL-STD-810H</strong><br>Resistência à água e poeira e testes de
+                        robustez, dentro dos limites e condições definidos pelo fabricante.</figcaption>
+                </figure>
+                <figure><img src="https://mgd-dist.com.br/wp-content/uploads/2025/12/longas.jpg"
+                        alt="Bateria removível e conexão POGO do Active5" loading="lazy" width="380" height="230">
+                    <figcaption><strong>Bateria removível de 5.050 mAh</strong><br>Planejamento de recarga e
+                        substituição para a rotina. Acessórios e baterias adicionais devem ser avaliados na proposta.
+                    </figcaption>
+                </figure>
+                <figure><img src="https://mgd-dist.com.br/wp-content/uploads/2025/12/precisao.jpg"
+                        alt="Uso da S Pen com o Galaxy Tab Active5" loading="lazy" width="380" height="230">
+                    <figcaption><strong>S Pen incluída</strong><br>Anotações e preenchimento em aplicativos compatíveis.
+                        Valide a sensibilidade da tela com as luvas utilizadas pela equipe.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+    <section class="soft" id="especificacoes">
+        <div class="wrap"><span class="kicker">Ficha técnica</span>
+            <h2>Samsung Galaxy Tab Active5 5G</h2>
+            <div class="tablewrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Recurso</th>
+                            <th scope="col">Especificação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tela</td>
+                            <td>8,0 polegadas · 1920 × 1200</td>
+                        </tr>
+                        <tr>
+                            <td>Processador</td>
+                            <td>Octa-core</td>
+                        </tr>
+                        <tr>
+                            <td>Memória RAM</td>
+                            <td>6 GB</td>
+                        </tr>
+                        <tr>
+                            <td>Armazenamento</td>
+                            <td>128 GB na versão brasileira SM-X306BZGAL05; confirme a configuração na proposta</td>
+                        </tr>
+                        <tr>
+                            <td>Sistema operacional</td>
+                            <td>Android · versão e atualizações conforme o equipamento fornecido</td>
+                        </tr>
+                        <tr>
+                            <td>Conectividade</td>
+                            <td>5G · disponibilidade sujeita à rede e ao plano de dados</td>
+                        </tr>
+                        <tr>
+                            <td>Proteção</td>
+                            <td>IP68 e MIL-STD-810H, conforme condições do fabricante</td>
+                        </tr>
+                        <tr>
+                            <td>Bateria</td>
+                            <td>Removível · 5.050 mAh (capacidade típica)</td>
+                        </tr>
+                        <tr>
+                            <td>Caneta</td>
+                            <td>S Pen incluída, com classificação IP68</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="subnote">Aplicativos, integrações, licenças, serviços e acessórios adicionais não são presumidos
+                como parte do fornecimento. A proposta define os itens contratados.</p>
+        </div>
+    </section>
+    <section id="beneficios">
+        <div class="wrap"><span class="kicker">Benefícios para Logística</span>
+            <h2>Hardware alinhado à sua rotina</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>Informação no local da tarefa</h3>
+                    <p>Leve consultas e registros aos pontos de trabalho descritos nas aplicações de logística.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>Registros mais consistentes</h3>
+                    <p>Padronize formulários e evidências com os aplicativos definidos pela organização.</p>
+                </article>
+                <article class="card">
+                    <h3>Mobilidade robusta</h3>
+                    <p>Escolha um equipamento projetado para rotinas exigentes, com uso adequado aos limites do
+                        fabricante.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section class="soft" id="como-funciona">
+        <div class="wrap"><span class="kicker">Seu projeto com a MGD</span>
+            <h2>Da necessidade à definição do equipamento</h2>
+            <div class="steps">
+                <div><span class="num">01</span>
+                    <h3>Descreva a operação</h3>
+                    <p>Informe locais de uso, atividades e quantidade de profissionais.</p>
+                </div>
+                <div><span class="num">02</span>
+                    <h3>Valide os requisitos</h3>
+                    <p>Confira aplicativos, conectividade, acessórios e requisitos de segurança.</p>
+                </div>
+                <div><span class="num">03</span>
+                    <h3>Solicite a proposta</h3>
+                    <p>Receba as condições comerciais dos itens definidos para o projeto.</p>
+                </div>
+                <div><span class="num">04</span>
+                    <h3>Planeje a adoção</h3>
+                    <p>Organize homologação, configuração e uso com sua equipe de TI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="faq">
+        <div class="wrap"><span class="kicker">Perguntas frequentes</span>
+            <h2>Active5 para Logística: tire suas dúvidas</h2>
+            
+            <details open>
+                <summary>Posso usar a câmera do tablet para ler código de barras e QR Codes?</summary>
+                <p>Sim, o Active5 conta com câmera traseira de alta resolução com foco automático e inteligência de leitura de códigos 1D e 2D mesmo em ambientes de baixa iluminação.</p>
+            </details>
+            <details>
+                <summary>O tablet funciona com sistemas como SAP, Totvs, Protheus e Sankhya?</summary>
+                <p>Sim, por rodar Android corporativo, é 100% compatível com os apps mobile dos principais ERPs e WMS de mercado.</p>
+            </details>
+            <details>
+                <summary>Como é a resistência do aparelho a poeira e sujeira de depósito?</summary>
+                <p>O Active5 possui selo IP68, sendo totalmente vedado contra a entrada de partículas microscópicas de poeira e areia.</p>
+            </details>
+            <details>
+                <summary>A MGD tem disponibilidade para entrega rápida?</summary>
+                <p>Sim, a MGD é um distribuidor que mantém estoque estratégico corporativo à pronta entrega para atendimento ágil em todo o Brasil.</p>
+            </details>
+        </div>
+    </section>
+    <section class="soft">
+        <div class="wrap"><span class="kicker">Veja também</span>
+            <h2>Conheça o produto e outros segmentos</h2>
+            <p><a href="https://mgd-dist.com.br/produtos/active5/">Ver a página principal do Samsung Galaxy Tab Active5
+                    5G</a></p>
+            <nav class="related" aria-label="Outros segmentos do Active5">
+                <a href="https://mgd-dist.com.br/tablet-robusto-active5-logistica/">Logística</a>
+                <a href="https://mgd-dist.com.br/tablet-para-prefeitura/">Governo</a>
+                <a href="https://mgd-dist.com.br/tablet-para-industria/">Manufatura</a>
+                <a href="https://mgd-dist.com.br/tablet-para-mineracao/">Mineração</a>
+                <a href="https://mgd-dist.com.br/tablet-para-hospital/">Saúde</a>
+                <a href="https://mgd-dist.com.br/tablet-para-equipe-de-campo/">Serviços</a>
+                <a href="https://mgd-dist.com.br/tablet-para-leitura-de-medidores/">Utilities</a>
+            </nav>
+        </div>
+    </section>
+    <section>
+        <div class="wrap center"><span class="kicker">MGD Distribuição</span>
+            <h2>Uma empresa do Grupo MGITECH</h2>
+            <p>Conheça a MGD e converse com a equipe sobre o fornecimento de equipamentos para seu projeto.</p><a
+                href="https://mgd-dist.com.br/sobre-nos/">Saiba mais sobre a MGD</a>
+        </div>
+    </section>
+    <section class="yellow">
+        <div class="wrap center">
+            <h2>Leve o Active5 para sua operação de logística</h2>
+            <p>Informe os requisitos da equipe e solicite uma proposta à MGD.</p><a class="btn"
+                href="#orcamento">Solicitar orçamento</a>
+        </div>
+    </section>
+</div>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://mgd-dist.com.br/tablet-para-controle-de-estoque/#faq","mainEntity":[{"@type":"Question","name":"Posso usar a câmera do tablet para ler código de barras e QR Codes?","acceptedAnswer":{"@type":"Answer","text":"Sim, o Active5 conta com câmera traseira de alta resolução com foco automático e inteligência de leitura de códigos 1D e 2D mesmo em ambientes de baixa iluminação."}},{"@type":"Question","name":"O tablet funciona com sistemas como SAP, Totvs, Protheus e Sankhya?","acceptedAnswer":{"@type":"Answer","text":"Sim, por rodar Android corporativo, é 100% compatível com os apps mobile dos principais ERPs e WMS de mercado."}},{"@type":"Question","name":"Como é a resistência do aparelho a poeira e sujeira de depósito?","acceptedAnswer":{"@type":"Answer","text":"O Active5 possui selo IP68, sendo totalmente vedado contra a entrada de partículas microscópicas de poeira e areia."}},{"@type":"Question","name":"A MGD tem disponibilidade para entrega rápida?","acceptedAnswer":{"@type":"Answer","text":"Sim, a MGD é um distribuidor que mantém estoque estratégico corporativo à pronta entrega para atendimento ágil em todo o Brasil."}}]}</script>
+<!-- /wp:html -->

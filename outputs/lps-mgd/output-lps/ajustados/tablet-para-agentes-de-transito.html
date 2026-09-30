@@ -1,0 +1,684 @@
+<!-- wp:html -->
+<style>
+    .mgd-lp {
+        --yellow: #ffcd00;
+        --ink: #231f1d;
+        --muted: #625d57;
+        --soft: #f5f4f1;
+        font-family: 'Instrument Sans', Arial, sans-serif;
+        color: var(--ink);
+        line-height: 1.65;
+        background: #fff;
+    }
+
+    .mgd-lp * {
+        box-sizing: border-box;
+    }
+
+    .mgd-lp .wrap {
+        width: min(1180px, calc(100% - 48px));
+        margin: auto;
+    }
+
+    .mgd-lp section {
+        padding: 76px 0;
+    }
+
+    .mgd-lp h1 {
+        font-size: clamp(32px, 4vw, 52px);
+        line-height: 1.12;
+        font-weight: 700;
+        letter-spacing: -.035em;
+        color: var(--ink);
+        margin: 18px 0 24px;
+    }
+
+    .mgd-lp h2 {
+        font-size: clamp(26px, 3vw, 38px);
+        line-height: 1.2;
+        font-weight: 700;
+        letter-spacing: -.025em;
+        color: inherit;
+        margin: 10px 0 22px;
+    }
+
+    .mgd-lp h3 {
+        font-size: 20px;
+        line-height: 1.35;
+        font-weight: 700;
+        color: inherit;
+        margin: 0 0 12px;
+    }
+
+    .mgd-lp p {
+        margin: 0 0 18px;
+    }
+
+    .mgd-lp a {
+        color: inherit;
+    }
+
+    .mgd-lp .kicker {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+    }
+
+    .mgd-lp .kicker:before {
+        content: '';
+        display: inline-block;
+        background: var(--yellow);
+        width: 22px;
+        height: 3px;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+
+    .mgd-lp .hero {
+        padding: 32px 0 64px;
+    }
+
+    .mgd-lp .crumbs {
+        font-size: 13px;
+        color: var(--muted);
+        margin-bottom: 32px;
+    }
+
+    .mgd-lp .cols {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: 64px;
+        align-items: center;
+    }
+
+    .mgd-lp .lead {
+        font-size: 19px;
+        color: var(--muted);
+        max-width: 64ch;
+    }
+
+    .mgd-lp .product {
+        width: 100%;
+        height: 440px;
+        object-fit: contain;
+        display: block;
+    }
+
+    .mgd-lp .visual {
+        background: var(--soft);
+        border-radius: 24px;
+        padding: 28px;
+    }
+
+    .mgd-lp .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 24px 0;
+    }
+
+    .mgd-lp .chip {
+        border: 1px solid #d7d2ca;
+        border-radius: 24px;
+        padding: 5px 13px;
+        font-size: 13px;
+        background: #fff;
+    }
+
+    .mgd-lp .btn {
+        display: inline-block;
+        padding: 14px 24px;
+        border: 1px solid var(--yellow);
+        border-radius: 12px;
+        background: var(--yellow);
+        color: var(--ink);
+        font-weight: 700;
+        text-decoration: none;
+        line-height: 1.4;
+        transition: all 0.2s ease;
+    }
+
+    .mgd-lp .btn:hover {
+        background: #e6b900;
+        border-color: #e6b900;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(230, 185, 0, 0.25);
+    }
+
+    .mgd-lp .btn:focus-visible,
+    .mgd-lp summary:focus-visible {
+        outline: 3px solid #896c00;
+        outline-offset: 4px;
+    }
+
+    .mgd-lp .subnote {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 18px;
+    }
+
+    .mgd-lp .dark {
+        background: var(--ink);
+        color: #fff;
+    }
+
+    .mgd-lp .dark .lead {
+        color: #dedbd6;
+    }
+
+    .mgd-lp .dark h2,
+    .mgd-lp .dark h3 {
+        color: #fff;
+    }
+
+    .mgd-lp .formcols {
+        display: grid;
+        grid-template-columns: .8fr 1.2fr;
+        gap: 56px;
+        align-items: start;
+    }
+
+    .mgd-lp .formbox {
+        background: #fff;
+        border-radius: 20px;
+        padding: 20px;
+        color: var(--ink);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .mgd-lp iframe {
+        border: 0;
+        width: 100%;
+        height: 970px;
+        display: block;
+    }
+
+    .mgd-lp .soft {
+        background: var(--soft);
+    }
+
+    .mgd-lp .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 32px;
+    }
+
+    .mgd-lp .card {
+        padding: 28px;
+        border: 1px solid #e1ddd6;
+        border-radius: 16px;
+        background: #fff;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .mgd-lp .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .mgd-lp .card p {
+        color: var(--muted);
+        margin: 0;
+    }
+
+    .mgd-lp .num {
+        display: block;
+        color: #8e7100;
+        font-weight: 700;
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .mgd-lp .challenges {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        list-style: none;
+        padding: 0;
+        margin: 28px 0 0;
+    }
+
+    .mgd-lp .challenges li {
+        padding: 18px;
+        border-left: 3px solid var(--yellow);
+        background: var(--soft);
+        font-weight: 500;
+    }
+
+    .mgd-lp .media-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 32px;
+    }
+
+    .mgd-lp figure {
+        margin: 0;
+    }
+
+    .mgd-lp .media-grid img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        border-radius: 16px;
+    }
+
+    .mgd-lp figcaption {
+        font-size: 14px;
+        padding: 14px 0;
+        color: var(--muted);
+    }
+
+    .mgd-lp .tablewrap {
+        overflow-x: auto;
+    }
+
+    .mgd-lp table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .mgd-lp th,
+    .mgd-lp td {
+        text-align: left;
+        padding: 16px 20px;
+        border-bottom: 1px solid #e1ddd6;
+        font-size: 15px;
+    }
+
+    .mgd-lp th {
+        background: var(--ink);
+        color: #fff;
+    }
+
+    .mgd-lp td:first-child {
+        font-weight: 700;
+        width: 34%;
+    }
+
+    .mgd-lp .steps {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        margin-top: 32px;
+    }
+
+    .mgd-lp details {
+        border-bottom: 1px solid #d7d2ca;
+        padding: 22px 0;
+    }
+
+    .mgd-lp summary {
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .mgd-lp details p {
+        padding: 18px 0 0;
+        color: var(--muted);
+        max-width: 90ch;
+    }
+
+    .mgd-lp .related {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
+    }
+
+    .mgd-lp .related a {
+        border: 1px solid #d7d2ca;
+        padding: 9px 16px;
+        border-radius: 24px;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background 0.15s ease;
+    }
+
+    .mgd-lp .related a:hover {
+        background: var(--yellow);
+    }
+
+    .mgd-lp .center {
+        text-align: center;
+    }
+
+    .mgd-lp .center p {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 70ch;
+    }
+
+    .mgd-lp .yellow {
+        background: var(--yellow);
+    }
+
+    .mgd-lp .yellow .btn {
+        background: var(--ink);
+        border-color: var(--ink);
+        color: #fff;
+    }
+
+    @media(max-width:800px) {
+        .mgd-lp .cols,
+        .mgd-lp .formcols {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        .mgd-lp .grid,
+        .mgd-lp .steps {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .mgd-lp .media-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .mgd-lp section {
+            padding: 48px 0;
+        }
+
+        .mgd-lp .product {
+            height: 330px;
+        }
+    }
+
+    @media(max-width:520px) {
+        .mgd-lp .wrap {
+            width: calc(100% - 32px);
+        }
+
+        .mgd-lp .grid,
+        .mgd-lp .steps,
+        .mgd-lp .challenges {
+            grid-template-columns: 1fr;
+        }
+
+        .mgd-lp .formbox {
+            padding: 10px;
+        }
+
+        .mgd-lp iframe {
+            height: 1100px;
+        }
+
+        .mgd-lp .visual {
+            padding: 16px;
+        }
+
+        .mgd-lp .btn {
+            width: 100%;
+            text-align: center;
+        }
+    }
+</style>
+<div class="mgd-lp">
+    <section class="hero">
+        <div class="wrap">
+            <nav class="crumbs" aria-label="Caminho de navegação"><a href="https://mgd-dist.com.br/">MGD</a> / <a
+                    href="https://mgd-dist.com.br/produtos/active5/">Galaxy Tab Active5</a> / Governo</nav>
+            <div class="cols">
+                <div><span class="kicker">Galaxy Tab Active5 · Segurança & Trânsito</span>
+                    <h1>Tablet Robusto para Agentes de Trânsito e Segurança Pública</h1>
+                    <p class="lead">Agilize blitzes, consultas a sistemas de trânsito e emissão eletrônica de infrações com o Samsung Galaxy Tab Active5, conforme os aplicativos e integrações do seu órgão. Robustez para uso em vias públicas.</p>
+                    <div class="chips"><span class="chip">Conexão 5G</span><span class="chip">Toque com luvas</span><span class="chip">Resistência a Quedas</span><span class="chip">IP68</span></div>
+                    <a class="btn" href="#orcamento">Solicitar cotação para órgãos de trânsito</a> <a class="btn" style="margin-left:12px" href="https://api.whatsapp.com/send/?phone=5511986350609&text=Ol%C3%A1%2C%20vim%20pelo%20site%20MGD%20e%20gostaria%20de%20or%C3%A7amento%20de%20Samsung%20Galaxy%20Tab%20Active5%205G.&type=phone_number&app_absent=0" target="_blank" rel="noopener" data-track="whatsapp">Falar no WhatsApp</a>
+                    <p class="subnote">Suportes veiculares e acessórios com pinos POGO: confirme a compatibilidade na proposta.</p>
+                </div>
+                <figure class="visual"><img class="product"
+                        src="https://mgd-dist.com.br/wp-content/uploads/2025/12/Active-Site-V2.png"
+                        alt="Tablet robusto para agentes de trânsito e viaturas policiais" width="560" height="440"
+                        fetchpriority="high">
+                    <figcaption>Prontidão operacional em vias públicas, com conectividade 5G sujeita à cobertura da operadora.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+    <section id="orcamento" class="dark">
+        <div class="wrap formcols">
+            <div><span class="kicker">Fale com a MGD</span>
+                <h2>Equipe seu efetivo de trânsito com tecnologia de ponta.</h2>
+                <p class="lead">Receba a proposta comercial da distribuidora MGD para autarquias e secretarias de mobilidade urbana.</p>
+                <ul>
+                    <li>Quantidade de tablets e usuários</li>
+                    <li>Aplicativos e locais de utilização</li>
+                    <li>Conectividade e acessórios necessários</li>
+                </ul>
+                <p>Receba atendimento da equipe comercial para definir seu projeto.</p><a
+                    href="https://mgd-dist.com.br/contato/#orcamentos">Abrir a página de orçamento da MGD</a>
+            </div>
+            <div class="formbox"><iframe src="https://share.hsforms.com/1IddHF0FpSjCci97KJIJuBQ2gcl"
+                    title="Solicitar orçamento à MGD" loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        </div>
+    </section>
+    <section>
+        <div class="wrap"><span class="kicker">Desafios da operação</span>
+            <h2>A rotina do trânsito não tolera atrasos ou telas quebradas.</h2>
+            <div class="cols">
+                <p>Agentes em motos ou em viaturas enfrentam trepidação, calor escaldante no asfalto e chuvas repentinas. Dispositivos comuns sofrem superaquecimento e quebram na primeira queda.</p>
+                <p>O Samsung Galaxy Tab Active5 tem certificação MIL-STD-810H e IP68, com tela sensível mesmo com luvas. Os limites de uso seguem as condições do fabricante.</p>
+            </div>
+            <ul class="challenges">
+                <li>Superaquecimento e desligamento do tablet sob sol escaldante</li><li>Dificuldade de digitação de placas usando luvas táticas de motoqueiro</li><li>Telas quebradas em quedas acidentais no asfalto</li><li>Lentidão na consulta a bancos de dados de veículos roubados</li>
+            </ul>
+        </div>
+    </section>
+    <section class="soft" id="aplicacoes">
+        <div class="wrap"><span class="kicker">Aplicações em Governo</span>
+            <h2>Como o Active5 pode apoiar sua equipe</h2>
+            <p class="lead">Possibilidades de uso com aplicativos compatíveis e processos definidos pela sua
+                organização.</p>
+            <div class="grid">
+                
+                <article class="card"><span class="num">01</span>
+                    <h3>Talão Eletrônico de Trânsito</h3>
+                    <p>Lavratura rápida de multas e autos de trânsito com captura fotográfica da infração.</p>
+                </article>
+                <article class="card"><span class="num">02</span>
+                    <h3>Consulta Instantânea de Placas</h3>
+                    <p>Consulta integrada aos sistemas estaduais e federais de restrições veiculares.</p>
+                </article>
+                <article class="card"><span class="num">03</span>
+                    <h3>Operação em Viaturas e Motocicletas</h3>
+                    <p>Fixação em suportes veiculares compatíveis; os acessórios são validados na proposta.</p>
+                </article>
+                <article class="card"><span class="num">04</span>
+                    <h3>Registro de Boletins de Acidente</h3>
+                    <p>Elaboração de croquis de acidentes na tela de 8 polegadas utilizando a caneta S Pen.</p>
+                </article>
+                <article class="card"><span class="num">05</span>
+                    <h3>Controle de Pátios e Guincho</h3>
+                    <p>Checklist de estado de veículos apreendidos com documentação fotográfica antes do reboque.</p>
+                </article>
+                <article class="card"><span class="num">06</span>
+                    <h3>Comunicação e Rastreamento Operacional</h3>
+                    <p>Envio contínuo de coordenadas da guarnição para a central de comando operacional.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section id="recursos">
+        <div class="wrap"><span class="kicker">Recursos do equipamento</span>
+            <h2>Robustez, autonomia e precisão no trabalho</h2>
+            <div class="media-grid">
+                <figure><img src="https://mgd-dist.com.br/wp-content/uploads/2025/12/tab-robusto-1.jpg"
+                        alt="Resistência do Samsung Galaxy Tab Active5" loading="lazy" width="380" height="230">
+                    <figcaption><strong>IP68 e MIL-STD-810H</strong><br>Resistência à água e poeira e testes de
+                        robustez, dentro dos limites e condições definidos pelo fabricante.</figcaption>
+                </figure>
+                <figure><img src="https://mgd-dist.com.br/wp-content/uploads/2025/12/longas.jpg"
+                        alt="Bateria removível e conexão POGO do Active5" loading="lazy" width="380" height="230">
+                    <figcaption><strong>Bateria removível de 5.050 mAh</strong><br>Planejamento de recarga e
+                        substituição para a rotina. Acessórios e baterias adicionais devem ser avaliados na proposta.
+                    </figcaption>
+                </figure>
+                <figure><img src="https://mgd-dist.com.br/wp-content/uploads/2025/12/precisao.jpg"
+                        alt="Uso da S Pen com o Galaxy Tab Active5" loading="lazy" width="380" height="230">
+                    <figcaption><strong>S Pen incluída</strong><br>Anotações e preenchimento em aplicativos compatíveis.
+                        Valide a sensibilidade da tela com as luvas utilizadas pela equipe.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+    <section class="soft" id="especificacoes">
+        <div class="wrap"><span class="kicker">Ficha técnica</span>
+            <h2>Samsung Galaxy Tab Active5 5G</h2>
+            <div class="tablewrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Recurso</th>
+                            <th scope="col">Especificação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tela</td>
+                            <td>8,0 polegadas · 1920 × 1200</td>
+                        </tr>
+                        <tr>
+                            <td>Processador</td>
+                            <td>Octa-core</td>
+                        </tr>
+                        <tr>
+                            <td>Memória RAM</td>
+                            <td>6 GB</td>
+                        </tr>
+                        <tr>
+                            <td>Armazenamento</td>
+                            <td>128 GB na versão brasileira SM-X306BZGAL05; confirme a configuração na proposta</td>
+                        </tr>
+                        <tr>
+                            <td>Sistema operacional</td>
+                            <td>Android · versão e atualizações conforme o equipamento fornecido</td>
+                        </tr>
+                        <tr>
+                            <td>Conectividade</td>
+                            <td>5G · disponibilidade sujeita à rede e ao plano de dados</td>
+                        </tr>
+                        <tr>
+                            <td>Proteção</td>
+                            <td>IP68 e MIL-STD-810H, conforme condições do fabricante</td>
+                        </tr>
+                        <tr>
+                            <td>Bateria</td>
+                            <td>Removível · 5.050 mAh (capacidade típica)</td>
+                        </tr>
+                        <tr>
+                            <td>Caneta</td>
+                            <td>S Pen incluída, com classificação IP68</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="subnote">Aplicativos, integrações, licenças, serviços e acessórios adicionais não são presumidos
+                como parte do fornecimento. A proposta define os itens contratados.</p>
+        </div>
+    </section>
+    <section id="beneficios">
+        <div class="wrap"><span class="kicker">Benefícios para agentes de trânsito</span>
+            <h2>Hardware alinhado ao trabalho na rua</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>Consulta e autuação no local</h3>
+                    <p>Reduza idas e vindas à base, usando os aplicativos do órgão direto na via.</p>
+                </article>
+                <article class="card">
+                    <h3>Toque com luvas</h3>
+                    <p>A tela sensível com luvas ajuda no preenchimento durante a abordagem; valide o modelo de luva da equipe.</p>
+                </article>
+                <article class="card">
+                    <h3>Chuva e poeira</h3>
+                    <p>IP68 protege contra água e poeira, conforme as condições do fabricante.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section class="soft" id="como-funciona">
+        <div class="wrap"><span class="kicker">Seu projeto com a MGD</span>
+            <h2>Da necessidade à definição do equipamento</h2>
+            <div class="steps">
+                <div><span class="num">01</span>
+                    <h3>Descreva a operação</h3>
+                    <p>Informe locais de uso, atividades e quantidade de profissionais.</p>
+                </div>
+                <div><span class="num">02</span>
+                    <h3>Valide os requisitos</h3>
+                    <p>Confira aplicativos, conectividade, acessórios e requisitos de segurança.</p>
+                </div>
+                <div><span class="num">03</span>
+                    <h3>Solicite a proposta</h3>
+                    <p>Receba as condições comerciais dos itens definidos para o projeto.</p>
+                </div>
+                <div><span class="num">04</span>
+                    <h3>Planeje a adoção</h3>
+                    <p>Organize homologação, configuração e uso com sua equipe de TI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="faq">
+        <div class="wrap"><span class="kicker">Perguntas frequentes</span>
+            <h2>Active5 para Governo: tire suas dúvidas</h2>
+            
+            <details open>
+                <summary>O tablet funciona com o agente usando luvas de trânsito?</summary>
+                <p>O Active5 tem tela sensível com luvas. Teste o modelo de luva usado pela equipe antes de padronizar.</p>
+            </details>
+            <details>
+                <summary>Existem suportes para instalação em viaturas e motos?</summary>
+                <p>Sim, a MGD apoia projetos com ecossistema completo de capas robustas, bases com pinos POGO e suportes automotivos compatíveis.</p>
+            </details>
+            <details>
+                <summary>O sistema operacional conta com proteção contra vazamento de dados?</summary>
+                <p>O Active5 roda Android corporativo. Proteção de dados e políticas de segurança dependem do MDM e dos aplicativos adotados pelo órgão.</p>
+            </details>
+            <details>
+                <summary>É possível carregar o tablet sem desgastar a porta USB-C?</summary>
+                <p>O Active5 tem pinos POGO para conectar acessórios e bases. Confirme na proposta a base de recarga compatível com o seu veículo.</p>
+            </details>
+        </div>
+    </section>
+    <section class="soft">
+        <div class="wrap"><span class="kicker">Veja também</span>
+            <h2>Conheça o produto e outros segmentos</h2>
+            <p><a href="https://mgd-dist.com.br/produtos/active5/">Ver a página principal do Samsung Galaxy Tab Active5
+                    5G</a></p>
+            <nav class="related" aria-label="Outros segmentos do Active5">
+                <a href="https://mgd-dist.com.br/tablet-robusto-active5-logistica/">Logística</a>
+                <a href="https://mgd-dist.com.br/tablet-robusto-active5-governo/">Governo</a>
+                <a href="https://mgd-dist.com.br/tablet-robusto-active5-manufatura/">Manufatura</a>
+                <a href="https://mgd-dist.com.br/tablet-robusto-active5-mineracao/">Mineração</a>
+                <a href="https://mgd-dist.com.br/tablet-robusto-active5-saude/">Saúde</a>
+                <a href="https://mgd-dist.com.br/tablet-robusto-active5-servicos/">Serviços</a>
+                <a href="https://mgd-dist.com.br/tablet-robusto-active5-utilities/">Utilities</a>
+                <a href="https://mgd-dist.com.br/tablet-robusto-active5-bens-de-consumo/">Bens de consumo</a>
+            </nav>
+        </div>
+    </section>
+    <section>
+        <div class="wrap center"><span class="kicker">MGD Distribuição</span>
+            <h2>Uma empresa do Grupo MGITECH</h2>
+            <p>Conheça a MGD e converse com a equipe sobre o fornecimento de equipamentos para seu projeto.</p><a
+                href="https://mgd-dist.com.br/sobre-nos/">Saiba mais sobre a MGD</a>
+        </div>
+    </section>
+    <section class="yellow">
+        <div class="wrap center">
+            <h2>Leve o Active5 para sua operação de governo</h2>
+            <p>Informe os requisitos da equipe e solicite uma proposta à MGD.</p><a class="btn"
+                href="#orcamento">Solicitar orçamento</a> <a class="btn" style="margin-left:12px" href="https://api.whatsapp.com/send/?phone=5511986350609&text=Ol%C3%A1%2C%20vim%20pelo%20site%20MGD%20e%20gostaria%20de%20or%C3%A7amento%20de%20Samsung%20Galaxy%20Tab%20Active5%205G.&type=phone_number&app_absent=0" target="_blank" rel="noopener" data-track="whatsapp">Falar no WhatsApp</a>
+        </div>
+    </section>
+</div>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://mgd-dist.com.br/tablet-para-agentes-de-transito/#faq","mainEntity":[{"@type":"Question","name":"O tablet funciona com o agente usando luvas de trânsito?","acceptedAnswer":{"@type":"Answer","text":"O Active5 tem tela sensível com luvas. Teste o modelo de luva usado pela equipe antes de padronizar."}},{"@type":"Question","name":"Existem suportes para instalação em viaturas e motos?","acceptedAnswer":{"@type":"Answer","text":"Sim, a MGD apoia projetos com ecossistema completo de capas robustas, bases com pinos POGO e suportes automotivos compatíveis."}},{"@type":"Question","name":"O sistema operacional conta com proteção contra vazamento de dados?","acceptedAnswer":{"@type":"Answer","text":"O Active5 roda Android corporativo. Proteção de dados e políticas de segurança dependem do MDM e dos aplicativos adotados pelo órgão."}},{"@type":"Question","name":"É possível carregar o tablet sem desgastar a porta USB-C?","acceptedAnswer":{"@type":"Answer","text":"O Active5 tem pinos POGO para conectar acessórios e bases. Confirme na proposta a base de recarga compatível com o seu veículo."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MGD Distribuição","item":"https://mgd-dist.com.br/"},{"@type":"ListItem","position":2,"name":"Samsung Galaxy Tab Active5 5G","item":"https://mgd-dist.com.br/produtos/active5/"},{"@type":"ListItem","position":3,"name":"Agentes de trânsito","item":"https://mgd-dist.com.br/tablet-para-agentes-de-transito/"}]}</script>
+<!-- /wp:html -->

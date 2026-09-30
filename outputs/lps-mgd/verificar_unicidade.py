@@ -19,6 +19,12 @@ def shingles(t, n=5):
     w = re.findall(r"\w+", t.lower())
     return {" ".join(w[i:i + n]) for i in range(max(0, len(w) - n + 1))}
 
+# afirmações que NÃO constam na página do produto (ver fatos_active5.json)
+TERMOS = [r"knox", r"hot-?swap", r"antirreflexo", r"\b1,8\s?m", r"100% compat", r"com validade legal", r"\bgnss\b",
+          r"\bemr\b", r"ultrarr[aá]pid", r"wet touch", r"wi-?fi 6", r"pilar corporativo", r"multi-slot", r"\bptt\b"]
+PILARES = {"tablet-robusto-active5-" + s for s in ("logistica", "governo", "manufatura", "mineracao", "saude", "servicos", "utilities", "bens-de-consumo")}
+EXISTENTES = {"produtos", "sobre-nos", "contato"} | PILARES
+
 ap = argparse.ArgumentParser()
 ap.add_argument("pasta")
 ap.add_argument("--max-sim", type=float, default=0.30)
@@ -30,7 +36,7 @@ for f in sorted(glob.glob(os.path.join(a.pasta, "*.html"))):
     slug = os.path.basename(f)[:-5]
     h = open(f, encoding="utf-8").read()
     body = pega(r"<body[^>]*>(.*)</body>", h) or h
-    pags[slug] = dict(
+    pags[slug] = dict(raw=h,
         title=pega(r"<title>(.*?)</title>", h),
         h1=pega(r"<h1[^>]*>(.*?)</h1>", re.sub(r"(?s)<[^>]+>(?=[^<]*</h1>)", "", h)) or pega(r"<h1[^>]*>(.*?)</h1>", h),
         desc=pega(r'<meta[^>]+name=["\']description["\'][^>]+content=["\'](.*?)["\']', h),
@@ -40,16 +46,32 @@ for f in sorted(glob.glob(os.path.join(a.pasta, "*.html"))):
     pags[slug]["sh"] = shingles(pags[slug]["txt"])
 
 erros = []
+avisos = []
 for campo in ("title", "h1", "desc"):
     c = collections.defaultdict(list)
     for s, p in pags.items():
         c[p[campo].lower()].append(s)
     for v, ss in c.items():
-        if len(ss) > 1 or not v:
+        if campo != "h1" and not v:
+            avisos.append(f"{campo.upper()} fora do arquivo (defina no plugin de SEO): {', '.join(ss)}")
+        elif len(ss) > 1 or not v:
             erros.append(f"{campo.upper()} {'vazio' if not v else 'duplicado'}: {', '.join(ss)}")
 for s, p in pags.items():
-    if not re.search(rf"/{re.escape(s)}/?$", p["canon"]):
+    if not p["canon"]:
+        avisos.append(f"CANONICAL fora do arquivo em {s}: confirme no plugin de SEO que aponta para /{s}/")
+    elif not re.search(rf"/{re.escape(s)}/?$", p["canon"]):
         erros.append(f"CANONICAL não aponta para si mesma em {s}: '{p['canon']}'")
+    if "api.whatsapp.com" not in p["raw"]:
+        erros.append(f"SEM WHATSAPP em {s}")
+    if "BreadcrumbList" not in p["raw"]:
+        avisos.append(f"sem BreadcrumbList em {s}")
+    for t in TERMOS:
+        if re.search(t, p["raw"], re.I):
+            erros.append(f"AFIRMAÇÃO SEM BASE em {s}: /{t}/")
+    for l in set(re.findall(r'href="https://mgd-dist\.com\.br/([^"#/]+)/"', p["raw"])):
+        if l in EXISTENTES or l == s:
+            continue
+        avisos.append(f"link interno para /{l}/ em {s}: confirme que está publicado")
     n = len(re.findall(r"\w+", p["txt"]))
     if n < a.min_palavras:
         erros.append(f"CONTEÚDO FINO em {s}: {n} palavras (mín. {a.min_palavras})")
@@ -73,7 +95,10 @@ for (s1, p1), (s2, p2) in itertools.combinations(pags.items(), 2):
 for j, s1, s2 in sorted(pares, reverse=True):
     erros.append(f"DUPLICIDADE {j:.0%} entre {s1} e {s2} (limite {a.max_sim:.0%})")
 
-print(f"{len(pags)} páginas analisadas, {len(erros)} problemas")
+print(f"{len(pags)} páginas analisadas, {len(erros)} problemas, {len(avisos)} avisos")
 for e in erros:
     print(" -", e)
+avisos.append("links para os 8 pilares: ficam 404 até os pilares serem publicados (hoje são rascunho)")
+for a_ in avisos:
+    print(" ~", a_)
 sys.exit(1 if erros else 0)
