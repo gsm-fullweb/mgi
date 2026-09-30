@@ -103,7 +103,7 @@ Conferir cada dado técnico no site da Samsung antes de publicar.
 
 - **Melhor tablet para uso corporativo?** Para equipes que trabalham fora do escritório, o melhor é um tablet robusto, como o Samsung Galaxy Tab Active5: tem certificação IP68 e MIL-STD-810H, suporta 5G e bateria removível. Para uso só em escritório, um tablet comum atende.
 - **Tablet resistente para o trabalho?** O Galaxy Tab Active5 resiste a água, poeira e quedas (IP68 e MIL-STD-810H) e funciona com luvas. É indicado para logística, indústria, mineração, saúde, serviços e campo.
-- **Tablet bom para planilhas?** Para planilhas e formulários em campo, o Active5 roda Excel e apps corporativos e tem teclado e caneta como acessórios. Para planilhas pesadas no escritório, o notebook ainda é mais indicado.
+- **Tablet bom para planilhas?** Para preencher formulários e consultar sistemas em campo, o Active5 atende: tela sensível com luvas e S Pen incluída. Para planilhas pesadas, o notebook no escritório continua mais indicado. (Não afirmar compatibilidade com Excel nem teclado: não consta na página do produto.)
 - **Tablet que substitui notebook?** Em rotas de entrega, vistorias e fiscalização, o tablet robusto substitui o notebook: é mais leve, liga rápido e aguenta o uso externo. Para edição pesada, o notebook continua necessário.
 
 ### Como usar
@@ -143,3 +143,20 @@ Trocar "logística" por "mineração" no mesmo molde é duplicidade. Cada LP pre
 - similaridade de texto acima de 30% entre qualquer par de LPs (shingles de 5 palavras).
 
 Fluxo: gerar HTML → rodar o verificador → só publicar em rascunho quando sair sem problemas. Testei o verificador com páginas de exemplo e ele pegou uma cópia com 97% de similaridade.
+
+## 8. Modelo "mesmo produto, situação diferente"
+
+O produto é um só: [Active5 5G](https://mgd-dist.com.br/produtos/active5/). O que muda em cada LP é a **situação de uso**. Isso define a estrutura:
+
+| Elemento | Regra |
+|---|---|
+| Canonical | A própria LP. A página do produto mantém o canonical dela. |
+| Palavra-chave | Só a situação ("tablet para controle de estoque"). **Nenhuma LP disputa o termo de marca** ("tablet robusto samsung galaxy tab active 5 5g"), que fica para a página do produto. |
+| H1 | A situação, não o produto. Ex.: "Tablet para conferência de mercadorias no armazém". |
+| Produto | Aparece como solução, em um bloco que leva à página do produto (CTA "Ver a página principal do Active5 5G"). |
+| Especificações | Só as **verificadas** em `fatos_active5.json` (conferidas na página do produto), com o destaque que a situação pede. |
+| Diferenciação | Persona, cenário, problema, fluxo de trabalho e FAQ da situação (seção 7). |
+
+Consequência: a variação entre as LPs é de **situação**, e os fatos do produto ficam constantes. Por isso a ficha técnica se repete, mas deve ficar abaixo de 30% do texto para passar no verificador. O diferencial de cada LP precisa ser o cenário.
+
+**Fatos que não constam na página e não devem ser afirmados:** Excel/Office, teclado acessório, leitor de código de barras integrado, autonomia em horas, peso, tamanho de tela e preço. Se quiser usá-los, confirme com a Samsung ou a equipe da MGD primeiro.

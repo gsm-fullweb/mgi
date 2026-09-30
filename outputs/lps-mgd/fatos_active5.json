@@ -1,0 +1,28 @@
+{
+  "fonte": "https://mgd-dist.com.br/produtos/active5/ (conferido em 2026-09-30)",
+  "produto": "Tablet Robusto Samsung Galaxy Tab Active 5 5G",
+  "url_produto": "https://mgd-dist.com.br/produtos/active5/",
+  "fatos_verificados": {
+    "memoria": "6GB RAM, 64GB ou 128GB",
+    "protecao": "IP68 + certificação MIL-STD-810H",
+    "resistencia": "água, poeira e quedas",
+    "toque": "alta sensibilidade, funciona com luvas",
+    "bateria": "removível e intercambiável, 5.050 mAh",
+    "s_pen": "incluída na embalagem, certificada IP68, funciona com luvas, sem recarga",
+    "higiene": "pode ser limpo com desinfetantes",
+    "conectividade": "5G",
+    "acessorios": "pinos POGO para conexão, transferência de dados e acoplar acessórios"
+  },
+  "nao_confirmado_na_pagina": ["rodar Excel/Office", "teclado como acessório", "leitor de código de barras integrado", "autonomia em horas", "peso", "tamanho da tela", "preço"],
+  "spec_em_destaque_por_situacao": {
+    "Logística": ["toque com luvas", "bateria removível", "queda"],
+    "Manufatura": ["toque com luvas", "MIL-STD-810H", "poeira"],
+    "Mineração": ["poeira", "queda", "MIL-STD-810H"],
+    "Saúde": ["limpeza com desinfetantes", "S Pen sem recarga"],
+    "Governo": ["chuva e poeira (IP68)", "5G", "S Pen"],
+    "Serviços": ["bateria removível", "S Pen", "5G"],
+    "Utilities": ["IP68", "5G", "bateria removível"],
+    "Bens de consumo": ["5G", "S Pen", "bateria removível"],
+    "Leitura de dados em campo": ["5G", "pinos POGO para acessórios", "S Pen"]
+  }
+}
