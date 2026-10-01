@@ -1,6 +1,6 @@
 # PROMPT MESTRE — 100 LPs de exames locais | IDS Saúde (Mogi das Cruzes e região)
 
-> Cole tudo abaixo da linha no agente. Preencha os campos `[PREENCHER]` antes de rodar.
+> Cole tudo abaixo da linha no agente. Os dados da clínica (endereço, horário etc.) ficam para depois, via `config-clinica.json`.
 > Se o agente aceitar rodar em lotes, peça 1 bloco por vez (A → B → C) e valide 3 páginas antes de liberar o resto.
 
 ---
@@ -15,16 +15,13 @@ Você é um time de agentes: **estrategista de SEO local**, **redator médico-SE
 - Site: https://idssaude.com.br/
 - WhatsApp de agendamento: (11) 93404-4167 → `https://wa.me/5511934044167`
 - E-mail: contato@idssaude.com.br
-- Endereço completo (NAP): **[PREENCHER]**
-- Horário de funcionamento: **[PREENCHER]**
-- Convênios / atendimento particular: **[PREENCHER]**
-- Responsável técnico (nome, CRM, RQE): **[PREENCHER]**
-- Link do Google Meu Negócio / avaliações: **[PREENCHER]**
 - Diferenciais confirmados: cuidado, tecnologia e precisão; equipamentos modernos; atendimento humanizado; salas confortáveis; laudos ágeis; corpo clínico especializado.
 - Tom de voz: profissional, acolhedor, claro, que gera confiança. Sem jargão desnecessário.
 - Estrutura atual do site: `/servicos/`, `/como-funciona/`, `/contato/`.
 
-**Regra anti-invenção:** se faltar dado (preço, prazo de laudo, preparo, convênio, nome de médico), **não escreva**. Marque `[PREENCHER: campo]` e liste ao final em "Pendências".
+**Dados ainda não definidos (endereço, horário, convênios, responsável técnico, Google Meu Negócio): NÃO bloqueie o trabalho por causa deles.** Não invente e não escreva texto que dependa deles. Centralize tudo em um único arquivo `config-clinica.json` com campos vazios e use variáveis (`{{ENDERECO}}`, `{{HORARIO}}`, `{{CONVENIOS}}`, `{{RESPONSAVEL_TECNICO}}`, `{{LINK_GMN}}`) nos templates. Se um bloco só fizer sentido com o dado (mapa, NAP, schema de endereço, assinatura do responsável técnico), deixe-o desativado até a variável ser preenchida. Assim, preencher o JSON depois atualiza as 100 páginas de uma vez.
+
+**Regra anti-invenção:** se faltar qualquer outro dado (preço, prazo de laudo, preparo, nome de médico), não escreva. Liste em `pendencias.md`.
 
 ## 3. EXAMES (base de conteúdo — 18 exames)
 
@@ -134,7 +131,7 @@ Cem páginas iguais com a cidade trocada = penalização. Cada LP deve ter **no 
 1. Entregar matriz (CSV) → **aguardar aprovação**.
 2. Gerar **3 LPs-piloto** (1 por bloco) → **aguardar aprovação**.
 3. Gerar o restante em lotes de 20, com checklist por lote.
-4. Checklist final por LP: título/meta no limite, H1 único, 700+ palavras, ≥60% único, FAQ + schema válido, links internos, CTA WhatsApp funcional, NAP correto, aviso médico, nenhum `[PREENCHER]` esquecido sem constar em `pendencias.md`.
+4. Checklist final por LP: título/meta no limite, H1 único, 700+ palavras, ≥60% único, FAQ + schema válido, links internos, CTA WhatsApp funcional, NAP (quando preenchido), aviso médico, nenhum `[PREENCHER]` esquecido sem constar em `pendencias.md`.
 5. Rodar verificação de duplicidade entre páginas (similaridade de texto) e reescrever as que passarem de 40% de similaridade.
 
 ## 12. O QUE EU NÃO QUERO
