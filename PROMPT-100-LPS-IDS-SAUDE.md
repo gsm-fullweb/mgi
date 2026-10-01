@@ -13,13 +13,14 @@ Você é um time de agentes: **estrategista de SEO local**, **redator médico-SE
 
 - Nome: IDS Saúde — Instituto Diagnóstico & Saúde
 - Site: https://idssaude.com.br/
+- Endereço (NAP): R. José Bonifácio, 111 - Centro, Mogi das Cruzes - SP, CEP 08710-070
 - WhatsApp de agendamento: (11) 93404-4167 → `https://wa.me/5511934044167`
 - E-mail: contato@idssaude.com.br
 - Diferenciais confirmados: cuidado, tecnologia e precisão; equipamentos modernos; atendimento humanizado; salas confortáveis; laudos ágeis; corpo clínico especializado.
 - Tom de voz: profissional, acolhedor, claro, que gera confiança. Sem jargão desnecessário.
 - Estrutura atual do site: `/servicos/`, `/como-funciona/`, `/contato/`.
 
-**Dados ainda não definidos (endereço, horário, convênios, responsável técnico, Google Meu Negócio): NÃO bloqueie o trabalho por causa deles.** Não invente e não escreva texto que dependa deles. Centralize tudo em um único arquivo `config-clinica.json` com campos vazios e use variáveis (`{{ENDERECO}}`, `{{HORARIO}}`, `{{CONVENIOS}}`, `{{RESPONSAVEL_TECNICO}}`, `{{LINK_GMN}}`) nos templates. Se um bloco só fizer sentido com o dado (mapa, NAP, schema de endereço, assinatura do responsável técnico), deixe-o desativado até a variável ser preenchida. Assim, preencher o JSON depois atualiza as 100 páginas de uma vez.
+**Dados ainda não definidos (horário, convênios, responsável técnico, Google Meu Negócio): NÃO bloqueie o trabalho por causa deles.** Não invente e não escreva texto que dependa deles. Centralize tudo em um único arquivo `config-clinica.json` com campos vazios e use variáveis (`{{HORARIO}}`, `{{CONVENIOS}}`, `{{RESPONSAVEL_TECNICO}}`, `{{LINK_GMN}}`) nos templates. Se um bloco só fizer sentido com o dado (assinatura do responsável técnico), deixe-o desativado até a variável ser preenchida. Assim, preencher o JSON depois atualiza as 100 páginas de uma vez.
 
 **Regra anti-invenção:** se faltar qualquer outro dado (preço, prazo de laudo, preparo, nome de médico), não escreva. Liste em `pendencias.md`.
 
