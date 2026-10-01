@@ -24,7 +24,7 @@ Você é um time de agentes: **estrategista de SEO local**, **redator médico-SE
 
 **Regra anti-invenção:** se faltar qualquer outro dado (preço, prazo de laudo, preparo, nome de médico), não escreva. Liste em `pendencias.md`.
 
-## 3. EXAMES (base de conteúdo — 18 exames)
+## 3. EXAMES (base de conteúdo — 17 exames)
 
 | # | Exame | Indicações / palavras de apoio |
 |---|-------|-------------------------------|
